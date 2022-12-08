@@ -1,0 +1,83 @@
+.hero
+  height: 1050px
+  background: #fff
+  color: #fff
+  position: relative
+  padding-top: 283px
+  overflow: hidden
+  &::before
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    z-index: 2
+    background: #000
+    opacity: 0.4
+  .title-sm
+    margin-top: 17px
+  .text
+    max-width: 456px
+    margin-top: 25px
+  .btn-wrap
+    margin-top: 45px
+  video
+    object-fit: cover
+    background-size: cover
+    width: 100%
+    height: 100%
+    position: absolute
+    top: 0
+    left: 0
+  .col
+    &::before
+      content: ''
+      position: absolute
+      top: -175px
+      bottom: -1000px
+      left: 0
+      width: 1px
+      background: rgba(255, 255, 255, 0.15)
+    &:nth-child(2)::after
+      content: ''
+      position: absolute
+      top: -175px
+      bottom: -1000px
+      right: 0
+      width: 1px
+      background: rgba(255, 255, 255, 0.15)
+
+@media(max-width: 1600px)
+  .hero
+    height: 800px
+    padding-top: 215px
+    .title-sm
+      font-size: 22px
+    .title-xl
+      max-width: 541px
+    .text
+      max-width: 362px
+    .btn-wrap
+      margin-top: 35px
+    .col
+      &::before, &:nth-child(2)::after
+        top: -135px
+
+@media(max-width: 960px)
+  .hero
+    padding-top: 204px
+    height: 846px
+    .title-sm
+      margin: 0
+    .title-xl
+      margin-top: 30px
+    .col::before,
+    .col:nth-child(2)::after
+      top: -150px
+
+@media(max-width: 620px)
+  .hero
+    height: 691px
+    .title-xl
+      font-size: 30px
