@@ -7,6 +7,7 @@
   width: 100%
   top: 0
   left: 0
+  transition: .2s
   .container
     @include flexbox
     align-items: center
@@ -19,7 +20,8 @@
       display: block
       width: 169px
       height: 43px
-      background: url(../img/svg/logo-color.svg) no-repeat
+      background-image: url(../img/svg/logo-color.svg)
+      background-repeat: no-repeat
     &__desc
       font-size: 11px
       font-weight: 600
@@ -40,6 +42,9 @@
         font-size: 15px
         letter-spacing: -0.02em
         color: $color-blue-black
+        transition: .2s
+        &:hover
+          color: $color-blue !important
   &-tender
     font-size: 18px
     @include flexbox
@@ -90,11 +95,33 @@
         height: 42px
         border-radius: 100%
         border: 1px solid rgba(100, 100, 100, 0.3)
+        transition: .2s
+        img
+          transition: .2s
+        &:hover
+          background: $color-blue
+          img
+            filter: invert(100%)
   &-burger
     width: 108px
     height: 108px
-    background: url(../img/svg/burger.svg) no-repeat center
+    background: #fff url(../img/svg/burger.svg) no-repeat center
     cursor: pointer
+
+  &-clear
+    background: transparent
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15)
+    color: #fff
+    .header-logo__desc
+      color: rgba(255,255,255,.67)
+    .header-nav li a
+      color: #fff
+    .header-social li a
+      border: 1px solid rgba(255,255,255,.3)
+      img
+        filter: invert(100%)
+    .header-logo__pic
+      background-image: url(../img/svg/logo-white.svg)
 
 @media(max-width: 1800px)
   .header-logo__desc
