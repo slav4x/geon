@@ -32,8 +32,13 @@ const maskPhone = () => {
 
 maskPhone();
 
-$(window).scroll(function () {
-  const scrolled = $(window).scrollTop();
+if ($(window).width() >= 610) {
+  $(window).scroll(function () {
+    const scrolled = $(window).scrollTop();
 
-  if ($('.header').hasClass('header-home')) scrolled > 1 ? $('.header').removeClass('header-clear') : $('.header').addClass('header-clear');
-});
+    if ($('.header').hasClass('header-home'))
+      scrolled > 1 ? $('.header').removeClass('header-clear') : $('.header').addClass('header-clear');
+  });
+} else {
+  $('.header').removeClass('header-home');
+}
