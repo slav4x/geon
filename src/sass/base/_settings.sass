@@ -98,14 +98,9 @@ ul
   align-items: center
   font-size: 18px
   line-height: 1.6
+  padding: 30px 35px
   color: $color-blue
   transition: .2s
-  &-padding
-    padding: 30px 35px
-    &.btn-icon:hover
-      padding: 30px 25px
-      &::after
-        margin-left: 35px
   p
     border-bottom: 1px solid transparent
     transition: .2s
@@ -145,14 +140,18 @@ ul
       border: 1px solid rgba(0, 103, 232, 0.2)
       background: url("data:image/svg+xml,%3Csvg width='25' height='25' viewBox='0 0 25 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.5 8.5L14.5 12.5L10.5 16.5' stroke='%230071FE' stroke-width='1.5'/%3E%3C/svg%3E%0A") no-repeat center
       transition: .2s
-    &.btn-fill::after,
-    &.btn-glass::after
-      border: 1px solid rgba(255, 255, 255, 0.1)
-      background: url("data:image/svg+xml,%3Csvg width='25' height='25' viewBox='0 0 25 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.5 8.5L14.5 12.5L10.5 16.5' stroke='%23FFFFFF' stroke-width='1.5'/%3E%3C/svg%3E%0A") no-repeat center
+    &:hover
+      padding: 30px 25px
+      &::after
+        margin-left: 35px
+    &.btn-fill,
+    &.btn-glass
+      &::after
+        border: 1px solid rgba(255, 255, 255, 0.1)
+        background: url("data:image/svg+xml,%3Csvg width='25' height='25' viewBox='0 0 25 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.5 8.5L14.5 12.5L10.5 16.5' stroke='%23FFFFFF' stroke-width='1.5'/%3E%3C/svg%3E%0A") no-repeat center
   &-wrap
     @include flexbox
     align-items: flex-start
-
   &-glass
     background: rgba(255,255,255,.1)
     p
