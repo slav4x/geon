@@ -39,6 +39,8 @@ if ($(window).width() >= 610) {
     if ($('.header').hasClass('header-home'))
       scrolled > 1 ? $('.header').removeClass('header-clear') : $('.header').addClass('header-clear');
   });
+
+  if ($(window).scrollTop() > 1) $('.header').removeClass('header-clear');
 } else {
   $('.header').removeClass('header-home');
 }
