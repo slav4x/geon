@@ -47,7 +47,6 @@ if ($(window).width() >= 610) {
 
 const solutionsMain = new Swiper('.solutions-main', {
   loop: true,
-  slidesPerView: 1,
   navigation: {
     nextEl: '.solutions-arrow-next',
     prevEl: '.solutions-arrow-prev',
@@ -60,6 +59,17 @@ const solutionsMain = new Swiper('.solutions-main', {
   },
   noSwiping: true,
   noSwipingClass: 'swiper-slide',
+  on: {
+    init: function () {
+      $('.solutions-next .text-lg').text($('.swiper-slide-next .title-lg').text());
+    },
+    slideChangeTransitionEnd: function () {
+      $('.solutions-next .text-lg').text($('.swiper-slide-next .title-lg').text()).css({ opacity: 1, transition: 'opacity 0.2s' });
+    },
+    slideChangeTransitionStart: function () {
+      $('.solutions-next .text-lg').css({ opacity: 0, transition: 'opacity 0.2s' });
+    },
+  },
 });
 const solutionsSecond = new Swiper('.solutions-second__slider', {
   lazy: true,
