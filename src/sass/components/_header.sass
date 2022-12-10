@@ -43,9 +43,27 @@
         font-size: 15px
         letter-spacing: -0.024em
         color: $color-blue-black
-        transition: .2s
-        &:hover
-          color: $color-blue !important
+        // transition: .2s
+        display: block
+        margin: 0
+        position: relative
+        overflow: hidden
+        height: 18px
+        span
+          transition: .3s
+          position: relative
+          top: 0
+          &:nth-child(2)
+            position: absolute
+            left: 0
+            top: 100%
+            color: $color-blue !important
+        &:hover span
+          &:nth-child(1)
+            top: -100%
+          &:nth-child(2)
+            top: 0
+
   &-tender
     font-size: 18px
     @include flexbox
@@ -146,6 +164,7 @@
       margin-right: 30px
       a
         font-size: 13px
+        height: 16px
 
   .header-social li a
     width: 36px
