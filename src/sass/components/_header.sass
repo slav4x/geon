@@ -124,8 +124,31 @@
   &-burger
     width: 108px
     height: 107px
-    background: #fff url(../img/svg/burger.svg) no-repeat center
+    // background: #fff url(../img/svg/burger.svg) no-repeat center
+    background: #fff
     cursor: pointer
+    @include flexbox
+    align-items: center
+    justify-content: center
+    &__icon
+      @include flexbox
+      align-items: center
+      justify-content: center
+      flex-direction: column
+      span
+        height: 2px
+        background: $color-blue-black
+        width: 26px
+        margin: 3px 0
+        transition: .2s
+        &:nth-child(2)
+          width: 0
+          margin: 0
+    &:hover .header-burger__icon span
+      background: $color-blue
+      &:nth-child(2)
+        width: 42px
+        margin: 9px 0
 
 @media(min-width: 620px)
   .header-clear
