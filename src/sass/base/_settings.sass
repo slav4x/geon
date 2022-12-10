@@ -4,6 +4,7 @@ body
   font-size: 16px
   color: $color-black
   min-width: 375px
+  counter-reset: title-counter
 
 .wrapper
   width: 100%
@@ -32,10 +33,10 @@ ul
   @include flexbox
   align-items: flex-start
   .col
-    width: 32%
+    width: 33%
     position: relative
-    &:nth-child(2)
-      width: 68%
+    &:nth-child(2n)
+      width: 67%
 
 .container-lines
   position: absolute
@@ -88,10 +89,20 @@ ul
   line-height: 1.15
   font-weight: 400
   letter-spacing: -0.024em
+.title-counter
+  &::before
+    counter-increment: title-counter
+    content: counter(title-counter, decimal-leading-zero)
+    color: $color-blue
+    padding-right: 10px
 
-.text
+.text-lg
   font-size: 18px
   line-height: 1.5
+.text-sm
+  font-size: 15px
+  line-height: 1.2
+  font-weight: 600
 
 .btn
   @include flexbox
@@ -159,3 +170,60 @@ ul
       border-bottom: 0px !important
     &:hover
       background: rgba(255,255,255,.2)
+  &-fluid
+    width: 100%
+
+.control
+  @include flexbox
+  align-items: center
+  &-increment
+    min-width: 100px
+    text-align: center
+    width: auto
+    color: $color-gray
+    .swiper-pagination-current
+      color: $color-black
+  &-arrow
+    width: 75px
+    height: 75px
+    cursor: pointer
+    position: relative
+    &::after
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      border-radius: 9999px
+      background: #fafafa
+      transition: .3s
+    &::before
+      content: ''
+      position: absolute
+      z-index: 2
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      transition: .3s
+      background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_807_4140)'%3E%3Cpath d='M0.292893 8.70711C-0.0976311 8.31658 -0.0976311 7.68342 0.292893 7.29289L6.65685 0.928932C7.04738 0.538408 7.68054 0.538408 8.07107 0.928932C8.46159 1.31946 8.46159 1.95262 8.07107 2.34315L2.41421 8L8.07107 13.6569C8.46159 14.0474 8.46159 14.6805 8.07107 15.0711C7.68054 15.4616 7.04738 15.4616 6.65685 15.0711L0.292893 8.70711ZM16 9H1V7H16V9Z' fill='%230C1C2F'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_807_4140'%3E%3Crect width='16' height='16' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A")
+      background-repeat: no-repeat
+      background-position: center
+    &:hover
+      &::after
+        transform: scale(0.86)
+        background: $color-blue
+      &::before
+        background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_807_4140)'%3E%3Cpath d='M0.292893 8.70711C-0.0976311 8.31658 -0.0976311 7.68342 0.292893 7.29289L6.65685 0.928932C7.04738 0.538408 7.68054 0.538408 8.07107 0.928932C8.46159 1.31946 8.46159 1.95262 8.07107 2.34315L2.41421 8L8.07107 13.6569C8.46159 14.0474 8.46159 14.6805 8.07107 15.0711C7.68054 15.4616 7.04738 15.4616 6.65685 15.0711L0.292893 8.70711ZM16 9H1V7H16V9Z' fill='%23FFFFFF'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_807_4140'%3E%3Crect width='16' height='16' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A")
+    &:last-child
+      transform: rotate(180deg)
+    &:active
+      &::after
+        transform: scale(0.73)
+        background: #fafafa
+      &::before
+        background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_807_4140)'%3E%3Cpath d='M0.292893 8.70711C-0.0976311 8.31658 -0.0976311 7.68342 0.292893 7.29289L6.65685 0.928932C7.04738 0.538408 7.68054 0.538408 8.07107 0.928932C8.46159 1.31946 8.46159 1.95262 8.07107 2.34315L2.41421 8L8.07107 13.6569C8.46159 14.0474 8.46159 14.6805 8.07107 15.0711C7.68054 15.4616 7.04738 15.4616 6.65685 15.0711L0.292893 8.70711ZM16 9H1V7H16V9Z' fill='%230071FE'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_807_4140'%3E%3Crect width='16' height='16' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A")
+
+.swiper-slide-active .swiper-lazy-preloader
+  animation: swiper-preloader-spin 1s steps(12, end) infinite

@@ -42,3 +42,33 @@ if ($(window).width() >= 610) {
 } else {
   $('.header').removeClass('header-home');
 }
+
+const solutionsMain = new Swiper('.solutions-main', {
+  loop: true,
+  slidesPerView: 1,
+  navigation: {
+    nextEl: '.solutions-arrow-next',
+    prevEl: '.solutions-arrow-prev',
+  },
+  pagination: {
+    el: '.solutions-increment',
+    type: 'fraction',
+    formatFractionCurrent: (number) => (number < 10 ? '0' + number : number),
+    formatFractionTotal: (number) => (number < 10 ? '0' + number : number),
+  },
+  noSwiping: true,
+  noSwipingClass: 'swiper-slide',
+});
+const solutionsSecond = new Swiper('.solutions-second__slider', {
+  lazy: true,
+  loop: true,
+  navigation: {
+    nextEl: '.solutions-arrow-next',
+    prevEl: '.solutions-arrow-prev',
+  },
+  thumbs: {
+    swiper: solutionsMain,
+  },
+  noSwiping: true,
+  noSwipingClass: 'swiper-slide',
+});
