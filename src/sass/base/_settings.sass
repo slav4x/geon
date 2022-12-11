@@ -104,6 +104,7 @@ input
   font-weight: 400
   letter-spacing: -0.024em
 .title-counter
+  padding: 10px 0
   &::before
     counter-increment: title-counter
     content: counter(title-counter, decimal-leading-zero)
@@ -294,3 +295,11 @@ input
   color: #fff
   @include placeholder
     color: rgba(255,255,255,.6)
+
+.title
+  max-width: 730px
+  span
+    color: $color-blue
+  .text-lg
+    margin-top: 25px
+    color: $color-gray
