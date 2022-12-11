@@ -71,6 +71,7 @@ const solutionsMain = new Swiper('.solutions-main', {
     },
   },
 });
+
 const solutionsSecond = new Swiper('.solutions-second__slider', {
   // lazy: true,
   loop: true,
@@ -110,3 +111,20 @@ const solutionsSecond = new Swiper('.solutions-second__slider', {
 //     },
 //   },
 // });
+
+const projectsSlider = new Swiper('.projects-slider', {
+  loop: true,
+  speed: 1000,
+  navigation: {
+    nextEl: '.projects-arrow-next',
+    prevEl: '.projects-arrow-prev',
+  },
+  pagination: {
+    el: '.projects-increment',
+    type: 'fraction',
+    formatFractionCurrent: (number) => (number < 10 ? '0' + number : number),
+    formatFractionTotal: (number) => (number < 10 ? '0' + number : number),
+  },
+  noSwiping: true,
+  noSwipingClass: 'swiper-slide',
+});
