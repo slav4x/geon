@@ -1,0 +1,93 @@
+.free
+  &-block
+    background: #05173F
+    color: #fff
+    padding: 70px 80px
+    position: relative
+    overflow: hidden
+    &::before
+      content: ''
+      width: 32%
+      background: $color-blue
+      position: absolute
+      top: 0
+      right: 0
+      bottom: 0
+  &-content
+    max-width: 710px
+    .text-lg
+      max-width: 555px
+      margin-top: 25px
+    .form
+      margin-top: 55px
+      max-width: 450px
+  &-book
+    position: absolute
+    top: 0
+    bottom: 0
+    margin: auto 0
+    right: 80px
+
+@media(max-width: 1600px)
+  .free-block
+    padding: 65px 60px
+    .free-content
+      max-width: 520px
+      .text-lg
+        margin-top: 15px
+        max-width: 490px
+      .form
+        margin-top: 45px
+  .free-book
+    width: 580px
+    right: 60px
+
+@media(max-width: 1300px)
+  .free-block
+    padding: 50px 40px
+    .free-content .text-lg
+      max-width: 360px
+  .free-book
+    width: 716px
+    right: initial
+    left: 470px
+
+@media(max-width: 960px)
+  .free-block
+    padding: 40px 30px
+    &::before
+      width: 20%
+    .free-content
+      max-width: 350px
+      .title-xl
+        font-size: 30px
+        line-height: 1.2
+  .free-book
+    width: 530px
+    left: 376px
+
+@media(max-width: 610px)
+  .free-block
+    overflow: initial
+    padding: 20px 20px 250px
+    margin-bottom: 50px
+    .free-content
+      max-width: 100%
+      .form
+        margin-top: 35px
+        .btn
+          margin-top: 0
+    &::before
+      width: 100%
+      left: 0
+      top: initial
+      height: 220px
+
+  .free-book
+    position: absolute
+    left: 0
+    right: 0
+    top: initial
+    bottom: -30px
+    width: 335px
+    margin: 0 auto
