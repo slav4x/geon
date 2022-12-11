@@ -1,0 +1,69 @@
+.approach
+  &-stat
+    margin-top: 45px
+    padding: 120px 0
+    color: #fff
+    background: url(../img/approach-bg.jpg) no-repeat center
+    background-size: cover
+  &-item
+    position: relative
+    padding: 35px 0
+    &::before
+      content: ''
+      position: absolute
+      bottom: 0
+      left: 0
+      width: 1000%
+      height: 1px
+      background: #fff
+      opacity: 0.15
+    &:first-child
+      padding-top: 0
+    &:last-child
+      padding-bottom: 0
+      &::before
+        display: none
+    .text-lg
+      margin-top: 40px
+    &__counter
+      // display: inline-block
+      h3
+        font-size: 120px
+        line-height: 1
+        font-weight: 600
+        display: inline-block
+      h4
+        font-size: 60px
+        line-height: 1.1
+        display: inline-block
+        font-weight: 400
+        padding-left: 20px
+
+@media(max-width: 1600px)
+  .approach-stat
+    padding: 80px 0
+  .approach-item .text-lg
+    margin-top: 20px
+  .approach-item__counter
+    h3
+      font-size: 90px
+    h4
+      font-size: 40px
+
+@media(max-width: 767px)
+  .approach-stat
+    padding: 50px 0
+    background-size: auto 700px
+    background-position: bottom -20px center
+  .approach-item .text-lg
+    margin-top: 15px
+  .approach-item__counter
+    h3
+      font-size: 50px
+    h4
+      font-size: 22px
+      padding-left: 10px
+
+@media(max-width: 425px)
+  .approach-item__counter h3
+    font-size: 48px
