@@ -72,7 +72,7 @@ const solutionsMain = new Swiper('.solutions-main', {
   },
 });
 const solutionsSecond = new Swiper('.solutions-second__slider', {
-  lazy: true,
+  // lazy: true,
   loop: true,
   navigation: {
     nextEl: '.solutions-arrow-next',
