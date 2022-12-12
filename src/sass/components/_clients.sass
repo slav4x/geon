@@ -24,8 +24,18 @@
         left: 0
         right: 0
         bottom: 0
-        padding: 30px
+        padding: 50px
         margin: auto
+        transition: .2s
+        &:nth-child(1)
+          z-index: 5
+        &:nth-child(2)
+          opacity: 0
+      &:hover img
+        &:nth-child(1)
+          opacity: 0
+        &:nth-child(2)
+          opacity: 1
 
 @media(max-width: 1600px)
   .clients
@@ -37,6 +47,8 @@
     li
       width: calc(100% / 3)
       border-left: 0 !important
+      img
+        padding: 30px
       &:nth-child(4)
         border-top: 0 !important
       &:last-child
