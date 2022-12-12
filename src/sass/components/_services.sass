@@ -1,5 +1,8 @@
 .services
   padding: 150px 0
+  &-wrap
+    overflow: hidden
+    position: relative
   &-slider
     margin-top: 40px
     max-width: 820px
@@ -24,6 +27,15 @@
 @media(max-width: 1600px)
   .services
     padding: 125px 0
+  .services-slider
+    max-width: 610px
+  .services-item__img
+    height: 420px
+    margin-bottom: 15px
+  .services-item .text-lg
+    margin-top: 10px
+  .services-item .title-md
+    margin-top: 5px
 
 @media(max-width: 610px)
   .services

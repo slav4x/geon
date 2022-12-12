@@ -86,31 +86,32 @@ const solutionsSecond = new Swiper('.solutions-second__slider', {
   noSwipingClass: 'swiper-slide',
 });
 
-// const servicesSlider = new Swiper('.services-slider', {
-//   mousewheel: true,
-//   slidesPerView: 'auto',
-//   freeMode: true,
-//   on: {
-//     slideChange: function () {
-//       setTimeout(function () {
-//         servicesSlider.params.touchReleaseOnEdges = false;
-//         servicesSlider.params.mousewheel.releaseOnEdges = false;
-//       });
-//     },
-//     reachEnd: function () {
-//       setTimeout(function () {
-//         servicesSlider.params.touchReleaseOnEdges = true;
-//         servicesSlider.params.mousewheel.releaseOnEdges = true;
-//       }, 500);
-//     },
-//     reachBeginning: function () {
-//       setTimeout(function () {
-//         servicesSlider.params.touchReleaseOnEdges = true;
-//         servicesSlider.params.mousewheel.releaseOnEdges = true;
-//       }, 500);
-//     },
-//   },
-// });
+const servicesSlider = new Swiper('.services-slider', {
+  mousewheel: true,
+  slidesPerView: 'auto',
+  freeMode: true,
+  spaceBetween: 15,
+  on: {
+    slideChange: function () {
+      setTimeout(function () {
+        servicesSlider.params.touchReleaseOnEdges = false;
+        servicesSlider.params.mousewheel.releaseOnEdges = false;
+      });
+    },
+    reachEnd: function () {
+      setTimeout(function () {
+        servicesSlider.params.touchReleaseOnEdges = true;
+        servicesSlider.params.mousewheel.releaseOnEdges = true;
+      }, 500);
+    },
+    reachBeginning: function () {
+      setTimeout(function () {
+        servicesSlider.params.touchReleaseOnEdges = true;
+        servicesSlider.params.mousewheel.releaseOnEdges = true;
+      }, 500);
+    },
+  },
+});
 
 const projectsSlider = new Swiper('.projects-slider', {
   loop: true,
