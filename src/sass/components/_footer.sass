@@ -1,0 +1,285 @@
+.footer
+  background: #04112f
+  color: #fff
+  padding: 70px 0 40px
+  &-company
+    max-width: 310px
+    img
+      width: 308px
+    &__desc
+      font-size: 16px
+      line-height: 1.6
+      letter-spacing: -0.024em
+      margin-top: 35px
+  .row
+    align-items: stretch
+  &-social
+    margin-top: 110px
+    p
+      font-size: 15px
+      line-height: 1.2
+      font-weight: 600
+      opacity: 0.8
+      margin-bottom: 15px
+    &__links
+      @include flexbox
+      align-items: center
+      li
+        margin-right: 12px
+        &:last-child
+          margin-right: 0
+        a
+          @include flexbox
+          align-items: center
+          justify-content: center
+          width: 52px
+          height: 52px
+          border-radius: 100%
+          border: 1px solid rgba(255, 255, 255, 0.3)
+          transition: .2s
+          img
+            filter: invert(100%)
+  &-main
+    flex: 1
+    margin-left: 320px
+    @include flexbox
+    justify-content: space-between
+    flex-direction: column
+  &-row
+    @include flexbox
+    align-items: flex-start
+  &-col
+    margin-right: 75px
+    @include flexbox
+    justify-content: space-between
+    flex-direction: column
+    &:last-child
+      margin-right: 0
+    &:nth-child(1)
+      width: 235px
+    &:nth-child(2)
+      width: 205px
+    &:nth-child(3)
+      flex: 1
+  &-nav
+    &.hide
+      display: none
+    li
+      margin-top: 12px
+      font-size: 18px
+      line-height: 1.6
+      color: rgba(255,255,255,.65)
+      &:first-child
+        margin-top: 0
+        font-size: 20px
+        font-weight: 600
+        margin-bottom: 20px
+        line-height: 1.2
+        color: #fff
+  &-contact
+    small
+      font-size: 15px
+      line-height: 1.2
+      font-weight: 600
+      opacity: 0.8
+      margin-bottom: 15px
+      display: block
+    p
+      font-size: 24px
+      line-height: 1.2
+      font-weight: 600
+      letter-spacing: -0.024em
+  &-bottom
+    width: 100%
+    margin-top: 40px
+    padding-top: 40px
+    border-top: 1px solid rgba(255, 255, 255, 0.15)
+    @include flexbox
+    align-items: center
+    justify-content: space-between
+    font-size: 14px
+    color: rgba(255,255,255,.5)
+    &__nav
+      @include flexbox
+      align-items: center
+      li
+        margin-right: 35px
+        &:last-child
+          margin-right: 0
+
+@media(max-width: 1600px)
+  .footer-social
+    margin-top: 80px
+  .footer-main
+    margin-left: 150px
+  .footer-col
+    margin-right: 40px
+  .footer-col:nth-child(1)
+    width: 215px
+  .footer-col:nth-child(2)
+    width: 195px
+
+  .footer-nav li
+    font-size: 14px
+    line-height: 1.4
+    &:first-child
+      font-size: 16px
+  .footer-contact p
+    font-size: 22px
+
+  .footer-social p
+    font-size: 13px
+
+  .footer-social__links li
+    margin-right: 5px
+    a
+      width: 42px
+      height: 42px
+
+  .footer-bottom
+    font-size: 13px
+    &__nav li
+      margin-right: 25px
+
+@media(max-width: 1300px)
+  .footer-company img
+    width: 210px
+  .footer-company__desc
+    font-size: 12px
+  .footer-company
+    max-width: 260px
+
+  .footer-contact p
+    font-size: 18px
+  .footer-contact small
+    font-size: 13px
+
+  .footer-col
+    margin-right: 30px
+    flex: 1
+
+  .footer-main
+    margin-left: 20px
+
+@media(max-width: 1023px)
+  .footer
+    padding: 40px 0
+  .footer-second
+    width: 100%
+    @include flexbox
+    align-items: flex-start
+    justify-content: space-between
+  .footer-company
+    @include flexbox
+    align-items: center
+    max-width: initial
+  .footer-social
+    margin-top: 0
+  .footer-company__desc
+    max-width: 230px
+    margin-left: 30px
+    margin-top: 0
+  .footer-social p
+    margin-bottom: 5px
+
+  .footer-main
+    margin-left: 0
+  .footer-row
+    margin-top: 70px
+
+  .footer-bottom
+    font-size: 10px
+  .footer-copyright
+    max-width: 180px
+
+@media(max-width: 750px)
+  .footer-contact p
+    font-size: 14px
+  .footer-contact small
+    font-size: 12px
+    margin-bottom: 5px
+  .footer-nav li
+    font-size: 12px
+  .footer-nav li:first-child
+    font-size: 14px
+
+  .footer-social
+    width: 100%
+    margin-top: 35px
+
+@media(max-width: 610px)
+  .footer-company
+    flex-direction: column
+    align-items: flex-start
+  .footer-company__desc
+    margin-left: 0
+    margin-top: 35px
+  .footer-col
+    width: 100% !important
+    flex: inherit
+    margin-right: 0
+  .footer-row:nth-child(2)
+    order: -1
+    margin-top: 15px
+
+  .footer-contact
+    margin-top: 20px
+
+  .footer-contact small
+    font-size: 13px
+    margin-bottom: 10px
+  .footer-contact p
+    font-size: 24px
+
+  .footer-social p
+    font-size: 15px
+    margin-bottom: 15px
+
+  .footer-row
+    margin-top: 20px
+
+  .footer-nav
+    margin-top: 35px
+    &.hide
+      display: block
+
+  .footer-nav li:first-child
+    font-size: 22px
+    margin-bottom: 15px
+
+  .footer-nav li:not(:first-child),
+  .footer-bottom__nav li
+    font-size: 14px
+    margin: 0
+    width: 100%
+    color: rgba(255,255,255,.65)
+    a
+      display: block
+      width: 100%
+      padding: 15px 0
+      padding-right: 34px
+      border-bottom: 1px solid rgba(255,255,255,.17)
+      position: relative
+      &::before
+        content: ''
+        position: absolute
+        top: 21px
+        right: 10px
+        width: 12px
+        height: 8px
+        background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M8.57363 0.159096L11.8492 3.61591C12.0503 3.82804 12.0503 4.17196 11.8492 4.38409L8.57363 7.8409C8.37263 8.05303 8.04673 8.05303 7.84572 7.8409C7.64471 7.62878 7.64471 7.28485 7.84572 7.07272L10.2427 4.54319H0V3.45681H10.2427L7.84572 0.927276C7.64471 0.715149 7.64471 0.371223 7.84572 0.159096C8.04673 -0.0530318 8.37263 -0.0530318 8.57363 0.159096Z' fill='%23D0D0D0'/%3E%3C/svg%3E%0A")
+  .footer-bottom__nav
+    width: 100%
+    flex-direction: column
+    align-items: flex-start
+
+  .footer-copyright
+    max-width: 100%
+    font-size: 22px
+    color: #fff
+    line-height: 1.2
+    margin-bottom: 15px
+
+  .footer-bottom
+    padding-top: 0
+    border-top: 0
