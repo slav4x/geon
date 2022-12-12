@@ -13,8 +13,19 @@
       top: 0
       right: 0
       bottom: 0
+    &::after
+      content: ''
+      position: absolute
+      top: 0
+      right: 0
+      bottom: 0
+      left: 0
+      background: url(../img/free-pattern.png) no-repeat top right
+      z-index: 1
   &-content
     max-width: 710px
+    position: relative
+    z-index: 5
     .text-lg
       max-width: 555px
       margin-top: 25px
@@ -27,6 +38,7 @@
     bottom: 0
     margin: auto 0
     right: 80px
+    z-index: 2
 
 @media(max-width: 1600px)
   .free-block
@@ -47,6 +59,8 @@
     padding: 50px 40px
     .free-content .text-lg
       max-width: 360px
+    &::after
+      background-position: top left
   .free-book
     width: 716px
     right: initial
