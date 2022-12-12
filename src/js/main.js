@@ -90,7 +90,12 @@ const servicesSlider = new Swiper('.services-slider', {
   mousewheel: true,
   slidesPerView: 'auto',
   freeMode: true,
-  spaceBetween: 15,
+  spaceBetween: 10,
+  breakpoints: {
+    610: {
+      spaceBetween: 15,
+    },
+  },
   on: {
     slideChange: function () {
       setTimeout(function () {
@@ -112,6 +117,14 @@ const servicesSlider = new Swiper('.services-slider', {
     },
   },
 });
+
+// const servicesBlock = $('.services .title');
+// console.log(servicesBlock.offset().top);
+
+// $(window).scroll(function () {
+//   const scrolled = $(window).scrollTop();
+//   if (scrolled > servicesBlock.offset().top) $('body').css('overflow', 'hidden');
+// });
 
 const projectsSlider = new Swiper('.projects-slider', {
   loop: true,
