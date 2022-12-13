@@ -129,6 +129,10 @@ const servicesSlider = new Swiper('.services-slider', {
 const projectsSlider = new Swiper('.projects-slider', {
   loop: true,
   speed: 1000,
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: false,
+  },
   navigation: {
     nextEl: '.projects-arrow-next',
     prevEl: '.projects-arrow-prev',
