@@ -305,3 +305,23 @@ input
   .text-lg
     margin-top: 25px
     color: $color-gray
+
+.progress
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  width: 100%
+  height: 100%
+  transition: transform 0.4s cubic-bezier(0.7, 0, 0.3, 1)
+
+.progress__circle,
+.progress__path
+  fill: none
+  stroke-width: 1px
+
+.progress__path
+  stroke-dasharray: 1
+  stroke-dashoffset: 1
+  transition: stroke-dashoffset 0.4s cubic-bezier(0.7, 0, 0.3, 1)

@@ -38,10 +38,19 @@
           width: 52px
           height: 52px
           border-radius: 100%
-          border: 1px solid rgba(255, 255, 255, 0.3)
+          // border: 1px solid rgba(255, 255, 255, 0.3)
           transition: .2s
+          position: relative
+          clip-path: circle(50% at 50% 50%)
+          background: none
           img
             filter: invert(100%)
+          .progress__circle
+            stroke: rgba(255,255,255,.3)
+          .progress__path
+            stroke: #fff
+          &:hover .progress__path
+            stroke-dashoffset: 0
   &-main
     flex: 1
     margin-left: 320px

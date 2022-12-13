@@ -113,14 +113,18 @@
         width: 42px
         height: 42px
         border-radius: 100%
-        border: 1px solid rgba(100, 100, 100, 0.3)
         transition: .2s
+        position: relative
+        clip-path: circle(50% at 50% 50%)
+        background: none
         img
           transition: .2s
-        &:hover
-          background: $color-blue
-          img
-            filter: invert(100%)
+        .progress__circle
+          stroke: rgba(100,100,100,.5)
+        .progress__path
+          stroke: rgba(100,100,100,1)
+        &:hover .progress__path
+          stroke-dashoffset: 0
   &-burger
     width: 108px
     height: 107px
@@ -163,7 +167,10 @@
     .header-nav li a
       color: #fff
     .header-social li a
-      border: 1px solid rgba(255,255,255,.3)
+      .progress__circle
+        stroke: rgba(255,255,255,.5)
+      .progress__path
+        stroke: rgba(255,255,255,1)
       img
         filter: invert(100%)
     .header-logo__pic
