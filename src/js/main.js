@@ -142,3 +142,20 @@ const projectsSlider = new Swiper('.projects-slider', {
   noSwiping: true,
   noSwipingClass: 'swiper-slide',
 });
+
+$('.approach-item__counter').each(function (i, el) {
+  const num = $(el).find('h3').attr('data-approach-counter');
+  const numArr = [...('' + num)];
+
+  $(el)
+    .find('.idle')
+    .html(numArr.map((e) => `<span class="char">${e}</span>`));
+  $(el)
+    .find('.hover')
+    .html(numArr.map((e) => `<span class="char">${e}</span>`));
+
+  $(window).scroll(function () {
+    const scrolled = $(window).scrollTop() + $(window).height() - 100;
+    if (scrolled > $(el).find('h3').offset().top) $(el).find('h3').addClass('is-inview');
+  });
+});
