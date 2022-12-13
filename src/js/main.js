@@ -47,6 +47,7 @@ if ($(window).width() >= 610) {
 
 const solutionsMain = new Swiper('.solutions-main', {
   loop: true,
+  speed: 1000,
   navigation: {
     nextEl: '.solutions-arrow-next',
     prevEl: '.solutions-arrow-prev',
@@ -75,6 +76,7 @@ const solutionsMain = new Swiper('.solutions-main', {
 const solutionsSecond = new Swiper('.solutions-second__slider', {
   // lazy: true,
   loop: true,
+  speed: 1000,
   navigation: {
     nextEl: '.solutions-arrow-next',
     prevEl: '.solutions-arrow-prev',
