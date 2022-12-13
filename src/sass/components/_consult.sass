@@ -1,0 +1,112 @@
+.consult
+  padding: 80px 0
+  background: $color-blue
+  color: #fff
+  .row
+    align-items: stretch
+  &-content
+    padding-left: 80px
+    .title-xl
+      margin-top: 10px
+      margin-bottom: 50px
+    .form
+      max-width: 450px
+  &-man
+    position: relative
+    height: 100%
+    &__img
+      position: absolute
+      bottom: -80px
+      top: -80px
+      left: -108px
+      right: 0
+      &::before
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 65.43%, rgba(4, 17, 47, 0.3) 84.14%)
+      img
+        width: 100%
+        height: 100%
+        object-fit: cover
+        object-position: top center
+        max-width: initial
+    &__desc
+      position: absolute
+      bottom: -10px
+      left: 0
+      z-index: 10
+      .text-lg
+        margin-bottom: 5px
+      .text-sm
+        opacity: 0.6
+
+@media(max-width: 1600px)
+  .consult-content
+    padding-left: 60px
+
+@media(max-width: 1300px)
+  .consult
+    padding: 40px 0
+  .consult-content
+    padding-left: 40px
+  .consult-man__img
+    bottom: -40px
+    top: -40px
+
+@media(max-width: 1200px)
+  .consult-man__img
+    left: -40px
+
+@media(max-width: 1023px)
+  .consult
+    .title-xl
+      font-size: 30px
+    .col:nth-child(1)
+      width: 260px !important
+    .col:nth-child(2)
+      width: calc(100% - 260px) !important
+
+@media(max-width: 680px)
+  .consult
+    padding-bottom: 0
+    .col:nth-child(1),
+    .col:nth-child(2)
+      width: 100% !important
+    .col:nth-child(1)
+      order: 1
+  .consult-content
+    padding-left: 0
+    padding-bottom: 40px
+
+  .consult-man
+    height: 500px
+  .consult-man__img
+    right: -40px
+    bottom: 0
+    top: 0
+    // order: 1
+  .consult-man__desc
+    bottom: 40px
+  .consult-man__desc .text-lg
+    font-size: 18px
+  .consult-man__desc .text-sm
+    font-size: 15px
+
+@media(max-width: 576px)
+  .consult-man__desc
+    bottom: 20px
+  .consult
+    padding-top: 20px
+  .consult-content
+    padding-bottom: 20px
+
+  .consult-content .title-xl
+    margin-bottom: 35px
+
+@media(max-width: 475px)
+  .consult-man
+    height: 380px
