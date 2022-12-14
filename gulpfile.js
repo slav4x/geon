@@ -12,6 +12,7 @@ const replace = require('gulp-replace');
 const plumber = require('gulp-plumber');
 const notify = require('gulp-notify');
 const noop = require('gulp-noop');
+const listing = require('is-pagelist');
 
 const isMinify = false;
 
@@ -100,5 +101,9 @@ const watching = () => {
   watch('src/resources/**/*', parallel(resources));
 };
 
+const pageList = () => {
+  return src('app/*.html').pipe(listing('page-list.html')).pipe(dest('app/'));
+};
+
 exports.default = series(clean, parallel(libs_js, js, libs_style, style, html, img, resources, watching));
-exports.build = series(clean, parallel(libs_js, js, libs_style, style, html, img, resources));
+exports.build = series(clean, parallel(libs_js, js, libs_style, style, html, img, resources), pageList);

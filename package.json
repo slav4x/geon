@@ -34,5 +34,8 @@
     "gulp-sass": "^5.1.0",
     "gulp-uglify-es": "^3.0.0",
     "sass": "^1.54.2"
+  },
+  "dependencies": {
+    "is-pagelist": "^0.0.2"
   }
 }
