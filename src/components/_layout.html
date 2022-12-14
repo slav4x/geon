@@ -14,7 +14,7 @@
   </head>
   <body>
 
-    <div class="wrapper">
+    <div class="wrapper{% if home === false %} wrapper-padding{% endif %}">
       {% include "components/header.html" %}
       {% block content %}{% endblock %}
       {% include "components/footer.html" %}
