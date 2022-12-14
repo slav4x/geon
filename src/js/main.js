@@ -170,3 +170,13 @@ $('.contact-open').click(function () {
   $(this).toggleClass('open');
   $('.contact-map').slideToggle();
 });
+
+$('.btn-up').on('click', function (event) {
+  event.preventDefault();
+  $('html, body').animate(
+    {
+      scrollTop: $('body').offset().top,
+    },
+    1000
+  );
+});

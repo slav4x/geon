@@ -1,0 +1,53 @@
+{% extends 'components/_layout.html' %}
+{% set site_title = 'Проекты' %}
+{% set home = false %}
+
+{% block content %}
+
+<div class="container container-lines side row">
+  <div class="col"></div>
+  <div class="col"></div>
+</div>
+
+<section class="projects-all">
+  <div class="container row">
+    <div class="col"><h4 class="title-sm title-counter">Наши проекты</h4></div>
+    <div class="col">
+      <div class="title">
+        <h2 class="title-lg">Готовы начать работу на любом этапе и довести дело до результата</h2>
+        <div class="text-lg">Лучшие представители разных сфер бизнеса уже обратились к нам и применяют наши очистные сооружения на своих объектах</div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="projects-list">
+      <div class="projects-item">
+        <img src="img/projects/1.jpg" alt="" class="projects-item__img">
+        <div class="projects-item__title">Wildberries</div>
+        <div class="projects-item__desc title-sm">Строительство очистных сооружений для склада Wildberries в Краснодаре</div>
+      </div>
+      <div class="projects-item">
+        <img src="img/projects/2.jpg" alt="" class="projects-item__img">
+        <div class="projects-item__title">Доброград</div>
+        <div class="projects-item__desc title-sm">Строительство очистных сооружений для особой экономической зоны «Доброград»</div>
+      </div>
+      <div class="projects-item">
+        <img src="img/projects/3.jpg" alt="" class="projects-item__img">
+        <div class="projects-item__title">ПАО «ГАЗ»</div>
+        <div class="projects-item__desc title-sm">Строительство очистных сооружений для ПАО «ГАЗ»</div>
+      </div>
+      <div class="projects-item">
+        <img src="img/projects/4.jpg" alt="" class="projects-item__img">
+        <div class="projects-item__title">Новая<br> Кузнечиха</div>
+        <div class="projects-item__desc title-sm">Строительство очистных сооружений для ЖК «Новая Кузнечиха»</div>
+      </div>
+    </div>
+    <div class="btn-wrap center">
+      <a href="javascript:;" class="btn btn-up"><p>Наверх</p></a>
+    </div>
+  </div>
+</section>
+
+{% include 'components/consult.html' %}
+
+{% endblock %}

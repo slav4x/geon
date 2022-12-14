@@ -146,6 +146,7 @@ input
       color: #0067e8
       border-bottom: 1px solid #0067E8
   &-white
+    background: #fff
     p
       border-bottom: 0px !important
   &-outline
@@ -193,6 +194,8 @@ input
   &-wrap
     @include flexbox
     align-items: flex-start
+    &.center
+      justify-content: center
   &-glass
     background: rgba(255,255,255,.1)
     p
@@ -224,6 +227,21 @@ input
         background-image: url("data:image/svg+xml,%3Csvg width='8' height='11' viewBox='0 0 8 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.64645 10.3536C3.84171 10.5488 4.15829 10.5488 4.35355 10.3536L7.53553 7.17157C7.7308 6.97631 7.7308 6.65973 7.53553 6.46447C7.34027 6.2692 7.02369 6.2692 6.82843 6.46447L4 9.29289L1.17157 6.46447C0.976311 6.2692 0.659729 6.2692 0.464466 6.46447C0.269204 6.65973 0.269204 6.97631 0.464466 7.17157L3.64645 10.3536ZM3.5 2.18557e-08L3.5 10L4.5 10L4.5 -2.18557e-08L3.5 2.18557e-08Z' fill='white'/%3E%3C/svg%3E%0A")
     &:hover
       padding: 30px 25px
+  &-up
+    border: 1px solid #eee
+    p
+      color: $color-gray !important
+      border-bottom: 0px !important
+    &:hover::after
+      margin-top: -2px
+      margin-bottom: 2px
+    &::after
+      content: ''
+      width: 25px
+      height: 25px
+      margin-left: 15px
+      background-image: url("data:image/svg+xml,%3Csvg width='25' height='25' viewBox='0 0 25 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.5 14.5L12.5 10.5L16.5 14.5' stroke='%23435266' stroke-width='1.5'/%3E%3Crect x='0.5' y='0.5' width='24' height='24' rx='12' stroke='white' stroke-opacity='0.1'/%3E%3C/svg%3E%0A")
+      transition: .2s
 
 .control
   @include flexbox
