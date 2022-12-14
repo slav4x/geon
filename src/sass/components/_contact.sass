@@ -1,0 +1,134 @@
+.contact
+  padding-bottom: 60px
+  &-header
+    padding: 80px 40px
+    .title-xl
+      margin-top: 10px
+  &-row
+    @include flexbox
+    align-items: flex-start
+  &-item
+    padding: 60px 40px
+    width: calc(100% / 3)
+    .text-lg
+      color: #3c4b5d
+    .title-lg
+      margin-top: 10px
+    &:last-child
+      width: 100%
+      border-top: 1px solid #eee
+  &-map
+    width: 100%
+    position: relative
+    overflow: hidden
+    height: 856px
+    background: #eee
+    iframe
+      position: absolute
+      top: 0
+      left: 0
+      width: 100% !important
+      height: 100% !important
+  &-open
+    color: $color-blue
+    margin-top: 10px
+    font-size: 14px
+    cursor: pointer
+    width: 175px
+    height: 25px
+    line-height: 25px
+    position: relative
+    letter-spacing: -0.024em
+    display: none
+    &::before
+      content: ''
+      position: absolute
+      top: 0
+      right: 0
+      width: 25px
+      height: 25px
+      background-image: url("data:image/svg+xml,%3Csvg width='25' height='25' viewBox='0 0 25 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16.5 10.5L12.5 14.5L8.5 10.5' stroke='%230071FE' stroke-width='1.5'/%3E%3Crect x='24.5' y='0.5' width='24' height='24' rx='12' transform='rotate(90 24.5 0.5)' stroke='%230067E8' stroke-opacity='0.2'/%3E%3C/svg%3E%0A")
+      transform: rotate(-90deg)
+      transition: .2s
+    &.open::before
+      transform: rotate(0deg)
+
+@media(max-width: 1600px)
+  .contact
+    padding-bottom: 125px
+  .contact-header,
+  .contact-item
+    padding: 50px 40px
+
+  .contact-map
+    height: 600px
+
+@media(max-width: 1300px)
+  .contact
+    padding-bottom: 80px
+  .contact-header
+    padding: 50px 30px
+  .contact-item
+    padding: 30px
+    padding-right: 0
+  .contact-map
+    height: 430px
+
+  .contact-item .title-lg
+    font-size: 24px
+
+  .contact-item
+    &:nth-child(-n+2)
+      flex: 1
+    &:nth-child(3)
+      width: 285px
+
+  .contact-header .title-xl
+    font-size: 34px
+
+@media(max-width: 1023px)
+  .contact-item:nth-child(3)
+    width: 100%
+    border-top: 1px solid #eee
+  .contact-map
+    height: 550px
+
+  .contact-header
+    padding: 35px 30px 45px
+
+@media(max-width: 767px)
+  .contact-item
+    width: 100% !important
+    flex: initial !important
+    border-top: 1px solid #eee
+    padding-right: 30px
+    &:first-child
+      border: 0
+
+  .contact-header
+    padding: 35px 30px
+
+@media(max-width: 576px)
+  .contact-header
+    padding: 35px 20px
+    margin-left: -20px
+    margin-right: -20px
+    width: calc(100% + 40px)
+  .contact-item
+    padding: 30px 20px
+    margin-left: -20px
+    margin-right: -20px
+    width: calc(100% + 40px) !important
+
+  .contact-map
+    height: 810px
+    display: none
+    margin-left: -20px
+    margin-right: -20px
+    width: calc(100% + 40px)
+
+  .contact
+    padding-bottom: 0
+
+  .contact-open
+    display: block

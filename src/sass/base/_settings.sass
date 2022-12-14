@@ -81,6 +81,8 @@ input
       right: 0
       width: 1px
       background: #eee
+  &.side .col:nth-child(2)::before
+    display: none
 
 .title-xs
   font-size: 20px
@@ -331,3 +333,22 @@ input
   stroke-dasharray: 1
   stroke-dashoffset: 1
   transition: stroke-dashoffset 0.4s cubic-bezier(0.7, 0, 0.3, 1)
+
+.breadcrumbs
+  display: block
+  font-size: 18px
+  line-height: 1.6
+  font-weight: 600
+  color: #3D444C
+  opacity: 0.8
+  li
+    display: inline
+    &::after
+      content: ''
+      display: inline-block
+      width: 5px
+      height: 9px
+      margin: 0 8px
+      background: url(../img/svg/breadcrumbs-arrow.svg) no-repeat
+    &:last-child::after
+      display: none

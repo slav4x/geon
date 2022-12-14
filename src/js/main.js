@@ -165,3 +165,8 @@ $('.approach-item__counter').each(function (i, el) {
     if (scrolled > $(el).find('h3').offset().top) $(el).find('h3').addClass('is-inview');
   });
 });
+
+$('.contact-open').click(function () {
+  $(this).toggleClass('open');
+  $('.contact-map').slideToggle();
+});
