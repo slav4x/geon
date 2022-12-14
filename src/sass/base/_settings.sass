@@ -133,6 +133,7 @@ input
   padding: 30px 35px
   color: $color-blue
   transition: .2s
+  background: transparent
   p
     border-bottom: 1px solid transparent
     transition: .2s
@@ -286,6 +287,12 @@ input
   flex-direction: column
   .btn
     margin-top: 25px
+  &-black
+    .input
+      border-bottom: 1px solid #eee
+      color: $color-blue
+      @include placeholder
+        color: $color-gray
 
 .label
   display: block
