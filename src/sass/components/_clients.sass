@@ -18,24 +18,27 @@
         content: ''
         display: block
         padding-bottom: 100%
-      img
-        position: absolute
-        top: 0
-        left: 0
-        right: 0
-        bottom: 0
-        padding: 50px
-        margin: auto
-        transition: .2s
-        &:nth-child(1)
-          z-index: 5
-        &:nth-child(2)
-          opacity: 0
-      &:hover img
-        &:nth-child(1)
-          opacity: 0
-        &:nth-child(2)
-          opacity: 1
+  &-logo
+    position: absolute
+    top: 50px
+    left: 50px
+    right: 50px
+    bottom: 50px
+    img
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      margin: auto
+      transition: .2s
+      &:nth-child(1)
+        z-index: 3
+        opacity: 1
+      &:nth-child(2)
+        opacity: 1
+      &:hover
+        opacity: 0
 
 @media(max-width: 1600px)
   .clients
@@ -47,12 +50,15 @@
     li
       width: calc(100% / 3)
       border-left: 0 !important
-      img
-        padding: 30px
       &:nth-child(4)
         border-top: 0 !important
       &:last-child
         border-right: 1px solid #eee
+  .clients-logo
+    top: 30px
+    right: 30px
+    bottom: 30px
+    left: 30px
 
 @media(max-width: 610px)
   .clients
