@@ -195,12 +195,12 @@ $('.services-list a').hover(
   function () {
     $(this).find('.text-lg').slideDown(200);
     const elIndex = $(this).index();
-    if (elIndex !== 0) $('.services-left img').eq(elIndex).fadeIn(200);
+    $('.services-left img').eq(elIndex).fadeIn(200);
   },
   function () {
     $(this).find('.text-lg').slideUp(200);
     const elIndex = $(this).index();
-    if (elIndex !== 0) $('.services-left img').eq(elIndex).fadeOut(200);
+    $('.services-left img').eq(elIndex).fadeOut(400);
   }
 );
 

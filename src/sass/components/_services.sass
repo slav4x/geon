@@ -128,8 +128,31 @@
   &-left
     width: calc(100% / 2 - 35px)
     position: relative
+    background: $color-blue
+    &::before
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      margin: auto
+      width: 169px
+      height: 43px
+      background-image: url(../img/svg/logo-white.svg)
+      background-repeat: no-repeat
+    &::after
+      content: 'Выберите услугу'
+      position: absolute
+      bottom: 60px
+      left: 0
+      right: 0
+      color: #fff
+      font-size: 22px
+      text-align: center
     img
       position: absolute
+      z-index: 5
       top: 0
       left: 0
       right: 0
@@ -139,8 +162,6 @@
       object-fit: cover
       object-position: center
       display: none
-      &:first-child
-        display: block !important
   &-right
     width: calc(100% / 2 - 35px)
     margin-left: auto
@@ -183,7 +204,7 @@
   .services-left
     width: calc(100% / 2 - 20px)
   .services-header
-    margin-top: 50px
+    // margin-top: 50px
     margin-bottom: 30px
 
 @media(max-width: 1300px)
