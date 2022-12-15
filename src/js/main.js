@@ -149,9 +149,11 @@ const projectsSlider = new Swiper('.projects-slider', {
   noSwipingClass: 'swiper-slide',
 });
 
-$('.approach-item__counter').each(function (i, el) {
-  const num = $(el).find('h3').attr('data-approach-counter');
+$('[data-counter]').each(function (i, el) {
+  const num = $(el).text();
   const numArr = [...('' + num)];
+
+  $(el).html('<span class="idle"></span><span class="hover"></span>');
 
   $(el)
     .find('.idle')
@@ -162,7 +164,7 @@ $('.approach-item__counter').each(function (i, el) {
 
   $(window).scroll(function () {
     const scrolled = $(window).scrollTop() + $(window).height() - 100;
-    if (scrolled > $(el).find('h3').offset().top) $(el).find('h3').addClass('is-inview');
+    if (scrolled > $(el).offset().top) $(el).addClass('is-inview');
   });
 });
 
