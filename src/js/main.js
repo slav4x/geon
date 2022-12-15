@@ -193,3 +193,25 @@ $('.services-list a').hover(
     if (elIndex !== 0) $('.services-left img').eq(elIndex).fadeOut(200);
   }
 );
+
+$('.js-hover-link').each(function (i, el) {
+  const height = $(el).height();
+  $(el).css('height', height);
+
+  const name = $(el).text();
+  $(el).html(`<span>${name}</span><span>${name}</span>`);
+});
+
+$('input').each(function (i, el) {
+  $(el).click(function () {
+    $(this).val() !== '' ? $(this).closest('label').addClass('fill') : $(this).closest('label').removeClass('fill');
+  });
+  $(el).change(function () {
+    $(this).val() !== '' ? $(this).closest('label').addClass('fill') : $(this).closest('label').removeClass('fill');
+  });
+});
+
+$('.projects-item__title').each(function (i, el) {
+  const title = $(el).text().split(' ');
+  $(el).html(title.map((e) => `<span>${e}</span>`));
+});

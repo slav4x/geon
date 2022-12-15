@@ -88,6 +88,22 @@
         margin-bottom: 20px
         line-height: 1.2
         color: #fff
+        a
+          position: relative
+          &::before
+            content: ''
+            position: absolute
+            bottom: -6px
+            left: 0
+            right: 0
+            width: 0%
+            height: 1px
+            background: #fff
+            transition: .3s
+          &:hover::before
+            width: 100%
+      a span:nth-child(2)
+        color: #fff
   &-contact
     small
       font-size: 15px
@@ -101,6 +117,20 @@
       line-height: 1.2
       font-weight: 600
       letter-spacing: -0.024em
+      a
+        position: relative
+        &::before
+          content: ''
+          position: absolute
+          bottom: -6px
+          left: 0
+          right: 0
+          width: 0%
+          height: 1px
+          background: #fff
+          transition: .3s
+        &:hover::before
+          width: 100%
   &-bottom
     width: 100%
     margin-top: 40px
@@ -279,6 +309,21 @@
       padding-right: 34px
       border-bottom: 1px solid rgba(255,255,255,.17)
       position: relative
+      height: auto !important
+      &::after
+        content: ''
+        position: absolute
+        bottom: 0px
+        left: 0
+        right: 0
+        width: 0%
+        height: 1px
+        background: #fff
+        transition: .3s
+      &:hover
+        color: #fff
+        &::after
+          width: 100%
       &::before
         content: ''
         position: absolute
@@ -287,6 +332,8 @@
         width: 12px
         height: 8px
         background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M8.57363 0.159096L11.8492 3.61591C12.0503 3.82804 12.0503 4.17196 11.8492 4.38409L8.57363 7.8409C8.37263 8.05303 8.04673 8.05303 7.84572 7.8409C7.64471 7.62878 7.64471 7.28485 7.84572 7.07272L10.2427 4.54319H0V3.45681H10.2427L7.84572 0.927276C7.64471 0.715149 7.64471 0.371223 7.84572 0.159096C8.04673 -0.0530318 8.37263 -0.0530318 8.57363 0.159096Z' fill='%23D0D0D0'/%3E%3C/svg%3E%0A")
+      span:nth-child(2)
+        display: none !important
   .footer-bottom__nav
     width: 100%
     flex-direction: column

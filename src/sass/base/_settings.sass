@@ -232,9 +232,6 @@ input
     p
       color: $color-gray !important
       border-bottom: 0px !important
-    &:hover::after
-      margin-top: -2px
-      margin-bottom: 2px
     &::after
       content: ''
       width: 25px
@@ -242,6 +239,13 @@ input
       margin-left: 15px
       background-image: url("data:image/svg+xml,%3Csvg width='25' height='25' viewBox='0 0 25 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.5 14.5L12.5 10.5L16.5 14.5' stroke='%23435266' stroke-width='1.5'/%3E%3Crect x='0.5' y='0.5' width='24' height='24' rx='12' stroke='white' stroke-opacity='0.1'/%3E%3C/svg%3E%0A")
       transition: .2s
+    &:hover
+      background: $color-blue
+      border-color: $color-blue
+      p
+        color: #fff !important
+      &::after
+        background-image: url("data:image/svg+xml,%3Csvg width='25' height='25' viewBox='0 0 25 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.5 14.5L12.5 10.5L16.5 14.5' stroke='%23FFFFFF' stroke-width='1.5'/%3E%3Crect x='0.5' y='0.5' width='24' height='24' rx='12' stroke='white' stroke-opacity='0.1'/%3E%3C/svg%3E%0A")
 
 .control
   @include flexbox
@@ -311,15 +315,32 @@ input
       color: $color-blue
       @include placeholder
         color: $color-gray
+    .label::before
+      background: $color-blue
 
 .label
   display: block
   margin-bottom: 25px
+  position: relative
   p
     display: block
     font-size: 15px
     font-weight: 600
     line-height: 1.2
+  &::before
+    content: ''
+    position: absolute
+    bottom: 0
+    left: 0
+    right: 0
+    height: 1px
+    width: 0%
+    background: #fff
+    transition: .3s
+  &:focus-within::before
+    width: 100%
+  &.fill::before
+    width: 100%
 
 .input
   width: 100%
@@ -377,3 +398,21 @@ input
       background: url(../img/svg/breadcrumbs-arrow.svg) no-repeat
     &:last-child::after
       display: none
+
+.js-hover-link
+  position: relative
+  overflow: hidden
+  display: block
+  span
+    transition: .3s
+    position: relative
+    top: 0
+    &:nth-child(2)
+      position: absolute
+      left: 0
+      top: 100%
+  &:hover span
+    &:nth-child(1)
+      top: -100%
+    &:nth-child(2)
+      top: 0
