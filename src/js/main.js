@@ -88,44 +88,52 @@ const solutionsSecond = new Swiper('.solutions-second__slider', {
   noSwipingClass: 'swiper-slide',
 });
 
-const servicesSlider = new Swiper('.services-slider', {
-  mousewheel: true,
-  slidesPerView: 'auto',
-  freeMode: true,
-  spaceBetween: 10,
-  breakpoints: {
-    610: {
-      spaceBetween: 15,
-    },
-  },
-  on: {
-    slideChange: function () {
-      setTimeout(function () {
-        servicesSlider.params.touchReleaseOnEdges = false;
-        servicesSlider.params.mousewheel.releaseOnEdges = false;
-      });
-    },
-    reachEnd: function () {
-      setTimeout(function () {
-        servicesSlider.params.touchReleaseOnEdges = true;
-        servicesSlider.params.mousewheel.releaseOnEdges = true;
-      }, 500);
-    },
-    reachBeginning: function () {
-      setTimeout(function () {
-        servicesSlider.params.touchReleaseOnEdges = true;
-        servicesSlider.params.mousewheel.releaseOnEdges = true;
-      }, 500);
-    },
-  },
-});
+if ($('body').width() < 768) {
+  $('.services-item').css('width', $('.services .container').width());
+} else {
+  $(window).scroll(function () {
+    const scroll = $(window).scrollTop();
 
-// const servicesBlock = $('.services .title');
-// console.log(servicesBlock.offset().top);
+    const wrapper = $('.services-slider__wrapper');
+    const wrapperWidth = wrapper.outerWidth();
+    const wrapperHeight = wrapper.height();
+
+    const slider = $('.services-slider');
+    const sliderTop = slider.offset().top;
+
+    const containerWidth = $('.services .container').width();
+
+    slider.css('height', wrapperWidth - containerWidth + wrapperHeight);
+
+    const pos = parseInt(scroll - sliderTop + $('.header').height() + 20);
+
+    let sc = pos;
+
+    let img;
+
+    if (pos >= 0) {
+      img = -120 + (pos / 100) * 7;
+
+      if (pos >= wrapperWidth - containerWidth) {
+        sc = wrapperWidth - containerWidth;
+        img = 0;
+      }
+    } else {
+      sc = 0;
+    }
+
+    wrapper.css('transform', `translate(-${sc}px, ${sc}px)`);
+
+    $('.services-item__img img').each(function (i, el) {
+      $(el).css('transform', `translate3d(${img}px, 0, 0) scale(1.5)`);
+    });
+  });
+}
 
 // $(window).scroll(function () {
-//   const scrolled = $(window).scrollTop();
-//   if (scrolled > servicesBlock.offset().top) $('body').css('overflow', 'hidden');
+//   $('.services-item__img img').each(function(i, el){
+//     $(el).css('transform', `translate3d(${pos}px, 0, 0)`);
+//   });
 // });
 
 const projectsSlider = new Swiper('.projects-slider', {
