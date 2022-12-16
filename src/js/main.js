@@ -91,50 +91,50 @@ const solutionsSecond = new Swiper('.solutions-second__slider', {
 if ($('body').width() < 768) {
   $('.services-item').css('width', $('.services .container').width());
 } else {
-  $(window).scroll(function () {
+  const servicesHeight = $('.services').outerHeight();
+
+  $(window).scroll(() => {
     const scroll = $(window).scrollTop();
 
-    const wrapper = $('.services-slider__wrapper');
-    const wrapperWidth = wrapper.outerWidth();
-    const wrapperHeight = wrapper.height();
+    const services = $('.services');
+    const servicesTop = services.offset().top;
 
-    const slider = $('.services-slider');
-    const sliderTop = slider.offset().top;
+    const servicesContainer = $('.services .container');
+    const servicesContainerHeight = servicesContainer.height();
+
+    const servicesSliderWrapper = $('.services-slider__wrapper');
+    const servicesSliderWrapperWidth = servicesSliderWrapper.outerWidth();
 
     const containerWidth = $('.services .container').width();
 
-    slider.css('height', wrapperWidth - containerWidth + wrapperHeight);
+    services.css('height', servicesSliderWrapperWidth - containerWidth + servicesHeight);
 
-    const pos = parseInt(scroll - sliderTop + $('.header').height() + 20);
+    const versus = scroll + $(window).height() - (servicesTop + parseInt(services.css('padding-top')) + servicesContainerHeight);
 
-    let sc = pos;
-
+    let pos = versus;
     let img;
 
-    if (pos >= 0) {
-      img = -120 + (pos / 100) * 7;
-
-      if (pos >= wrapperWidth - containerWidth) {
-        sc = wrapperWidth - containerWidth;
-        img = 0;
+    if (versus >= 0) {
+      img = -130 + (pos / 100) * 13;
+      if (versus >= servicesSliderWrapperWidth - containerWidth) {
+        pos = servicesSliderWrapperWidth - containerWidth;
+        img = -130 + (pos / 100) * 13;
       }
     } else {
-      sc = 0;
+      pos = 0;
     }
+    servicesSliderWrapper.css('transform', `translate3d(-${pos}px, 0, 0)`);
 
-    wrapper.css('transform', `translate(-${sc}px, ${sc}px)`);
+    let pos2 = scroll - (servicesTop + servicesContainerHeight + parseInt(services.css('padding-top')) - $(window).height());
+    if (scroll - (servicesTop + servicesContainerHeight + parseInt(services.css('padding-top')) - $(window).height()) <= 0) pos2 = 0;
+    if (pos2 >= servicesSliderWrapperWidth - containerWidth) pos2 = servicesSliderWrapperWidth - containerWidth;
+    servicesContainer.css('transform', `translate3d(0, ${pos2}px, 0)`);
 
     $('.services-item__img img').each(function (i, el) {
       $(el).css('transform', `translate3d(${img}px, 0, 0) scale(1.5)`);
     });
   });
 }
-
-// $(window).scroll(function () {
-//   $('.services-item__img img').each(function(i, el){
-//     $(el).css('transform', `translate3d(${pos}px, 0, 0)`);
-//   });
-// });
 
 const projectsSlider = new Swiper('.projects-slider', {
   loop: true,

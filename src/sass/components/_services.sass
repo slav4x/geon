@@ -1,5 +1,6 @@
 .services
   padding: 150px 0
+  will-change: transform
   &-slider
     margin-top: 40px
     // padding-left: 33%
@@ -10,6 +11,7 @@
     overflow: hidden
     &__wrapper
       padding-left: 33%
+      padding-bottom: 80px
       @include flexbox
       align-items: flex-start
       flex: none
@@ -173,6 +175,8 @@
 @media(max-width: 1600px)
   .services
     padding: 125px 0
+  .services-slider__wrapper
+    padding-bottom: 40px
   .services-item
     width: 610px
   .services-item__img
