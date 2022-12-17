@@ -88,10 +88,8 @@ const solutionsSecond = new Swiper('.solutions-second__slider', {
   noSwipingClass: 'swiper-slide',
 });
 
-if ($('body').width() < 768) {
-  $('.services-item').css('width', $('.services .container').width());
-} else {
-  const servicesHeight = $('.services').outerHeight();
+const scrollSlider = () => {
+  const servicesHeight = $('.services').innerHeight();
 
   $(window).scroll(() => {
     const scroll = $(window).scrollTop();
@@ -103,7 +101,7 @@ if ($('body').width() < 768) {
     const servicesContainerHeight = servicesContainer.height();
 
     const servicesSliderWrapper = $('.services-slider__wrapper');
-    const servicesSliderWrapperWidth = servicesSliderWrapper.outerWidth();
+    const servicesSliderWrapperWidth = servicesSliderWrapper.innerWidth();
 
     const containerWidth = $('.services .container').width();
 
@@ -124,17 +122,21 @@ if ($('body').width() < 768) {
       pos = 0;
     }
     servicesSliderWrapper.css('transform', `translate3d(-${pos}px, 0, 0)`);
-
-    let pos2 = scroll - (servicesTop + servicesContainerHeight + parseInt(services.css('padding-top')) - $(window).height());
-    if (scroll - (servicesTop + servicesContainerHeight + parseInt(services.css('padding-top')) - $(window).height()) <= 0) pos2 = 0;
-    if (pos2 >= servicesSliderWrapperWidth - containerWidth) pos2 = servicesSliderWrapperWidth - containerWidth;
-    servicesContainer.css('transform', `translate3d(0, ${pos2}px, 0)`);
+    servicesContainer.css('transform', `translate3d(0, ${pos}px, 0)`);
 
     $('.services-item__img img').each(function (i, el) {
       $(el).css('transform', `translate3d(${img}px, 0, 0) scale(1.5)`);
     });
   });
-}
+};
+
+$(document).ready(function () {
+  if ($('body').width() < 768) {
+    $('.services-item').css('width', $('.services .container').width());
+  } else {
+    scrollSlider();
+  }
+});
 
 const projectsSlider = new Swiper('.projects-slider', {
   loop: true,
