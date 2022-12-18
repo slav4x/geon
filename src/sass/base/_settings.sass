@@ -1,3 +1,6 @@
+:root
+  --app-height: 100%
+
 html, body
   overscroll-behavior: none
 
@@ -55,6 +58,9 @@ input
       width: 67%
     &-fluid
       width: 100% !important
+  &.rtl
+    .col:first-child
+      order: 1
 
 .container-lines
   position: absolute

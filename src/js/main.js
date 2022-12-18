@@ -227,3 +227,20 @@ $('.projects-item__title').each(function (i, el) {
   const title = $(el).text().split(' ');
   $(el).html(title.map((e) => `<span>${e}</span>`));
 });
+
+let isOpen = false;
+$('.header-burger').click(function () {
+  isOpen = !isOpen;
+
+  $('.header-opened').toggleClass('open');
+  $('.header-logo').toggleClass('white');
+
+  if ($('body').width() < 1024) isOpen ? $('body').css('overflow', 'hidden') : $('body').css('overflow', 'visible');
+});
+
+const appHeight = () => {
+  const doc = document.documentElement;
+  doc.style.setProperty('--app-height', `${window.innerHeight}px`);
+};
+window.addEventListener('resize', appHeight);
+appHeight();
