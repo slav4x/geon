@@ -29,6 +29,62 @@
         right: 0
         width: 1px
         background: rgba(255, 255, 255, 0.15)
+  &-about
+    padding: 80px 0 150px
+    &__stat
+      @include flexbox
+      align-items: flex-start
+      margin-top: 45px
+      li
+        margin-right: 35px
+        &:last-child
+          margin-right: 0
+      &-counter
+        &.blue
+          color: $color-blue
+        h3
+          font-size: 120px
+          font-weight: 600
+          display: inline-block
+        h4
+          font-size: 45px
+          display: inline-block
+          font-weight: 600
+          margin-left: 15px
+          span
+            line-height: 1.2
+      .text-lg
+        color: $color-gray
+  &-director
+    height: 673px
+    position: relative
+    overflow: hidden
+    margin-top: 55px
+    &::after
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      background: linear-gradient(219.62deg, rgba(0, 0, 0, 0) 57.6%, rgba(0, 0, 0, 0.47) 91.65%)
+    img
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      object-fit: cover
+      object-position: center
+    &__desc
+      position: absolute
+      bottom: 50px
+      left: 50px
+      z-index: 5
+      color: #fff
+      .text-sm
+        margin-top: 5px
+        opacity: 0.6
 
 @media(max-width: 1600px)
   .company-header
@@ -37,10 +93,32 @@
       max-width: 1050px
       margin-top: 25px
 
+  .company-about
+    padding-bottom: 125px
+    &__stat
+      margin-top: 25px
+      &-counter
+        h3
+          font-size: 80px
+        h4
+          font-size: 35px
+      .text-lg
+        margin-top: 15px
+
+  .company-director
+    margin-top: 35px
+    height: 530px
+    &__desc
+      bottom: 40px
+      left: 40px
+
 @media(max-width: 1300px)
   .company-header
     height: auto
     padding: 130px 0
+
+  .company-director
+    height: 460px
 
 @media(max-width: 1023px)
   .company-header
@@ -48,8 +126,31 @@
     .title-xl
       font-size: 40px
 
+  .company-about
+    padding: 125px 0
+
+  .company-director
+    height: 420px
+
 @media(max-width: 610px)
   .company-header
     padding: 100px 0
     .title-xl
       font-size: 30px
+
+  .company-about
+    padding: 80px 0
+
+  .company-about__stat li
+    width: 100%
+    margin-right: 0
+    margin-bottom: 35px
+    &:last-child
+      margin-bottom: 0
+
+  .company-director img
+    object-position: top 0 left -60px
+  .company-director__desc
+    bottom: 20px
+    left: 20px
+    right: 20px
