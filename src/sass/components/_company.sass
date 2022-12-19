@@ -95,6 +95,34 @@
       object-position: center
       margin-top: 45px
 
+  &-services
+    padding-bottom: 150px
+    .title
+      margin-top: 25px
+    &__list
+      margin: 0 1px
+      column-count: 3
+      column-gap: 0
+      column-rule: solid 1px #eee
+      border-bottom: 1px solid #eee
+      font-size: 22px
+      line-height: 1.2
+      margin-top: 45px
+      counter-reset: services-counter
+      li
+        border-top: 1px solid #eee
+        padding: 25px 25px 25px 90px
+        position: relative
+        &::before
+          counter-increment: services-counter
+          content: counter(services-counter, decimal-leading-zero)
+          position: absolute
+          top: 28px
+          left: 25px
+          font-size: 16px
+          font-weight: 600
+          color: rgba(97, 120, 148, 0.73)
+
 @media(max-width: 1600px)
   .company-header
     height: 500px
@@ -127,6 +155,18 @@
       height: 660px
       margin-top: 35px
 
+  .company-services
+    padding-bottom: 125px
+    &__list
+      margin-top: 35px
+      font-size: 16px
+      li
+        padding: 20px 20px 20px 60px
+        &::before
+          font-size: 14px
+          left: 20px
+          top: 22px
+
 @media(max-width: 1300px)
   .company-header
     height: auto
@@ -138,6 +178,11 @@
   .company-equipment
     &__image
       height: 510px
+
+  .company-services__list
+    font-size: 14px
+    li::before
+      top: 20px
 
 @media(max-width: 1023px)
   .company-header
@@ -155,6 +200,13 @@
     &__image
       height: 465px
       object-position: top 0 left -40px
+
+  .company-services__list
+    column-count: 2
+
+@media(max-width: 740px)
+  .company-services__list
+    column-count: 1
 
 @media(max-width: 610px)
   .company-header
@@ -180,4 +232,7 @@
     right: 20px
 
   .company-equipment
+    padding-bottom: 80px
+
+  .company-services
     padding-bottom: 80px
