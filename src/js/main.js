@@ -89,45 +89,46 @@ const solutionsSecond = new Swiper('.solutions-second__slider', {
 });
 
 const scrollSlider = () => {
-  const servicesHeight = $('.services').innerHeight();
+  const services = $('.services');
 
-  $(window).scroll(() => {
-    const scroll = $(window).scrollTop();
-
-    const services = $('.services');
+  if (services.length !== 0) {
     const servicesTop = services.offset().top;
+    const servicesHeight = services.innerHeight();
 
     const servicesContainer = $('.services .container');
+    const servicesContainerWidth = servicesContainer.width();
     const servicesContainerHeight = servicesContainer.height();
 
     const servicesSliderWrapper = $('.services-slider__wrapper');
     const servicesSliderWrapperWidth = servicesSliderWrapper.innerWidth();
 
-    const containerWidth = $('.services .container').width();
+    services.css('height', servicesSliderWrapperWidth - servicesContainerWidth + servicesHeight);
 
-    services.css('height', servicesSliderWrapperWidth - containerWidth + servicesHeight);
+    $(window).scroll(() => {
+      const scroll = $(window).scrollTop();
+      const versus = scroll + $(window).height() - (servicesTop + parseInt(services.css('padding-top')) + servicesContainerHeight);
 
-    const versus = scroll + $(window).height() - (servicesTop + parseInt(services.css('padding-top')) + servicesContainerHeight);
+      let pos = versus;
+      let img;
 
-    let pos = versus;
-    let img;
-
-    if (versus >= 0) {
-      img = -130 + (pos / 100) * 13;
-      if (versus >= servicesSliderWrapperWidth - containerWidth) {
-        pos = servicesSliderWrapperWidth - containerWidth;
+      if (versus >= 0) {
         img = -130 + (pos / 100) * 13;
+        if (versus >= servicesSliderWrapperWidth - servicesContainerWidth) {
+          pos = servicesSliderWrapperWidth - servicesContainerWidth;
+          img = -130 + (pos / 100) * 13;
+        }
+      } else {
+        pos = 0;
       }
-    } else {
-      pos = 0;
-    }
-    servicesSliderWrapper.css('transform', `translate3d(-${pos}px, 0, 0)`);
-    servicesContainer.css('transform', `translate3d(0, ${pos}px, 0)`);
 
-    $('.services-item__img img').each(function (i, el) {
-      $(el).css('transform', `translate3d(${img}px, 0, 0) scale(1.5)`);
+      servicesSliderWrapper.css('transform', `translate3d(-${pos}px, 0, 0)`);
+      servicesContainer.css('transform', `translate3d(0, ${pos}px, 0)`);
+
+      $('.services-item__img img').each(function (i, el) {
+        $(el).css('transform', `translate3d(${img}px, 0, 0) scale(1.5)`);
+      });
     });
-  });
+  }
 };
 
 $(document).ready(function () {
