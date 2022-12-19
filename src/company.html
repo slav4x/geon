@@ -1,0 +1,29 @@
+{% extends 'components/_layout.html' %}
+{% set site_title = 'О компании' %}
+{% set home = false %}
+
+{% block content %}
+
+<div class="container container-lines row">
+  <div class="col"></div>
+  <div class="col"></div>
+</div>
+
+<section class="company-header">
+  <div class="container row">
+    <div class="col"></div>
+    <div class="col"></div>
+    <div class="col-fluid">
+      <ul class="breadcrumbs">
+        <li><a href="#">Главная</a></li><li><a href="#">О компании</a></li>
+      </ul>
+      <h1 class="title-xl">«Геон» - современная российская инжиниринговая компания полного цикла в&nbsp;области очистки и&nbsp;перекачки сточных вод</h1>
+    </div>
+  </div>
+</section>
+
+{% include 'components/free.html' %}
+
+{% include 'components/consult.html' %}
+
+{% endblock %}
