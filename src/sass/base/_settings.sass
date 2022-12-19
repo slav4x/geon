@@ -52,10 +52,10 @@ input
   @include flexbox
   align-items: flex-start
   .col
-    width: 33%
+    width: calc(100% / 3)
     position: relative
     &:nth-child(2n)
-      width: 67%
+      width: calc(100% / 3 * 2)
     &-fluid
       width: 100% !important
   &.rtl
