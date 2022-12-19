@@ -1,1 +1,55 @@
+.company
+  &-header
+    height: 600px
+    padding-top: 130px
+    color: #fff
+    background: url(../img/company-header.jpg) no-repeat center
+    background-size: cover
+    .breadcrumbs
+      color: #fff
+      li::after
+        background: url(../img/svg/breadcrumbs-arrow-white.svg) no-repeat
+    .title-xl
+      margin-top: 40px
+      max-width: 1380px
+    .col
+      &::before
+        content: ''
+        position: absolute
+        top: -1000px
+        bottom: -1000px
+        left: 0
+        width: 1px
+        background: rgba(255, 255, 255, 0.15)
+      &:nth-child(2)::after
+        content: ''
+        position: absolute
+        top: -1000px
+        bottom: -1000px
+        right: 0
+        width: 1px
+        background: rgba(255, 255, 255, 0.15)
 
+@media(max-width: 1600px)
+  .company-header
+    height: 500px
+    .title-xl
+      max-width: 1050px
+      margin-top: 25px
+
+@media(max-width: 1300px)
+  .company-header
+    height: auto
+    padding: 130px 0
+
+@media(max-width: 1023px)
+  .company-header
+    padding: 110px 0
+    .title-xl
+      font-size: 40px
+
+@media(max-width: 610px)
+  .company-header
+    padding: 100px 0
+    .title-xl
+      font-size: 30px
