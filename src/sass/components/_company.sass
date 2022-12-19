@@ -148,6 +148,34 @@
           background: #eee
           margin-bottom: 20px
 
+  &-quote
+    padding-bottom: 150px
+    &__text
+      max-width: 850px
+      font-size: 34px
+      line-height: 1.2
+      letter-spacing: -0.024em
+    &__author
+      margin-top: 80px
+      img
+        width: 280px
+        height: 280px
+        object-fit: cover
+        object-position: center
+        border-radius: 100%
+        margin-bottom: 20px
+      h4
+        font-size: 24px
+        font-weight: 600
+        line-height: 1.2
+      h5
+        font-size: 18px
+        font-weight: 400
+        line-height: 1.6
+        color: $color-gray
+        margin-top: 5px
+        margin-bottom: 0
+
 @media(max-width: 1600px)
   .company-header
     height: 500px
@@ -200,6 +228,21 @@
 
   .company-members
     padding: 125px 0
+
+  .company-quote
+    padding: 125px 0
+  .company-quote__text
+    font-size: 26px
+    max-width: 650px
+  .company-quote__author
+    margin-top: 50px
+    img
+      width: 220px
+      height: 220px
+    h4
+      font-size: 18px
+    h5
+      font-size: 14px
 
 @media(max-width: 1300px)
   .company-header
@@ -285,4 +328,7 @@
     padding: 80px 0
 
   .company-members
+    padding: 80px 0
+
+  .company-quote
     padding: 80px 0
