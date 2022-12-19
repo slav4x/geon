@@ -130,6 +130,24 @@
     .list
       font-size: 22px
 
+  &-members
+    padding: 150px 0
+    &__list
+      @include flexbox
+      align-items: flex-start
+      margin-top: -35px
+      li
+        width: 50%
+        margin-top: 35px
+        img
+          width: 130px
+          height: 130px
+          object-fit: cover
+          object-position: center
+          border-radius: 100%
+          background: #eee
+          margin-bottom: 20px
+
 @media(max-width: 1600px)
   .company-header
     height: 500px
@@ -180,6 +198,9 @@
       margin-top: 35px
       font-size: 16px
 
+  .company-members
+    padding: 125px 0
+
 @media(max-width: 1300px)
   .company-header
     height: auto
@@ -225,6 +246,12 @@
   .company-services__list
     column-count: 1
 
+  .company-members__list li
+    text-align: center
+    padding: 0 10px
+    img
+      margin: 0 auto 20px
+
 @media(max-width: 610px)
   .company-header
     padding: 100px 0
@@ -255,4 +282,7 @@
     padding-bottom: 80px
 
   .company-group
+    padding: 80px 0
+
+  .company-members
     padding: 80px 0
