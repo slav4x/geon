@@ -133,6 +133,7 @@
   &-members
     padding: 150px 0
     &__list
+      margin-left: 1px
       @include flexbox
       align-items: flex-start
       margin-top: -35px
@@ -140,12 +141,7 @@
         width: 50%
         margin-top: 35px
         img
-          width: 130px
-          height: 130px
-          object-fit: cover
-          object-position: center
-          border-radius: 100%
-          background: #eee
+          height: 114px
           margin-bottom: 20px
 
   &-quote
@@ -434,6 +430,9 @@
     .text-lg
       margin-top: 10px
 
+  .company-members__list li img
+    height: 100px
+
 @media(max-width: 1300px)
   .company-header
     height: auto
@@ -476,6 +475,9 @@
   .company-team__item
     img
       height: 250px
+
+  .company-members__list li img
+    height: 90px
 
 @media(max-width: 1023px)
   .company-header
@@ -531,15 +533,12 @@
   .company-sertificate__btn
     margin-top: 45px
 
+  .company-members__list li
+    width: 100%
+
 @media(max-width: 740px)
   .company-services__list
     column-count: 1
-
-  .company-members__list li
-    text-align: center
-    padding: 0 10px
-    img
-      margin: 0 auto 20px
 
 @media(max-width: 640px)
   .company-team__grid
