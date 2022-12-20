@@ -245,3 +245,8 @@ const appHeight = () => {
 };
 window.addEventListener('resize', appHeight);
 appHeight();
+
+$('.js-team-show').click(function () {
+  $(this).fadeToggle(200);
+  $('.company-team__item').each((i, el) => ($(el).css('display') === 'none' ? $(el).fadeToggle(200) : ''));
+});
