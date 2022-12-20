@@ -211,6 +211,90 @@
         span
           line-height: 1.2
 
+  &-sertificate
+    padding: 150px 0
+    &__item
+      width: calc(100% / 3 - 15px)
+      margin-right: 15px
+      margin-top: 45px
+      border: 1px solid #eee
+      padding: 40px 40px 0
+      height: 565px
+      @include flexbox
+      justify-content: space-between
+      flex-direction: column
+      overflow: hidden
+      transition: .3s
+      position: relative
+      &:nth-child(3n+2)
+        flex: 1
+      &:nth-child(3n)
+        margin-right: 0
+      h3
+        font-size: 22px
+        line-height: 1.2
+        font-weight: 600
+      h4
+        font-size: 18px
+        line-height: 1.6
+        font-weight: 400
+        margin-top: 10px
+        color: $color-gray
+        transition: .3s
+      &:hover
+        color: #fff
+        background: $color-blue
+        border-color: $color-blue
+        h4
+          color: #fff
+    &__image
+      flex: 1
+      margin-top: 50px
+      position: relative
+      img
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        margin: 0 auto
+    &__btn
+      @include flexbox
+      align-items: center
+      padding: 0 20px
+      border: 1px solid $color-blue
+      color: $color-blue
+      font-size: 18px
+      letter-spacing: -0.024em
+      line-height: 1.2
+      width: 250px
+      height: 70px
+      margin-top: 30px
+      transition: .3s
+      background: transparent
+      span
+        opacity: 0.6
+        margin-left: auto
+      &::before
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        z-index: 10
+      &::after
+        content: ''
+        margin-left: 18px
+        margin-top: 4px
+        width: 8px
+        height: 11px
+        display: block
+        background-image: url("data:image/svg+xml,%3Csvg width='8' height='11' viewBox='0 0 8 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.64645 10.3536C3.84171 10.5488 4.15829 10.5488 4.35355 10.3536L7.53553 7.17157C7.7308 6.97631 7.7308 6.65973 7.53553 6.46447C7.34027 6.2692 7.02369 6.2692 6.82843 6.46447L4 9.29289L1.17157 6.46447C0.976311 6.2692 0.659729 6.2692 0.464466 6.46447C0.269204 6.65973 0.269204 6.97631 0.464466 7.17157L3.64645 10.3536ZM3.5 2.18557e-08L3.5 10L4.5 10L4.5 -2.18557e-08L3.5 2.18557e-08Z' fill='%230071FE'/%3E%3C/svg%3E%0A")
+      &:hover
+        background: #fff
+        border-color: #fff
+        width: 270px
+
 @media(max-width: 1600px)
   .company-header
     height: 500px
@@ -298,6 +382,28 @@
   .company-stat__item .text-lg
     margin-top: 15px
 
+  .company-sertificate
+    padding: 125px 0
+    &__item
+      padding: 30px 30px 0
+      height: 425px
+      margin-top: 35px
+      h3
+        font-size: 16px
+      h4
+        font-size: 14px
+    &__image
+      margin-top: 40px
+      img
+        max-width: 220px
+    &__btn
+      width: 170px
+      height: 60px
+      padding: 0 15px
+      font-size: 13px
+      &:hover
+        width: 200px
+
 @media(max-width: 1300px)
   .company-header
     height: auto
@@ -334,6 +440,9 @@
   .company-stat__counter h4
     margin-left: 10px
 
+  .company-sertificate__item
+    height: 380px
+
 @media(max-width: 1023px)
   .company-header
     padding: 110px 0
@@ -368,6 +477,25 @@
     font-size: 90px
   .company-stat__counter h5
     font-size: 40px
+
+  .company-sertificate__item
+    width: 100%
+    flex: initial
+    margin-right: 0
+    margin-top: 15px
+    flex-direction: row
+    min-height: 240px
+    height: auto
+    padding: 40px
+    &:first-child
+      margin-top: 35px
+  .company-sertificate__image
+    margin-top: 0
+    max-width: 250px
+  .company-sertificate__info
+    flex: 1
+  .company-sertificate__btn
+    margin-top: 45px
 
 @media(max-width: 740px)
   .company-services__list
@@ -429,3 +557,16 @@
     font-size: 50px
   .company-stat__counter h5
     font-size: 22px
+
+  .company-sertificate__item
+    padding: 30px 30px 0
+    min-height: 360px
+    flex-direction: column
+  .company-sertificate__image
+    max-width: 100%
+    margin-top: 20px
+  .company-sertificate__info
+    flex: initial
+
+  .company-sertificate
+    padding: 80px 0
