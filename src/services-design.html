@@ -1,0 +1,74 @@
+{% extends 'components/_layout.html' %}
+{% set site_title = 'Услуги - Проектирование' %}
+{% set home = true %}
+
+{% block content %}
+
+<div class="container container-lines row">
+  <div class="col"></div>
+  <div class="col"></div>
+</div>
+
+<section class="services-hero" style="background-image: url(img/services-design-bg.jpg);">
+  <div class="container row">
+    <div class="col">
+      <ul class="breadcrumbs">
+        <li><a href="#">Главная</a></li><li><a href="#">Услуги</a></li><li><a href="#">Проектирование</a></li>
+      </ul>
+    </div>
+    <div class="col">
+      <h2 class="title-xl">Проектирование очистных сооружений сточных вод</h2>
+      <p class="text-lg">Разработаем проект, технологические решения, пройдем экспертизу за два месяца</p>
+      <div class="btn-wrap"><a href="#" class="btn btn-fill btn-icon"><p>Рассчитать стоимость</p></a></div>
+    </div>
+  </div>
+</section>
+
+<section class="company-about">
+  <div class="container row">
+    <div class="col"><h4 class="title-sm title-counter">О проектировании</h4></div>
+    <div class="col">
+      <div class="title">
+        <h2 class="title-lg">Проектирование — основа при строительстве очистных сооружений канализации</h2>
+        <div class="text-lg">которая дает подробное технологическое и экономическое обоснование всего проекта</div>
+      </div>
+      <ul class="company-about__stat">
+        <li>
+          <div class="company-about__stat-counter blue">
+            <h3 data-counter>37</h3>
+            <h4 data-counter>дней</h4>
+          </div>
+          <p class="text-lg">Средний срок<br> разработки проекта</p>
+        </li>
+        <li>
+          <div class="company-about__stat-counter">
+            <h3 data-counter>18</h3>
+            <h4 data-counter>инженеров</h4>
+          </div>
+          <p class="text-lg">Среднее количество<br> участников проекта</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="services-cleaning">
+  <div class="container row">
+    <div class="col"></div>
+    <div class="col">
+      <div class="title">
+        <h2 class="title-lg">Технология очистки — ключевой раздел, влияющий на успех всего проекта</h2>
+        <div class="text-lg">Наличие неточных расчетов в ТХ может повлечь за собой переделку всего проекта</div>
+      </div>
+    </div>
+    <div class="col-fluid"><img src="img/services-cleaning.jpg" alt="" class="services-cleaning__img"></div>
+  </div>
+</section>
+
+{% include 'components/company-brands.html' %}
+
+{% include 'components/company-sertificate.html' %}
+
+{% include 'components/consult.html' %}
+
+{% endblock %}
