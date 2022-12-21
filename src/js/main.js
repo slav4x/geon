@@ -263,3 +263,8 @@ const companyBrands = new Swiper('.company-brands__slider', {
     type: 'progressbar',
   },
 });
+
+$('.services-faq__item').click(function () {
+  $(this).find('.services-faq__text').slideToggle(300);
+  $(this).toggleClass('open');
+});
