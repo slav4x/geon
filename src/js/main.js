@@ -250,3 +250,16 @@ $('.js-team-show').click(function () {
   $(this).fadeToggle(200);
   $('.company-team__item').each((i, el) => ($(el).css('display') === 'none' ? $(el).fadeToggle(200) : ''));
 });
+
+const companyBrands = new Swiper('.company-brands__slider', {
+  slidesPerView: 'auto',
+  allowTouchMove: false,
+  navigation: {
+    nextEl: '.company-arrow-next',
+    prevEl: '.company-arrow-prev',
+  },
+  pagination: {
+    el: '.company-brands__progressbar',
+    type: 'progressbar',
+  },
+});

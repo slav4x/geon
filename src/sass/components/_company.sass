@@ -310,6 +310,40 @@
         background: #fff
         border-color: #fff
         width: 270px
+  &-brands
+    .row
+      align-items: center
+    &__slider
+      margin-left: 1px
+      margin-top: 45px
+      .swiper-slide
+        background: #fff
+        width: 385px
+        height: 385px
+        border-right: 1px solid #eee
+        border-top: 1px solid #eee
+        border-bottom: 1px solid #eee
+    &__progressbar
+      position: relative
+      margin-top: -1px
+      z-index: 10
+      height: 2px !important
+      background: #ebeef9
+      .swiper-pagination-progressbar-fill
+        background: $color-blue !important
+  &-control
+    justify-content: flex-end
+    .company-arrow-next
+      margin-left: 15px
+    .control-arrow
+      transition: .3s
+    .control-arrow.swiper-button-disabled
+      opacity: 0.4
+      cursor: default
+      &::after
+        background: #fff
+      &:hover::after
+        background: $color-blue
 
 @media(max-width: 1600px)
   .company-header
@@ -434,6 +468,12 @@
   .company-members__list li img
     height: 100px
 
+  .company-brands__slider
+    margin-top: 35px
+  .company-brands__slider .swiper-slide
+    width: 280px
+    height: 280px
+
 @media(max-width: 1300px)
   .company-header
     height: auto
@@ -479,6 +519,10 @@
 
   .company-members__list li img
     height: 90px
+
+  .company-brands__slider .swiper-slide
+    width: 210px
+    height: 210px
 
 @media(max-width: 1023px)
   .company-header
@@ -536,6 +580,15 @@
 
   .company-members__list li
     width: 100%
+
+  .company-brands
+    .row .col:first-child
+      flex: 1
+      width: initial !important
+    .row .col:nth-child(2n)
+      width: initial !important
+    .title-counter
+      margin-bottom: 0
 
 @media(max-width: 740px)
   .company-services__list
@@ -616,3 +669,10 @@
 
   .company-team
     padding-bottom: 80px
+
+  .company-brands__slider .swiper-slide
+    width: 175px
+    height: 175px
+  .company-brands .row .col:nth-child(2n)
+    order: 1
+    margin-top: 15px
