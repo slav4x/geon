@@ -235,6 +235,41 @@
       max-width: initial
       width: 100%
 
+  &-team
+    padding-bottom: 150px
+    .title + .row
+      margin-right: -25px
+    &__item
+      margin-right: 25px
+      margin-top: 45px
+      width: calc(100% / 4 - 25px)
+      img
+        aspect-ratio: 1 / 1
+        width: 100%
+        border-radius: 100%
+        object-fit: cover
+        object-position: top center
+        margin-bottom: 20px
+      .text-lg
+        font-weight: 600
+      .text-sm
+        margin-top: 5px
+        opacity: 0.6
+      &::last-child
+        margin-right: 0
+    &__circle
+      aspect-ratio: 1 / 1
+      width: 100%
+      border: 1px solid #eee
+      border-radius: 100%
+      font-size: 80px
+      text-align: center
+      @include flexbox
+      align-items: center
+      justify-content: center
+      color: #b5b5b5
+      font-weight: 300
+
 @media(max-width: 1600px)
   .services
     padding: 125px 0
@@ -297,6 +332,13 @@
       margin-top: 35px
       height: 510px
 
+  .services-team
+    padding-bottom: 125px
+    &__item
+      margin-top: 35px
+    &__circle
+      font-size: 45px
+
 @media(max-width: 1300px)
   .services-right
     width: 560px
@@ -323,6 +365,12 @@
 
   .services-manager__img
     height: 400px
+
+  .services-team__item
+    margin-right: 10px
+    width: calc(100% / 4 - 10px)
+  .services-team .title + .row
+    margin-right: -10px
 
 @media(max-width: 1023px)
   .services-slider__wrapper
@@ -384,6 +432,10 @@
   .services-cleaning__img
     height: 590px
 
+@media(max-width: 740px)
+  .services-team__item
+    width: calc(100% / 2 - 10px)
+
 @media(max-width: 610px)
   .services
     padding: 80px 0
@@ -414,6 +466,9 @@
     padding: 80px 0
   .services-manager__img
     height: 360px
+
+  .services-team
+    padding-bottom: 80px
 
 @media(max-width: 475px)
   .services-hero .btn
