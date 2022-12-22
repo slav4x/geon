@@ -1,7 +1,8 @@
 .services
   padding: 150px 0
   .container
-    will-change: transform
+    position: sticky
+    top: 0
   &-slider
     margin-top: 40px
     // padding-left: 33%
@@ -12,7 +13,7 @@
     overflow: hidden
     &__wrapper
       padding-left: calc(100% / 3)
-      padding-bottom: 80px
+      // padding-bottom: 80px
       display: flex
       flex-wrap: nowrap
       will-change: transform
@@ -131,6 +132,8 @@
     width: calc(100% / 2 - 35px)
     position: relative
     background: $color-blue
+    transition: .4s
+    overflow: hidden
     &::before
       content: ''
       position: absolute
@@ -143,6 +146,8 @@
       height: 43px
       background-image: url(../img/svg/logo-white.svg)
       background-repeat: no-repeat
+      opacity: 1
+      transition: .4s
     &::after
       content: 'Выберите услугу'
       position: absolute
@@ -152,6 +157,21 @@
       color: #fff
       font-size: 22px
       text-align: center
+      opacity: 1
+      transition: .4s
+    &.focus
+      background: transparent
+      &::before, &::after
+        opacity: 0
+    // &__placeholder
+    //   position: absolute
+    //   top: 0
+    //   left: 0
+    //   right: 0
+    //   bottom: 0
+    //   background: #fff
+    //   z-index: 10
+    //   display: none
     img
       position: absolute
       z-index: 5
@@ -212,7 +232,7 @@
     .title-xl
       max-width: 720px
     .text-lg
-      max-width: 500px
+      max-width: 540px
       margin-top: 25px
     .btn-wrap
       margin-top: 45px
@@ -317,8 +337,8 @@
 @media(max-width: 1600px)
   .services
     padding: 125px 0
-  .services-slider__wrapper
-    padding-bottom: 40px
+  // .services-slider__wrapper
+  //   padding-bottom: 40px
   .services-item
     width: 610px
   .services-item__img

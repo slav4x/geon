@@ -92,6 +92,8 @@ const scrollSlider = () => {
   const services = $('.services');
 
   if (services.length !== 0) {
+    $('.wrapper').css('overflow', 'unset');
+
     const servicesTop = services.offset().top;
     const servicesHeight = services.innerHeight();
 
@@ -103,6 +105,8 @@ const scrollSlider = () => {
     const servicesSliderWrapperWidth = servicesSliderWrapper.innerWidth();
 
     services.css('height', servicesSliderWrapperWidth - servicesContainerWidth + servicesHeight);
+
+    servicesContainer.css('top', $(window).height() - servicesContainerHeight - 40);
 
     $(window).scroll(() => {
       const scroll = $(window).scrollTop();
@@ -122,7 +126,7 @@ const scrollSlider = () => {
       }
 
       servicesSliderWrapper.css('transform', `translate3d(-${pos}px, 0, 0)`);
-      servicesContainer.css('transform', `translate3d(0, ${pos}px, 0)`);
+      // servicesContainer.css('transform', `translate3d(0, ${pos}px, 0)`);
 
       $('.services-item__img img').each(function (i, el) {
         $(el).css('transform', `translate3d(${img}px, 0, 0) scale(1.5)`);
@@ -194,18 +198,20 @@ $('.btn-up').on('click', function (event) {
   );
 });
 
-$('.services-list a').hover(
-  function () {
-    $(this).find('.text-lg').slideDown(200);
-    const elIndex = $(this).index();
-    $('.services-left img').eq(elIndex).fadeIn(200);
-  },
-  function () {
-    $(this).find('.text-lg').slideUp(200);
-    const elIndex = $(this).index();
-    $('.services-left img').eq(elIndex).fadeOut(400);
-  }
-);
+function servicesFadeIn() {
+  $('.services-left').addClass('focus');
+
+  $(this).find('.text-lg').stop().slideDown(200);
+  const elIndex = $(this).index();
+  $('.services-left img').stop().fadeOut(400);
+  $('.services-left img').eq(elIndex).stop().fadeIn(200);
+}
+
+function servicesFadeOut() {
+  $(this).find('.text-lg').stop().slideUp(200);
+}
+
+$('.services-list a').bind('mouseenter', servicesFadeIn).bind('mouseleave', servicesFadeOut);
 
 $('.js-hover-link').each(function (i, el) {
   const height = $(el).height();
@@ -265,6 +271,7 @@ const companyBrands = new Swiper('.company-brands__slider', {
 });
 
 $('.services-faq__item').click(function () {
+  $('.services-faq__item').find('.services-faq__text').slideUp(300);
   $(this).find('.services-faq__text').slideToggle(300);
   $(this).toggleClass('open');
 });
