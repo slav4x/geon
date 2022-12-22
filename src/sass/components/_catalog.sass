@@ -1,0 +1,54 @@
+.catalog
+  &-item
+    // width: 100%
+    position: relative
+    &__img
+      width: 100%
+      height: 650px
+      background: #fafafa
+      position: relative
+      transition: .2s
+      img
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        max-width: initial
+        height: 100%
+        object-fit: contain
+        object-position: center
+    &__info
+      margin-top: 25px
+      font-size: 18px
+      a
+        font-weight: 600
+        &::before
+          content: ''
+          position: absolute
+          top: 0
+          left: 0
+          right: 0
+          bottom: 0
+      p
+        margin-top: 10px
+        color: $color-gray
+    &:hover .catalog-item__img
+      background: $color-blue
+
+@media(max-width: 1600px)
+  .catalog-item
+    &__img
+      height: 500px
+    &__info
+      font-size: 14px
+      margin-top: 20px
+
+@media(max-width: 1300px)
+  .catalog-item
+    &__img
+      height: 375px
+
+@media(max-width: 610px)
+  .catalog-item
+    &__img
+      height: 350px

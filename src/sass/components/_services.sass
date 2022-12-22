@@ -334,6 +334,14 @@
       max-width: 640px
       display: none
 
+  &-catalog
+    padding-bottom: 150px
+    .catalog-item
+      margin-top: 35px
+    .col:nth-child(odd)
+      .catalog-item
+        margin-right: 15px
+
 @media(max-width: 1600px)
   .services
     padding: 125px 0
@@ -421,6 +429,9 @@
     &__text
       padding-top: 15px
 
+  .services-catalog
+    padding-bottom: 125px
+
 @media(max-width: 1300px)
   .services-right
     width: 560px
@@ -494,6 +505,10 @@
   .services-manager__img
     height: 510px
 
+  .services-catalog .col:nth-child(odd)
+    .catalog-item
+      margin-right: 0
+
 @media(max-width: 768px)
   .services-slider
     overflow-x: auto
@@ -562,6 +577,9 @@
         top: 17px
       &::after
         top: 20px
+
+  .services-catalog
+    padding-bottom: 80px
 
 @media(max-width: 475px)
   .services-hero .btn
