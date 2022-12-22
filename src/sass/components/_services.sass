@@ -342,6 +342,58 @@
       .catalog-item
         margin-right: 15px
 
+  &-survey
+    &__block
+      background: $color-blue
+      color: #fff
+      padding: 60px
+      position: relative
+      overflow: hidden
+      .title-xl
+        max-width: 900px
+        position: relative
+        z-index: 10
+      &::before
+        content: ''
+        position: absolute
+        top: -80px
+        right: -435px
+        width: 990px
+        height: 990px
+        border-radius: 100%
+        background: #05173F
+    &__list
+      @include flexbox
+      align-items: flex-start
+      margin-top: 25px
+      margin-right: -15px
+      max-width: 900px
+      position: relative
+      z-index: 10
+      li
+        margin-top: 15px
+        margin-right: 15px
+        border: 1px solid rgba(255, 255, 255, 0.15)
+        border-radius: 3px
+        font-size: 18px
+        padding: 17px
+        line-height: 1.6
+        letter-spacing: -0.024em
+        @include flexbox
+        align-items: center
+        img
+          margin-right: 17px
+    .btn-wrap
+      margin-top: 40px
+      max-width: 430px
+      position: relative
+      z-index: 10
+    &__img
+      position: absolute
+      top: -90px
+      right: -180px
+      max-width: initial
+
 @media(max-width: 1600px)
   .services
     padding: 125px 0
@@ -432,6 +484,31 @@
   .services-catalog
     padding-bottom: 125px
 
+  .services-survey
+    &__block
+      padding: 50px
+      .title-xl
+        max-width: 605px
+        font-size: 40px
+    &__list
+      max-width: 605px
+      margin-right: 0
+      li
+        font-size: 14px
+        padding: 12px
+        img
+          margin-right: 12px
+    .btn-wrap
+      max-width: 340px
+    &__img
+      width: 900px
+      top: -75px
+      right: -80px
+
+  .services-survey__block::before
+    top: -230px
+    right: -455px
+
 @media(max-width: 1300px)
   .services-right
     width: 560px
@@ -464,6 +541,31 @@
     width: calc(100% / 4 - 10px)
   .services-team .title + .row
     margin-right: -10px
+
+  .services-survey
+    &__block
+      padding: 40px
+      .title-xl
+        max-width: 555px
+        font-size: 40px
+    &__list
+      max-width: 605px
+      margin-right: 0
+      margin-top: 5px
+      li
+        font-size: 14px
+        padding: 12px
+        img
+          margin-right: 12px
+    .btn-wrap
+      margin-top: 25px
+    &__img
+      width: 760px
+      top: -20px
+      right: -200px
+
+  .services-survey__block::before
+    right: -660px
 
 @media(max-width: 1023px)
   .services-slider__wrapper
@@ -509,6 +611,22 @@
     .catalog-item
       margin-right: 0
 
+  .services-survey__block
+    padding-bottom: 250px
+    &::before
+      top: initial
+      bottom: -850px
+      left: -50%
+      right: -50%
+      margin: 0 auto
+  .services-survey__img
+    width: 480px
+    left: 0
+    right: 0
+    margin: 0 auto
+    top: initial
+    bottom: -125px
+
 @media(max-width: 768px)
   .services-slider
     overflow-x: auto
@@ -532,6 +650,29 @@
 @media(max-width: 740px)
   .services-team__item
     width: calc(100% / 2 - 10px)
+
+@media(max-width: 640px)
+  .services-survey
+    &__block
+      padding: 20px 20px 250px
+      &::before
+        width: 480px
+        height: 480px
+        bottom: -290px
+      .title-xl
+        font-size: 22px
+    &__list
+      li
+        width: 100%
+        margin-right: 0
+        line-height: 1.4
+        p
+          width: calc(100% - 24px - 12px)
+    &__img
+      width: 400px
+      left: -50%
+      right: -50%
+      bottom: -70px
 
 @media(max-width: 610px)
   .services
