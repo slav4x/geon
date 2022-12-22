@@ -394,6 +394,40 @@
       right: -180px
       max-width: initial
 
+  &-erp
+    &__img
+      filter: drop-shadow(0px 45.7855px 130.412px rgba(120, 159, 194, 0.3))
+      margin-top: 45px
+    &__block
+      background: $color-blue
+      padding: 180px 0 90px
+      margin-top: -75px
+      .row
+        align-items: center
+    &__badge
+      font-size: 15px
+      line-height: 1.2
+      font-weight: 600
+      padding: 10px 15px
+      border: 1px solid rgba(255, 255, 255, 0.15)
+    &__text
+      color: #fff
+      @include flexbox
+      align-items: flex-start
+      flex-direction: column
+      flex: 1
+      margin-right: 60px
+      .title-xl
+        margin-top: 20px
+      .text-lg
+        margin-top: 20px
+        opacity: 0.8
+    &__form
+      background: #fff
+      padding: 50px
+      max-width: 690px
+      width: 100%
+
 @media(max-width: 1600px)
   .services
     padding: 125px 0
@@ -509,6 +543,21 @@
     top: -230px
     right: -455px
 
+  .services-erp
+    &__block
+      padding: 100px 0
+      margin-top: -30px
+    &__form
+      max-width: 490px
+      padding: 30px
+    &__badge
+      font-size: 14px
+    &__text
+      margin-right: 30px
+
+  .services-erp__img
+    margin-top: 35px
+
 @media(max-width: 1300px)
   .services-right
     width: 560px
@@ -566,6 +615,16 @@
 
   .services-survey__block::before
     right: -660px
+
+  .services-erp
+    &__block
+      padding: 80px 0
+    &__form
+      max-width: 410px
+      padding: 30px
+    &__text
+      .title-xl
+        font-size: 34px
 
 @media(max-width: 1023px)
   .services-slider__wrapper
@@ -627,6 +686,24 @@
     top: initial
     bottom: -125px
 
+  .services-erp
+    &__block
+      padding: 100px 0
+      margin-top: -50px
+    &__form
+      max-width: 330px
+      padding: 25px
+    &__text
+      margin-right: 25px
+      .title-xl
+        font-size: 30px
+      .text-lg
+        margin-top: 15px
+    &__badge
+      padding: 10px
+      font-size: 12px
+      font-weight: 400
+
 @media(max-width: 768px)
   .services-slider
     overflow-x: auto
@@ -650,6 +727,19 @@
 @media(max-width: 740px)
   .services-team__item
     width: calc(100% / 2 - 10px)
+
+  .services-erp
+    &__block
+      padding: 80px 0
+      margin-top: -40px
+    &__form
+      max-width: 100%
+      padding: 25px
+      margin-top: 40px
+    &__text
+      margin-right: 0
+      flex: initial
+      width: 100%
 
 @media(max-width: 640px)
   .services-survey
