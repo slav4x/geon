@@ -132,10 +132,21 @@ input
   font-weight: 600
 
 .list
-  list-style: outside
-  padding-left: 30px
   li
-    padding: 10px 0
+    border-bottom: 1px solid #eee
+    padding: 30px 60px
+    font-size: 18px
+    line-height: 1.6
+    position: relative
+    &::before
+      content: ''
+      position: absolute
+      top: 40px
+      left: 25px
+      width: 10px
+      height: 10px
+      border-radius: 100%
+      border: 2px solid $color-blue
 
 .btn
   @include flexbox
