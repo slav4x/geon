@@ -239,6 +239,7 @@ let isOpen = false;
 $('.header-burger').click(function () {
   isOpen = !isOpen;
 
+  $('.header-burger').toggleClass('open');
   $('.header-opened').toggleClass('open');
   $('.header-logo').toggleClass('white');
 
