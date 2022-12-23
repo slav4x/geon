@@ -8,6 +8,12 @@
 
 // viewportFix(375);
 
+// const asscroll = new ASScroll();
+
+// window.addEventListener('load', () => {
+//   asscroll.enable();
+// });
+
 Fancybox.bind('[data-fancybox]', {
   dragToClose: false,
   autoFocus: false,
@@ -31,6 +37,11 @@ const maskPhone = () => {
 };
 
 maskPhone();
+
+// asscroll.on('update', ({ currentPos }) => {
+//   if ($('.header').hasClass('header-home'))
+//     currentPos > 1 ? $('.header').removeClass('header-clear') : $('.header').addClass('header-clear');
+// });
 
 if ($(window).width() >= 610) {
   $(window).scroll(function () {

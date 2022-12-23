@@ -73,7 +73,12 @@ const js = () => {
 };
 
 const libs_js = () => {
-  return src(['src/js/vendor/fancybox.umd.js', 'src/js/vendor/swiper-bundle.min.js', 'src/js/vendor/imask.min.js'])
+  return src([
+    'src/js/vendor/fancybox.umd.js',
+    'src/js/vendor/swiper-bundle.min.js',
+    'src/js/vendor/imask.min.js',
+    'src/js/vendor/asscroll.min.js',
+  ])
     .pipe(isMinify ? uglify() : noop())
     .pipe(isMinify ? concat('libs.min.js') : concat('libs.js'))
     .pipe(dest('app/js/'));
