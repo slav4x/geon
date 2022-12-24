@@ -276,3 +276,6 @@ $('.services-faq__item').click(function () {
   $(this).find('.services-faq__text').slideToggle(300);
   $(this).toggleClass('open');
 });
+
+const newsPage = $('.news');
+if (newsPage.length !== 0) $('.wrapper').css('overflow', 'unset');
