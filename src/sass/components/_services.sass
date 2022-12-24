@@ -452,6 +452,48 @@
       max-width: 690px
       width: 100%
 
+  &-steps
+    padding-bottom: 150px
+    .row-stretch
+      margin-top: 45px
+    &__images
+      background: #fafafa
+      height: 100%
+      margin-right: 25px
+    &__list
+      margin: 0 1px
+      li
+        border-bottom: 1px solid #eee
+        padding: 45px 35px
+        transition: .2s
+        cursor: pointer
+        background: transparent
+        position: relative
+        img
+          display: none
+          position: absolute
+          top: 25px
+          right: 25px
+          width: 115px
+          height: 76px
+          object-fit: scale-down
+          object-position: center
+        b
+          font-size: 24px
+          line-height: 1.2
+          letter-spacing: -0.024em
+        p
+          font-size: 18px
+          margin-top: 10px
+          line-height: 1.6
+          letter-spacing: -0.024em
+          color: $color-gray
+        &:hover
+          border-color: $color-blue
+        &.active
+          background: #fafafa
+          border-color: $color-blue
+
 @media(max-width: 1600px)
   .services
     padding: 125px 0
@@ -581,6 +623,20 @@
 
   .services-erp__img
     margin-top: 35px
+
+  .services-steps
+    padding-bottom: 125px
+    .row-stretch
+      margin-top: 35px
+    &__images
+      margin-right: 15px
+    &__list
+      li
+        padding: 25px 35px
+        b
+          font-size: 18px
+        p
+          font-size: 14px
 
 @media(max-width: 1300px)
   .services-right
@@ -728,6 +784,21 @@
       font-size: 12px
       font-weight: 400
 
+  .services-steps
+    &__images
+      display: none
+    &__list
+      li
+        padding: 35px 25px
+        padding-right: 140px
+        img
+          display: block
+        &.active
+          background: transparent
+          border-color: #eee
+        &:hover
+          border-color: #eee
+
 @media(max-width: 768px)
   .services-slider
     overflow-x: auto
@@ -841,6 +912,14 @@
   .services-item__arrow
     right: 0
     bottom: initial
+
+  .services-steps
+    padding-bottom: 80px
+    &__list
+      li
+        padding: 25px
+        img
+          display: none
 
 @media(max-width: 475px)
   .services-hero .btn
