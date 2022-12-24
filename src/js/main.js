@@ -279,3 +279,14 @@ $('.services-faq__item').click(function () {
 
 const newsPage = $('.news');
 if (newsPage.length !== 0) $('.wrapper').css('overflow', 'unset');
+
+$('.news-nav a').on('click', function (event) {
+  const target = $(this).attr('href');
+  event.preventDefault();
+  $('html, body').animate(
+    {
+      scrollTop: $(target).offset().top - 120,
+    },
+    1000
+  );
+});
