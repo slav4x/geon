@@ -496,6 +496,35 @@
           background: #fafafa
           border-color: $color-blue
 
+  &-video
+    padding-bottom: 150px
+    &__block
+      margin-top: 45px
+      width: 100%
+      height: 670px
+      position: relative
+      display: block
+      background: #000
+      img
+        width: 100%
+        height: 100%
+        object-fit: cover
+        object-position: center
+        opacity: 0.8
+      &::before
+        content: ''
+        position: absolute
+        z-index: 10
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        width: 80px
+        height: 80px
+        border-radius: 100%
+        border: 3px solid #fff
+        margin: auto
+
 @media(max-width: 1600px)
   .services
     padding: 125px 0
@@ -640,6 +669,12 @@
         p
           font-size: 14px
 
+  .services-video
+    padding-bottom: 125px
+    &__block
+      margin-top: 35px
+      height: 510px
+
 @media(max-width: 1300px)
   .services-right
     width: 560px
@@ -707,6 +742,10 @@
     &__text
       .title-xl
         font-size: 34px
+
+  .services-video
+    &__block
+      height: 400px
 
 @media(max-width: 1023px)
   .services-slider__wrapper
@@ -800,6 +839,10 @@
           border-color: #eee
         &:hover
           border-color: #eee
+
+  .services-video
+    &__block
+      height: 510px
 
 @media(max-width: 768px)
   .services-slider
@@ -922,6 +965,11 @@
         padding: 25px
         img
           display: none
+
+  .services-video
+    padding-bottom: 80px
+    &__block
+      height: 360px
 
 @media(max-width: 475px)
   .services-hero .btn
