@@ -1,0 +1,125 @@
+{% extends 'components/_layout.html' %}
+{% set site_title = 'Услуги - Пусконаладка' %}
+{% set home = true %}
+
+{% block content %}
+
+<div class="container container-lines row">
+  <div class="col"></div>
+  <div class="col"></div>
+</div>
+
+<section class="services-hero" style="background-image: url(img/services-commissioning-bg.jpg);">
+  <div class="container row">
+    <div class="col">
+      <ul class="breadcrumbs">
+        <li><a href="#">Главная</a></li><li><a href="#">Услуги</a></li><li><a href="#">Пусконаладка</a></li>
+      </ul>
+    </div>
+    <div class="col">
+      <h2 class="title-xl">Пусконаладка очистных сооружений</h2>
+      <p class="text-lg">Оценим работу всей технологической системы, выявим отклонения, предложим оптимальные решения</p>
+      <div class="btn-wrap"><a href="#" class="btn btn-fill btn-icon"><p>Узнать стоимость</p></a></div>
+    </div>
+  </div>
+</section>
+
+<section class="company-about">
+  <div class="container row">
+    <div class="col"><h4 class="title-sm title-counter">О проектировании</h4></div>
+    <div class="col">
+      <div class="title">
+        <h2 class="title-lg">Качественно выполненные пусконаладочные работы — <span>залог бесперебойного функционирования</span> и&nbsp;стабильных нормативных показателей очистки сточных вод</h2>
+        <div class="text-lg">В ходе мероприятия выявляются и устраняются недостатки, негативно влияющие на эффективность эксплуатации оборудования. Мы проводим полный комплекс технико-организационных мероприятий для вывода очистных сооружений на проектную мощность</div>
+      </div>
+      <ul class="company-about__stat">
+        <li>
+          <div class="company-about__stat-counter blue">
+            <h3 data-counter>8</h3>
+            <h4 data-counter>лет</h4>
+          </div>
+          <p class="text-lg">Опыт работы компании</p>
+        </li>
+        <li>
+          <div class="company-about__stat-counter">
+            <h3 data-counter>13</h3>
+            <h4 data-counter>лет</h4>
+          </div>
+          <p class="text-lg">Средний стаж сотрудников</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="services-cleaning" style="padding-bottom: 0;">
+  <div class="container row">
+    <div class="col"></div>
+    <div class="col">
+      <div class="title">
+        <h2 class="title-lg">Своя служба запуска и обслуживания оборудования</h2>
+        <div class="text-lg">Оперативно приедем на объект в течение двух дней и запустим в работу</div>
+      </div>
+    </div>
+    <div class="col-fluid"><img src="img/services-commissioning.jpg" alt="" class="services-cleaning__img"></div>
+  </div>
+</section>
+
+<section class="company-group">
+  <div class="container row">
+    <div class="col"></div>
+    <div class="col">
+      <div class="title">
+        <h2 class="title-lg">Делаем эксплуатацию<br> простой и понятной</h2>
+        <div class="text-lg">Проводим запуск совместно с эксплуатирующей организацией</div>
+      </div>
+      <ul class="list">
+        <li><b>Осуществляем отладку и настройку оборудования</b> в холостом режиме;</li>
+        <li><b>Выявляем недочеты</b> и определяются решения по их устранению;</li>
+        <li><b>Проводим обучение и инструктаж персонала,</b> который будет эксплуатировать очистные сооружения;</li>
+        <li><b>Подбираем оптимальные режимы работы</b> очистных сооружений;</li>
+        <li><b>Осуществляем комплексное тестирование сооружений и элементов оборудования</b> на сточной воде с учетом взятия проб исходной и очищенной;</li>
+        <li><b>Проводим тестовый запуск очистных сооружений</b> на технической воде для настройки систем технологических линий;</li>
+        <li><b>Проверяем работоспособность систем</b> управления, регулировок, безопасности, автоматизации, защиты, сигнализации и связи;</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+{% include 'components/company-map.html' %}
+
+{% include 'components/company-brands.html' %}
+
+{% include 'components/company-sertificate.html' %}
+
+<section class="consult">
+  <div class="container row">
+    <div class="col">
+      <div class="consult-man">
+        <div class="consult-man__img"><img src="img/man-2.jpg" alt=""></div>
+        <div class="consult-man__desc">
+          <div class="text-lg">Михаил Лазарев</div>
+          <div class="text-sm">Главный инженер проекта</div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="consult-content">
+        <h2 class="title-xl">Остались<br> вопросы? Задайте<br> их нашему ГИПу</h2>
+        <form action="#" class="form">
+          <label class="label">
+            <p>Ваше имя</p>
+            <input type="text" class="input" placeholder="Александр" />
+          </label>
+          <label class="label">
+            <p>Телефон</p>
+            <input type="tel" class="input masked" placeholder="+7 (000) 000-00-00" />
+          </label>
+          <button class="btn btn-fluid btn-white btn-icon"><p>Позвонить</p></button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
