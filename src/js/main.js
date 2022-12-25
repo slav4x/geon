@@ -198,21 +198,6 @@ $('.btn-up').on('click', function (event) {
   );
 });
 
-function servicesFadeIn() {
-  $('.services-left').addClass('focus');
-
-  $(this).find('.text-lg').stop().slideDown(200);
-  const elIndex = $(this).index();
-  $('.services-left img').stop().fadeOut(400);
-  $('.services-left img').eq(elIndex).stop().fadeIn(200);
-}
-
-function servicesFadeOut() {
-  $(this).find('.text-lg').stop().slideUp(200);
-}
-
-$('.services-list a').bind('mouseenter', servicesFadeIn).bind('mouseleave', servicesFadeOut);
-
 $('.js-hover-link').each(function (i, el) {
   const height = $(el).height();
   $(el).css('height', height);
@@ -290,3 +275,23 @@ $('.news-nav a').on('click', function (event) {
     1000
   );
 });
+
+function servicesFadeIn() {
+  $('.services-list .text-lg').stop().slideUp(250);
+  $(this).find('.text-lg').stop().slideDown(250);
+
+  const elIndex = $(this).index();
+
+  $('.services-left__placeholder').css('top', '0');
+
+  setTimeout(() => {
+    $('.services-left').addClass('focus');
+
+    $('.services-left__placeholder').css('top', '100%');
+
+    $('.services-left img').removeClass('focus');
+    $('.services-left img').eq(elIndex).addClass('focus');
+  }, 500);
+}
+
+$('.services-list a').bind('mouseenter', servicesFadeIn);

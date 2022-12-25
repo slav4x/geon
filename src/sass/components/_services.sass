@@ -184,7 +184,7 @@
       opacity: 1
       transition: .4s
     &.focus
-      background: transparent
+      background: #fff
       &::before, &::after
         opacity: 0
     // &__placeholder
@@ -196,9 +196,20 @@
     //   background: #fff
     //   z-index: 10
     //   display: none
+    &__placeholder
+      position: absolute
+      top: 100%
+      left: 0
+      right: 0
+      bottom: 0
+      z-index: 10
+      background: #fff
+      transition: .5s
+      // &.focus
+      //   animation: imagePlaceholder 1s
     img
       position: absolute
-      z-index: 5
+      z-index: -1
       top: 0
       left: 0
       right: 0
@@ -207,7 +218,8 @@
       height: 100%
       object-fit: cover
       object-position: center
-      display: none
+      &.focus
+        z-index: 4
   &-right
     width: calc(100% / 2 - 35px)
     margin-left: auto
