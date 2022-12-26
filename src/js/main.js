@@ -1,12 +1,12 @@
 /* eslint-disable operator-linebreak */
 /* eslint-disable no-inner-declarations */
 
-// const viewportFix = (width) => {
-//   const meta = $('meta[name="viewport"]');
-//   meta.attr('content', 'user-scalable=no, width=' + (screen.width <= width ? width : 'device-width'));
-// };
+const viewportFix = (width) => {
+  const meta = $('meta[name="viewport"]');
+  meta.attr('content', 'user-scalable=no, width=' + (screen.width <= width ? width : 'device-width'));
+};
 
-// viewportFix(375);
+viewportFix(380);
 
 Fancybox.bind('[data-fancybox]', {
   dragToClose: false,
