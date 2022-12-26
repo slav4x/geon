@@ -35,6 +35,31 @@
     &:hover .catalog-item__img
       background: $color-blue
 
+  &-header
+    background: $color-blue
+    color: #fff
+    padding: 250px 0 150px
+    overflow: hidden
+    .title-xl
+      margin-top: 25px
+    .breadcrumbs
+      color: #fff
+      li::after
+        background: url(../img/svg/breadcrumbs-arrow-white.svg) no-repeat
+    .col
+      &::before,
+      &:nth-child(2)::after
+        content: ''
+        position: absolute
+        top: -142px
+        bottom: -1000px
+        width: 1px
+        background: rgba(255, 255, 255, 0.15)
+      &::before
+        left: 0
+      &:nth-child(2)::after
+        right: 0
+
 @media(max-width: 1600px)
   .catalog-item
     &__img
@@ -42,6 +67,15 @@
     &__info
       font-size: 14px
       margin-top: 20px
+
+  .catalog-header
+    padding: 200px 0 120px
+    .title-xl
+      margin-top: 15px
+    .col
+      &::before,
+      &:nth-child(2)::after
+        top: -120px
 
 @media(max-width: 1300px)
   .catalog-item
@@ -52,3 +86,12 @@
   .catalog-item
     &__img
       height: 350px
+
+  .catalog-header
+    padding: 140px 0 80px
+    .title-xl
+      font-size: 32px
+    .col
+      &::before,
+      &:nth-child(2)::after
+        top: -60px
