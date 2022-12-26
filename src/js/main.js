@@ -331,3 +331,14 @@ function stepsFadeIn() {
 
 $('.services-steps__list li').bind('mouseenter', stepsFadeIn);
 $('.services-steps__images img').eq(0).addClass('focus');
+
+$('.catalog-grid__switch li').click(function () {
+  const grid = $(this).attr('data-grid');
+
+  $('.catalog-grid__switch li').removeClass('active');
+  $(this).addClass('active');
+
+  $('.catalog-grid')
+    .removeClass()
+    .addClass('catalog-grid ' + grid);
+});

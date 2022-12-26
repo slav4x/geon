@@ -1,4 +1,53 @@
 .catalog
+  padding: 80px 1px 0
+  &-grid
+    border-bottom: 1px solid #eee
+    padding-bottom: 80px
+    @include flexbox
+    align-items: flex-start
+    column-gap: 15px
+    row-gap: 45px
+    &.two
+      .catalog-item
+        flex: 1 1 calc((100% / 2) - 15px)
+    &.three
+      .catalog-item
+        flex: 1 1 calc((100% / 3) - 15px)
+    &__switch
+      @include flexbox
+      align-items: center
+      margin-left: auto
+      .text-lg
+        color: $color-gray
+        opacity: 0.7
+        margin-right: 20px
+      ul
+        @include flexbox
+        li
+          width: 40px
+          height: 40px
+          border: 1px solid #eee
+          margin-right: -1px
+          text-align: center
+          line-height: 38px
+          font-size: 14px
+          color: $color-gray
+          font-weight: 600
+          cursor: pointer
+          transition: .2s
+          &.active
+            border-color: $color-blue
+            color: $color-blue
+            z-index: 2
+          &:first-child
+            border-top-left-radius: 5px
+            border-bottom-left-radius: 5px
+          &:last-child
+            border-top-right-radius: 5px
+            border-bottom-right-radius: 5px
+  &-section
+    padding: 80px 0 150px
+
   &-item
     // width: 100%
     position: relative
@@ -60,10 +109,15 @@
       &:nth-child(2)::after
         right: 0
 
+  &-top
+    padding-bottom: 15px
+    margin-bottom: 45px
+    border-bottom: 1px solid #eee
+
 @media(max-width: 1600px)
   .catalog-item
     &__img
-      height: 500px
+      height: 450px
     &__info
       font-size: 14px
       margin-top: 20px
@@ -77,6 +131,17 @@
       &:nth-child(2)::after
         top: -120px
 
+  .catalog-grid
+    row-gap: 35px
+
+  .catalog-top
+    margin-bottom: 35px
+
+  .catalog-grid__switch ul li
+    width: 35px
+    height: 35px
+    line-height: 33px
+
 @media(max-width: 1300px)
   .catalog-item
     &__img
@@ -85,7 +150,7 @@
 @media(max-width: 610px)
   .catalog-item
     &__img
-      height: 350px
+      height: 300px
 
   .catalog-header
     padding: 140px 0 80px
@@ -95,3 +160,7 @@
       &::before,
       &:nth-child(2)::after
         top: -60px
+
+  .catalog-grid
+    .catalog-item
+      flex: 1 1 calc(100% - 15px) !important

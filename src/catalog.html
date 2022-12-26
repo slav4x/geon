@@ -1,0 +1,83 @@
+{% extends 'components/_layout.html' %}
+{% set site_title = 'Каталог' %}
+{% set home = true %}
+
+{% block content %}
+
+<div class="container container-lines side row">
+  <div class="col"></div>
+  <div class="col"></div>
+</div>
+
+<section class="catalog-header">
+  <div class="container side row">
+    <div class="col"></div>
+    <div class="col"></div>
+    <div class="col-fluid">
+      <ul class="breadcrumbs">
+        <li><a href="#">Главная</a></li><li><a href="#">Наши решения</a></li><li><a href="#">ЛОС</a></li>
+      </ul>
+      <h1 class="title-xl">Ливневые очистные сооружения</h1>
+    </div>
+  </div>
+</section>
+
+<section class="catalog">
+  <div class="container">
+    <div class="catalog-top row">
+      <div class="catalog-grid__switch">
+        <p class="text-lg">Вид</p>
+        <ul>
+          <li class="active" data-grid="two">2</li>
+          <li data-grid="three">3</li>
+        </ul>
+      </div>
+    </div>
+    <div class="catalog-grid two">
+      <div class="catalog-item">
+        <div class="catalog-item__img"><img src="img/catalog/1.png" alt=""></div>
+        <div class="catalog-item__info">
+          <a href="#">Ливневые очистные сооружения ГЕОН-ЛОС</a>
+          <p>от 12 999 000₽</p>
+        </div>
+      </div>
+      <div class="catalog-item">
+        <div class="catalog-item__img"><img src="img/catalog/1.png" alt=""></div>
+        <div class="catalog-item__info">
+          <a href="#">Ливневые очистные сооружения ГЕОН-ЛОС</a>
+          <p>от 12 999 000₽</p>
+        </div>
+      </div>
+      <div class="catalog-item">
+        <div class="catalog-item__img"><img src="img/catalog/1.png" alt=""></div>
+        <div class="catalog-item__info">
+          <a href="#">Ливневые очистные сооружения ГЕОН-ЛОС</a>
+          <p>от 12 999 000₽</p>
+        </div>
+      </div>
+      <div class="catalog-item">
+        <div class="catalog-item__img"><img src="img/catalog/1.png" alt=""></div>
+        <div class="catalog-item__info">
+          <a href="#">Ливневые очистные сооружения ГЕОН-ЛОС</a>
+          <p>от 12 999 000₽</p>
+        </div>
+      </div>
+      <div class="catalog-item">
+        <div class="catalog-item__img"><img src="img/catalog/1.png" alt=""></div>
+        <div class="catalog-item__info">
+          <a href="#">Ливневые очистные сооружения ГЕОН-ЛОС</a>
+          <p>от 12 999 000₽</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="catalog-section">
+  <div class="container row">
+    <div class="col">123</div>
+    <div class="col">456</div>
+  </div>
+</section>
+
+{% endblock %}
