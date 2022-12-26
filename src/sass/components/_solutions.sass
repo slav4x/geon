@@ -50,6 +50,86 @@
   &-control
     margin-top: 110px
 
+  &-section
+    padding-bottom: 150px
+    .row
+      align-items: stretch
+    &__image
+      width: 100%
+      height: 700px
+      position: relative
+      img
+        position: absolute
+        z-index: 1
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        width: 100%
+        height: 100%
+        object-fit: cover
+        object-position: center
+        &:first-child
+          z-index: 2
+        &.focus
+          z-index: 4
+    &__sidebar
+      padding-right: 70px
+      height: 100%
+      @include flexbox
+      flex-direction: column
+      .solutions-section__head
+        display: block
+    &__head
+      display: none
+      .text-lg
+        color: $color-gray
+        margin-top: 20px
+    &__list
+      margin: auto 0
+      li
+        a
+          display: block
+          background: #fff
+          padding: 25px 60px 25px 20px
+          border-bottom: 1px solid #eee
+          transition: .2s
+          position: relative
+          &::before
+            content: ''
+            position: absolute
+            top: 0
+            bottom: 0
+            margin: auto 0
+            right: 20px
+            width: 25px
+            height: 25px
+            background-image: url("data:image/svg+xml,%3Csvg width='25' height='25' viewBox='0 0 25 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.5 8.5L14.5 12.5L10.5 16.5' stroke='%23010513' stroke-width='1.5'/%3E%3Crect x='0.5' y='0.5' width='24' height='24' rx='12' stroke='%23EEEEEE'/%3E%3C/svg%3E%0A")
+            transition: .2s
+          b
+            line-height: 1.6
+            display: block
+            font-weight: 600
+            font-size: 20px
+          p
+            font-size: 14px
+            margin-top: 5px
+            color: $color-gray
+            transition: .2s
+          &:hover
+            padding-left: 30px
+            padding-right: 70px
+            background: $color-blue
+            color: #fff
+            p
+              color: #fff
+            &::before
+              right: 30px
+              background-image: url("data:image/svg+xml,%3Csvg width='25' height='25' viewBox='0 0 25 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.5 8.5L14.5 12.5L10.5 16.5' stroke='white' stroke-width='1.5'/%3E%3Crect x='0.5' y='0.5' width='24' height='24' rx='12' stroke='white' stroke-opacity='0.15'/%3E%3C/svg%3E%0A")
+
+.catalog-header + .solutions-section
+  padding-top: 80px
+
 @media(max-width: 1600px)
   .solutions
     padding: 85px 0 130px
@@ -68,6 +148,31 @@
   .solutions-second__slider
     height: 600px
 
+  .catalog-header + .solutions-section
+    padding-top: 60px
+
+  .solutions-section
+    padding-bottom: 125px
+    &__image
+      height: 600px
+    &__sidebar
+      padding-right: 35px
+    &__head
+      .text-lg
+        margin-top: 15px
+    &__list li a
+      padding: 20px 45px 20px 10px
+      b
+        font-size: 16px
+      p
+        font-size: 12px
+      &::before
+        right: 10px
+      &:hover
+        padding: 20px 45px 20px 15px
+        &::before
+          right: 10px
+
 @media(max-width: 1300px)
   .solutions-second__slider
     left: 40px
@@ -81,6 +186,16 @@
     margin-top: 50px
   .solutions .title-counter
     margin-bottom: 45px
+
+  .solutions-section
+    &__image
+      height: 520px
+    &__list li a
+      padding: 15px 45px 15px 10px
+      b
+        font-size: 14px
+      &:hover
+        padding: 15px 45px 15px 15px
 
 @media(max-width: 1023px)
   .solutions
@@ -116,6 +231,21 @@
     flex: 1
     margin-right: 20px
 
+  .solutions-section
+    &__head
+      display: block
+    &__sidebar
+      padding-right: 0
+      .solutions-section__head
+        display: none
+      .btn
+        margin-top: 25px
+    .col:first-child
+      order: 1
+    &__image
+      height: 250px
+      margin: 25px 0
+
 @media(max-width: 610px)
   .solutions
     padding: 80px 0
@@ -137,3 +267,16 @@
   .solutions-next
     margin-right: 0
     padding: 0 1px
+
+  .solutions-section
+    padding-bottom: 80px
+    .title-lg
+      font-size: 22px
+    .text-lg
+      margin-top: 5px
+    &__sidebar
+      .btn
+        margin-top: 20px
+    &__image
+      height: 220px
+      margin: 20px 0

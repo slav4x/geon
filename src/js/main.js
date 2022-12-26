@@ -291,7 +291,24 @@ function servicesFadeIn() {
 
     $('.services-left img').removeClass('focus');
     $('.services-left img').eq(elIndex).addClass('focus');
-  }, 500);
+  }, 400);
 }
 
 $('.services-list a').bind('mouseenter', servicesFadeIn);
+
+$('.solutions-section').each(function (i, el) {
+  function solutionsFadeIn() {
+    const elIndex = $(this).index();
+
+    $('.services-left__placeholder', el).css('top', '0');
+
+    setTimeout(() => {
+      $('.services-left__placeholder', el).css('top', '100%');
+
+      $('.solutions-section__image img', el).removeClass('focus');
+      $('.solutions-section__image img', el).eq(elIndex).addClass('focus');
+    }, 400);
+  }
+
+  $('.solutions-section__list li', el).bind('mouseenter', solutionsFadeIn);
+});
