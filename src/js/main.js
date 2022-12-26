@@ -312,3 +312,22 @@ $('.solutions-section').each(function (i, el) {
 
   $('.solutions-section__list li', el).bind('mouseenter', solutionsFadeIn);
 });
+
+function stepsFadeIn() {
+  $('.services-steps__list li').removeClass('active');
+  $(this).addClass('active');
+
+  const elIndex = $(this).index();
+
+  $('.services-left__placeholder').css('top', '0');
+
+  setTimeout(() => {
+    $('.services-left__placeholder').css('top', '100%');
+
+    $('.services-steps__images img').removeClass('focus');
+    $('.services-steps__images img').eq(elIndex).addClass('focus');
+  }, 400);
+}
+
+$('.services-steps__list li').bind('mouseenter', stepsFadeIn);
+$('.services-steps__images img').eq(0).addClass('focus');
