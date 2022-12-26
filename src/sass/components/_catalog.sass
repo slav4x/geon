@@ -1,5 +1,5 @@
 .catalog
-  padding: 80px 1px 0
+  padding: 80px 0 0
   &-grid
     border-bottom: 1px solid #eee
     padding-bottom: 80px
@@ -66,6 +66,22 @@
         height: 100%
         object-fit: contain
         object-position: center
+      &::before
+        content: ''
+        opacity: 0
+        transition: .2s
+        position: absolute
+        bottom: 50px
+        right: 50px
+        width: 75px
+        height: 75px
+        border-radius: 100%
+        background-color: #FAFAFA
+        background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_807_4140)'%3E%3Cpath d='M0.292893 8.70711C-0.0976311 8.31658 -0.0976311 7.68342 0.292893 7.29289L6.65685 0.928932C7.04738 0.538408 7.68054 0.538408 8.07107 0.928932C8.46159 1.31946 8.46159 1.95262 8.07107 2.34315L2.41421 8L8.07107 13.6569C8.46159 14.0474 8.46159 14.6805 8.07107 15.0711C7.68054 15.4616 7.04738 15.4616 6.65685 15.0711L0.292893 8.70711ZM16 9H1V7H16V9Z' fill='%230C1C2F'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_807_4140'%3E%3Crect width='16' height='16' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A")
+        background-repeat: no-repeat
+        background-position: center
+        transform: rotate(180deg)
+        z-index: 3
     &__info
       margin-top: 25px
       font-size: 18px
@@ -78,11 +94,14 @@
           left: 0
           right: 0
           bottom: 0
+          z-index: 5
       p
         margin-top: 10px
         color: $color-gray
     &:hover .catalog-item__img
       background: $color-blue
+      &::before
+        opacity: 1
 
   &-header
     background: $color-blue
@@ -142,6 +161,11 @@
     height: 35px
     line-height: 33px
 
+  .catalog-item__img::before
+    transform: scale(0.8) rotate(180deg)
+    bottom: 20px
+    right: 20px
+
 @media(max-width: 1300px)
   .catalog-item
     &__img
@@ -164,3 +188,5 @@
   .catalog-grid
     .catalog-item
       flex: 1 1 calc(100% - 15px) !important
+  .catalog-grid__switch
+    display: none
