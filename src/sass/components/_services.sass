@@ -187,29 +187,8 @@
       background: #fff
       &::before, &::after
         opacity: 0
-    // &__placeholder
-    //   position: absolute
-    //   top: 0
-    //   left: 0
-    //   right: 0
-    //   bottom: 0
-    //   background: #fff
-    //   z-index: 10
-    //   display: none
-    &__placeholder
-      position: absolute
-      top: 100%
-      left: 0
-      right: 0
-      bottom: 0
-      z-index: 10
-      background: #fff
-      transition: .4s
-      // &.focus
-      //   animation: imagePlaceholder 1s
     img
       position: absolute
-      z-index: -1
       top: 0
       left: 0
       right: 0
@@ -218,8 +197,12 @@
       height: 100%
       object-fit: cover
       object-position: center
-      &.focus
-        z-index: 4
+      opacity: 0
+      visibility: hidden
+      transition: all .5s ease
+      &.active
+        opacity: 1
+        visibility: inherit
   &-right
     width: calc(100% / 2 - 35px)
     margin-left: auto
@@ -477,7 +460,6 @@
       position: relative
       img
         position: absolute
-        z-index: -1
         top: 0
         left: 0
         right: 0
@@ -486,8 +468,12 @@
         height: 100%
         object-fit: scale-down
         object-position: center
-        &.focus
-          z-index: 4
+        opacity: 0
+        visibility: hidden
+        transition: all .5s ease
+        &.active
+          opacity: 1
+          visibility: inherit
     &__list
       margin: 0 1px
       li

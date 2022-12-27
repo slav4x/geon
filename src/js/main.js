@@ -280,57 +280,31 @@ function servicesFadeIn() {
   $('.services-list .text-lg').stop().slideUp(250);
   $(this).find('.text-lg').stop().slideDown(250);
 
+  $('.services-left').addClass('focus');
+
   const elIndex = $(this).index();
-
-  $('.services-left__placeholder').css('top', '0');
-
-  setTimeout(() => {
-    $('.services-left').addClass('focus');
-
-    $('.services-left__placeholder').css('top', '100%');
-
-    $('.services-left img').removeClass('focus');
-    $('.services-left img').eq(elIndex).addClass('focus');
-  }, 400);
+  $('.services-left img.active').removeClass('active');
+  $('.services-left img').eq(elIndex).addClass('active');
 }
-
 $('.services-list a').bind('mouseenter', servicesFadeIn);
 
 $('.solutions-section').each(function (i, el) {
   function solutionsFadeIn() {
     const elIndex = $(this).index();
-
-    $('.services-left__placeholder', el).css('top', '0');
-
-    setTimeout(() => {
-      $('.services-left__placeholder', el).css('top', '100%');
-
-      $('.solutions-section__image img', el).removeClass('focus');
-      $('.solutions-section__image img', el).eq(elIndex).addClass('focus');
-    }, 400);
+    $('.solutions-section__image img.active', el).removeClass('active');
+    $('.solutions-section__image img', el).eq(elIndex).addClass('active');
   }
-
+  $('.solutions-section__image img', el).eq(0).addClass('active');
   $('.solutions-section__list li', el).bind('mouseenter', solutionsFadeIn);
 });
 
 function stepsFadeIn() {
-  $('.services-steps__list li').removeClass('active');
-  $(this).addClass('active');
-
   const elIndex = $(this).index();
-
-  $('.services-left__placeholder').css('top', '0');
-
-  setTimeout(() => {
-    $('.services-left__placeholder').css('top', '100%');
-
-    $('.services-steps__images img').removeClass('focus');
-    $('.services-steps__images img').eq(elIndex).addClass('focus');
-  }, 400);
+  $('.services-steps__images img.active').removeClass('active');
+  $('.services-steps__images img').eq(elIndex).addClass('active');
 }
-
+$('.services-steps__images img').eq(0).addClass('active');
 $('.services-steps__list li').bind('mouseenter', stepsFadeIn);
-$('.services-steps__images img').eq(0).addClass('focus');
 
 $('.catalog-grid__switch li').click(function () {
   const grid = $(this).attr('data-grid');

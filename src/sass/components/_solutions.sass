@@ -60,7 +60,6 @@
       position: relative
       img
         position: absolute
-        z-index: 1
         top: 0
         left: 0
         right: 0
@@ -69,10 +68,12 @@
         height: 100%
         object-fit: cover
         object-position: center
-        &:first-child
-          z-index: 2
-        &.focus
-          z-index: 4
+        opacity: 0
+        visibility: hidden
+        transition: all .5s ease
+        &.active
+          opacity: 1
+          visibility: inherit
     &__sidebar
       padding-right: 70px
       height: 100%
