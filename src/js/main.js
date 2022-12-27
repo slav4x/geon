@@ -342,3 +342,31 @@ $('.catalog-grid__switch li').click(function () {
     .removeClass()
     .addClass('catalog-grid ' + grid);
 });
+
+const h = $('.catalog-sort p').css('height');
+$('.catalog-sort p').css('height', h);
+
+$('.catalog-sort').click(function () {
+  $(this).toggleClass('active');
+
+  const items = $('.catalog-item');
+  const arItems = $.makeArray(items);
+  arItems.sort(function (a, b) {
+    let par;
+
+    if ($('.catalog-sort').hasClass('active')) {
+      par = $(b).data('price') - $(a).data('price');
+    } else {
+      par = $(a).data('price') - $(b).data('price');
+    }
+    return par;
+  });
+  $(arItems).appendTo('.catalog-grid');
+});
+
+const triplets = (number) => number.toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
+
+$('.catalog-item').each((i, el) => {
+  const price = parseInt($(el).data('price'));
+  $('.catalog-item__price', el).text(triplets(price));
+});
