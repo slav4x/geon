@@ -45,8 +45,6 @@
           &:last-child
             border-top-right-radius: 5px
             border-bottom-right-radius: 5px
-  &-section
-    padding: 80px 0 150px
 
   &-item
     // width: 100%
@@ -133,6 +131,106 @@
     margin-bottom: 45px
     border-bottom: 1px solid #eee
 
+  &-section
+    padding: 80px 0 150px
+    .title-lg
+      padding-right: 30px
+      margin-bottom: 25px
+    .btn-up
+      border: 0
+      margin-left: 1px
+      p
+        color: $color-blue !important
+        border-bottom: 1px solid $color-blue !important
+      &::after
+        background-image: url("data:image/svg+xml,%3Csvg width='25' height='25' viewBox='0 0 25 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.5 14.5L12.5 10.5L16.5 14.5' stroke='%230071FE' stroke-width='1.5'/%3E%3Crect x='0.5' y='0.5' width='24' height='24' rx='12' stroke='%230067E8' stroke-opacity='0.2'/%3E%3C/svg%3E%0A")
+      &:hover
+        p
+          color: #fff !important
+          border-bottom: 1px solid #fff !important
+        &::after
+          background-image: url("data:image/svg+xml,%3Csvg width='25' height='25' viewBox='0 0 25 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.5 14.5L12.5 10.5L16.5 14.5' stroke='%23FFFFFF' stroke-width='1.5'/%3E%3Crect x='0.5' y='0.5' width='24' height='24' rx='12' stroke='%23FFFFFF' stroke-opacity='0.2'/%3E%3C/svg%3E%0A")
+    &__content
+      font-size: 18px
+      line-height: 1.6
+      letter-spacing: -0.024em
+      color: $color-gray
+      p
+        margin-top: 35px
+        &:first-child
+          margin-top: 0
+    &__spec
+      margin-top: 80px
+      ul
+        @include flexbox
+        align-items: flex-start
+        justify-content: space-between
+        margin-top: -35px
+        li
+          width: calc(100% / 2 - 20px)
+          margin-top: 45px
+          letter-spacing: -0.024em
+          h4
+            font-weight: 400
+            font-size: 50px
+            line-height: 1.1
+            span
+              font-size: 35px
+          p
+            margin-top: 15px
+      & + .btn-wrap
+        justify-content: center
+        margin-top: 35px
+        display: none
+  &-table
+    margin: 80px 0
+    border-top: 1px solid #eee
+    border-left: 1px solid #eee
+    color: $color-black
+    &:first-child
+      margin-top: 0
+    &:last-child
+      margin-bottom: 0
+    &__row
+      @include flexbox
+      &:first-child
+        background: #fafafa
+    &__col
+      @include flexbox
+      &.catalog-table__three
+        span
+          width: 50%
+          &:first-child
+            width: 100%
+      span
+        padding: 15px
+        border-bottom: 1px solid #eee
+        border-right: 1px solid #eee
+        @include flexbox
+        align-items: center
+        width: 100%
+    &__los1
+      .catalog-table__col
+        &:nth-child(1)
+          width: 300px
+        &:nth-child(2)
+          flex: 1
+          text-align: center
+          span
+            justify-content: center
+    &__los2
+      .catalog-table__col
+        &:nth-child(1)
+          width: 270px
+        &:nth-child(2)
+          width: 400px
+          text-align: center
+          span
+            justify-content: center
+        &:nth-child(3)
+          flex: 1
+          width: calc(100% - 270px - 400px)
+
 @media(max-width: 1600px)
   .catalog-item
     &__img
@@ -166,10 +264,69 @@
     bottom: 20px
     right: 20px
 
+  .catalog-section
+    padding-bottom: 125px
+    &__content
+      font-size: 14px
+      line-height: 1.4
+      p
+        margin-top: 25px
+
+  .catalog-table__los1 .catalog-table__col:nth-child(1)
+    width: 250px
+
+  .catalog-table__los2
+    .catalog-table__col
+      &:nth-child(1)
+        width: 270px
+      &:nth-child(2)
+        width: 225px
+      &:nth-child(3)
+        flex: 1
+        width: calc(100% - 270px - 225px)
+
+  .catalog-section__spec ul li
+    margin-top: 35px
+    h4
+      font-size: 36px
+      span
+        font-size: 25px
+
+  .catalog-table
+    margin: 60px 0
+
 @media(max-width: 1300px)
   .catalog-item
     &__img
       height: 375px
+
+  .catalog-table
+    font-size: 12px
+
+  .catalog-table__los2
+    .catalog-table__col
+      &:nth-child(1)
+        width: 200px
+      &:nth-child(2)
+        width: 200px
+      &:nth-child(3)
+        flex: 1
+        width: calc(100% - 200px - 200px)
+
+  .catalog-section__spec ul
+    margin-top: -30px
+    li
+      width: 100%
+      margin-top: 40px
+      h4
+        font-size: 40px
+
+@media(max-width: 1023px)
+  .catalog-section__spec + .btn-wrap
+    display: flex
+
+  .catalog-section .title-lg + .btn-wrap
+    display: none
 
 @media(max-width: 610px)
   .catalog-item
@@ -190,3 +347,46 @@
       flex: 1 1 calc(100% - 15px) !important
   .catalog-grid__switch
     display: none
+
+  .catalog-table
+    font-size: 11px
+
+  .catalog-table__los1 .catalog-table__col:nth-child(1)
+    width: 125px
+  .catalog-table__col span
+    padding: 10px
+
+  .catalog-table__los2
+    .catalog-table__col
+      &:nth-child(1)
+        width: 100%
+      &:nth-child(2)
+        width: 100px
+        span
+          width: 100% !important
+      &:nth-child(3)
+        flex: 1
+        width: calc(100% - 100px)
+    .catalog-table__row:first-child
+      .catalog-table__col:nth-child(2)
+        text-align: left
+        span
+          justify-content: flex-start
+
+  .catalog-section__spec ul
+    margin-top: -25px
+    li
+      margin-top: 25px
+      h4
+        font-size: 30px
+        span
+          font-size: 25px
+
+  .catalog-table
+    margin: 40px 0
+
+  .catalog-section__spec
+    margin-top: 60px
+
+  .catalog-section
+    padding-bottom: 80px
