@@ -257,9 +257,12 @@ const companyBrands = new Swiper('.company-brands__slider', {
 });
 
 $('.services-faq__item').click(function () {
-  $('.services-faq__item').find('.services-faq__text').slideUp(300);
-  $(this).find('.services-faq__text').slideToggle(300);
   $(this).toggleClass('open');
+  if ($(this).hasClass('open')) {
+    $(this).find('.services-faq__text').slideToggle(300);
+  } else {
+    $('.services-faq__item').find('.services-faq__text').slideUp(300);
+  }
 });
 
 const newsPage = $('.news');
