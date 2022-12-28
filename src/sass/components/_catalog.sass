@@ -1,8 +1,9 @@
 .catalog
-  padding: 80px 0 0
   &-grid
     border-bottom: 1px solid #eee
-    padding-bottom: 80px
+    padding: 45px 0 80px
+    background: #fff
+    margin: 0 1px
     @include flexbox
     align-items: flex-start
     column-gap: 15px
@@ -127,15 +128,14 @@
         right: 0
 
   &-top
-    padding-bottom: 15px
-    margin-bottom: 45px
+    padding: 80px 0 15px
+    margin: 0 1px
     border-bottom: 1px solid #eee
+    background: #fff
+    align-items: center
+    display: none
 
   &-section
-    padding: 80px 0 150px
-    .title-lg
-      padding-right: 30px
-      margin-bottom: 25px
     .btn-up
       border: 0
       margin-left: 1px
@@ -151,42 +151,46 @@
         &::after
           background-image: url("data:image/svg+xml,%3Csvg width='25' height='25' viewBox='0 0 25 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.5 14.5L12.5 10.5L16.5 14.5' stroke='%23FFFFFF' stroke-width='1.5'/%3E%3Crect x='0.5' y='0.5' width='24' height='24' rx='12' stroke='%23FFFFFF' stroke-opacity='0.2'/%3E%3C/svg%3E%0A")
     &__content
-      font-size: 18px
+      font-size: 20px
       line-height: 1.6
       letter-spacing: -0.024em
       color: $color-gray
+      padding: 80px 50px
       p
         margin-top: 35px
         &:first-child
           margin-top: 0
+      & + .btn-wrap
+        justify-content: center
+        padding-bottom: 40px
+        display: none
+    &__title
+      padding: 80px 50px 0 0
+      .btn-wrap
+        margin-top: 25px
     &__spec
-      margin-top: 80px
+      color: $color-blue-black
       ul
         @include flexbox
         align-items: flex-start
         justify-content: space-between
-        margin-top: -35px
         li
           width: calc(100% / 2 - 20px)
           margin-top: 45px
           letter-spacing: -0.024em
           h4
             font-weight: 400
-            font-size: 50px
+            font-size: 46px
             line-height: 1.1
             span
               font-size: 35px
           p
             margin-top: 15px
-      & + .btn-wrap
-        justify-content: center
-        margin-top: 35px
-        display: none
   &-table
-    margin: 80px 0
     border-top: 1px solid #eee
     border-left: 1px solid #eee
     color: $color-black
+    font-size: 18px
     &:first-child
       margin-top: 0
     &:last-child
@@ -270,9 +274,6 @@
           &:nth-child(2)
             top: 0
 
-  &-top
-    align-items: center
-
 @media(max-width: 1600px)
   .catalog-item
     &__img
@@ -306,14 +307,8 @@
     bottom: 20px
     right: 20px
 
-  .catalog-section
-    padding-bottom: 125px
-    &__content
-      font-size: 14px
-      line-height: 1.4
-      p
-        margin-top: 25px
-
+  .catalog-table
+    font-size: 14px
   .catalog-table__los1 .catalog-table__col:nth-child(1)
     width: 250px
 
@@ -330,15 +325,19 @@
   .catalog-section__spec ul li
     margin-top: 35px
     h4
-      font-size: 36px
+      font-size: 30px
       span
-        font-size: 25px
+        font-size: 22px
 
-  .catalog-table
-    margin: 60px 0
+  .catalog-section__content
+    padding: 40px
+    font-size: 16px
 
-  .catalog-sort
-    font-size: 14px
+  .catalog-section__content p
+    margin-top: 25px
+
+  .catalog-section__title
+    padding: 40px 40px 0 0
 
 @media(max-width: 1300px)
   .catalog-item
@@ -359,19 +358,27 @@
         width: calc(100% - 200px - 200px)
 
   .catalog-section__spec ul
-    margin-top: -30px
     li
       width: 100%
       margin-top: 40px
       h4
         font-size: 40px
 
+  .catalog-section__content
+    padding: 30px
+
+  .catalog-section__title
+    padding: 30px 30px 0 0
+
 @media(max-width: 1023px)
-  .catalog-section__spec + .btn-wrap
+  .catalog-section__content + .btn-wrap
     display: flex
 
-  .catalog-section .title-lg + .btn-wrap
+  .catalog-section__title .btn-wrap
     display: none
+
+  .catalog-section__title
+    padding: 30px 30px 0
 
 @media(max-width: 610px)
   .catalog-item
@@ -419,7 +426,6 @@
           justify-content: flex-start
 
   .catalog-section__spec ul
-    margin-top: -25px
     li
       margin-top: 25px
       h4
@@ -427,11 +433,9 @@
         span
           font-size: 25px
 
-  .catalog-table
-    margin: 40px 0
+  .catalog-section__content
+    padding: 30px 15px
+    font-size: 14px
 
-  .catalog-section__spec
-    margin-top: 60px
-
-  .catalog-section
-    padding-bottom: 80px
+  .catalog-section__title
+    padding: 30px 15px 0
