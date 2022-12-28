@@ -363,9 +363,6 @@
 
   &-work
     padding-bottom: 150px
-    .container
-      position: sticky
-      top: 20px
     &__wrapper
       background: #fff
       margin: 0 1px
@@ -373,72 +370,51 @@
       border-top: 1px solid #eee
       border-bottom: 1px solid #eee
       position: relative
-      .title-counter
-        position: absolute
-        top: 80px
-        left: 0
-        z-index: 100
-      .row
-        align-items: stretch
+    &__images
+      width: 760px
+      background: #eee
+      margin-left: auto
+      height: calc(100vh - 108px - 80px)
+      position: sticky
+      top: calc(108px + 40px)
     &__content
+      width: calc(100% - 760px - 40px)
       max-width: 810px
-      margin-right: auto
-      height: 820px
-      overflow: hidden
-      padding-top: 80px
       position: relative
+      margin-top: -160px
       &::before
         content: ''
-        position: absolute
-        top: 0
-        left: 0
-        right: 0
-        background: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 60%, #FFFFFF 70%)
-        height: 120px
-        z-index: 20
-      &::after
-        content: ''
-        position: absolute
-        bottom: 0
-        left: 0
-        right: 0
-        background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 80%, #FFFFFF 90%)
-        height: 120px
-        z-index: 20
-      .title
-        max-width: 100%
-    &__image
-      width: 767px
-      // height: 100%
-      background: #eee
-      position: relative
-      img
-        position: absolute
-        z-index: -1
-        top: 0
-        left: 0
-        right: 0
-        bottom: 0
+        position: sticky
+        top: calc(100vh - 160px)
+        display: block
+        z-index: 9999
         width: 100%
-        height: 100%
-        object-fit: cover
-        object-position: center
-        &.focus
-          z-index: 4
+        height: 160px
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #fff 90%)
+      .title-counter
+        position: sticky
+        top: calc(108px + 40px)
+        z-index: 9999
+        &::after
+          content: ''
+          position: absolute
+          top: -40px
+          left: 0
+          right: 0
+          height: 160px
+          background: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 50%)
+          z-index: -1
     &__item
-      height: 620px
-      // margin-top: -30px
-    &__scroll
-      transition: .4s ease
-    &__placeholder
-      position: absolute
-      top: 100%
-      left: 0
-      right: 0
-      bottom: 0
-      z-index: 10
-      background: #fff
-      transition: .4s
+      min-height: calc(100vh - 108px - 80px - 35px - 80px)
+      .title-lg
+        span
+          color: $color-blue
+      .text-lg
+        color: $color-gray
+        margin-top: 25px
+        letter-spacing: -0.024em
+      &:first-of-type
+        margin-top: 35px
 
 @media(max-width: 1600px)
   .company-header
@@ -572,13 +548,28 @@
   .company-map__svg
     margin-top: 35px
 
-  .company-work__content
-    max-width: 620px
-    height: 600px
-  .company-work__image
-    width: 490px
-  .company-work__item
-    height: 440px
+  .company-work
+    padding-bottom: 125px
+    &__images
+      width: 490px
+      height: calc(100vh - 80px - 40px)
+      top: calc(80px + 20px)
+    &__content
+      width: calc(100% - 490px - 40px)
+      max-width: 620px
+      margin-top: -120px
+      &::before
+        top: calc(100vh - 120px)
+        height: 120px
+      .title-counter
+        top: calc(80px + 20px)
+        &::after
+          top: -20px
+          height: 120px
+    &__item
+      min-height: calc(100vh - 80px - 40px - 80px)
+      .text-lg
+        margin-top: 15px
 
 @media(max-width: 1300px)
   .company-header
@@ -629,11 +620,6 @@
   .company-brands__slider .swiper-slide
     width: 210px
     height: 210px
-
-  .company-work__content
-    max-width: 540px
-  .company-work__image
-    width: 340px
 
 @media(max-width: 1023px)
   .company-header
