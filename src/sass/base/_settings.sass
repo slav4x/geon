@@ -140,6 +140,7 @@ input
     font-size: 18px
     line-height: 1.6
     position: relative
+    letter-spacing: -0.024em
     &::before
       content: ''
       position: absolute
@@ -151,6 +152,9 @@ input
       border: 2px solid $color-blue
     b
       font-weight: 600
+    span
+      max-width: 760px
+      display: block
 
 .btn
   @include flexbox
@@ -391,6 +395,7 @@ input
   .text-lg
     margin-top: 25px
     color: $color-gray
+    letter-spacing: -0.024em
 
 .progress
   position: absolute
@@ -544,3 +549,13 @@ input
     top: 0
   100%
     top: 100%
+
+.title-fixWidth
+  &__1
+    max-width: 830px
+    .text-lg
+      max-width: 650px
+  &__2
+    max-width: 630px
+    .text-lg
+      max-width: 475px
