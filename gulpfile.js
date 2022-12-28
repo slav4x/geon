@@ -13,6 +13,7 @@ const plumber = require('gulp-plumber');
 const notify = require('gulp-notify');
 const noop = require('gulp-noop');
 const listing = require('is-pagelist');
+const typograf = require('gulp-typograf');
 
 const isMinify = false;
 
@@ -26,6 +27,7 @@ const html = () => {
     .pipe(isMinify ? replace('main.css', 'main.min.css') : noop())
     .pipe(isMinify ? replace('libs.js', 'libs.min.js') : noop())
     .pipe(isMinify ? replace('main.js', 'main.min.js') : noop())
+    .pipe(typograf({ locale: ['ru', 'en-US'], htmlEntity: { type: 'digit' } }))
     .pipe(dest('app'))
     .pipe(bs.stream());
 };

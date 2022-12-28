@@ -212,12 +212,19 @@
       margin-top: 15px
 
   &-hero
-    padding: 238px 0 200px
     color: #fff
     background-repeat: no-repeat
     background-position: center
     background-size: cover
     position: relative
+    min-height: 100vh
+    // min-height: var(--app-height)
+    padding-top: 108px
+    @include flexbox
+    .container
+      overflow: hidden
+      padding-top: 200px
+      padding-bottom: 90px
     &::before
       content: ''
       position: absolute
@@ -229,25 +236,22 @@
       opacity: 0.4
     .breadcrumbs
       color: #fff
+      margin-top: 10px
       li::after
         background: url(../img/svg/breadcrumbs-arrow-white.svg) no-repeat
     .col
-      &::before
-        content: ''
-        position: absolute
-        top: -130px
-        bottom: -1000px
-        left: 0
-        width: 1px
-        background: rgba(255, 255, 255, 0.15)
+      &::before,
       &:nth-child(2)::after
         content: ''
         position: absolute
-        top: -130px
-        bottom: -1000px
-        right: 0
+        top: -2000px
+        bottom: -2000px
         width: 1px
         background: rgba(255, 255, 255, 0.15)
+      &::before
+        left: 0
+      &:nth-child(2)::after
+        right: 0
     .title-xl
       max-width: 720px
     .text-lg
@@ -579,15 +583,15 @@
     margin-bottom: 30px
 
   .services-hero
-    padding-top: 210px
+    padding-top: 80px
+    .container
+      padding-top: 135px
     .title-xl
       max-width: 540px
     .text-lg
       max-width: 360px
     .btn-wrap
       margin-top: 35px
-    .breadcrumbs
-      margin-top: 10px
 
   .services-cleaning
     padding-bottom: 125px
@@ -777,23 +781,10 @@
       font-size: 34px
 
   .services-hero
-    padding-top: 200px
-    .col:nth-child(1)::after,
-    .col:nth-child(1)::before
-      content: ''
-      display: block !important
-      position: absolute
-      top: -120px
-      bottom: -1000px
-      width: 1px
-      background: rgba(255, 255, 255, 0.15)
-    .col:nth-child(1)::before
-      left: 0
-    .col:nth-child(1)::after
-      right: 0
-    .col:nth-child(2)::after,
-    .col:nth-child(2)::before
-      display: none
+    flex-direction: column
+    .container
+      display: block
+      flex: 1
     .breadcrumbs
       margin-top: 0
       margin-bottom: 25px
@@ -932,7 +923,8 @@
       display: none !important
 
   .services-hero
-    padding: 185px 0 160px
+    .container
+      padding-top: 90px
     .title-xl
       font-size: 35px
 
