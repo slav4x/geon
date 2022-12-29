@@ -363,3 +363,24 @@ const projectsGallerySlider = new Swiper('.projects-gallery__slider', {
     formatFractionTotal: (number) => (number < 10 ? '0' + number : number),
   },
 });
+
+const projectsItemSlider = new Swiper('.projects-equipment__slider', {
+  speed: 1000,
+  spaceBetween: 15,
+  slidesPerView: 1,
+  navigation: {
+    nextEl: '.projects-equipment__arrow-next',
+    prevEl: '.projects-equipment__arrow-prev',
+  },
+  pagination: {
+    el: '.projects-equipment__increment',
+    type: 'fraction',
+    formatFractionCurrent: (number) => (number < 10 ? '0' + number : number),
+    formatFractionTotal: (number) => (number < 10 ? '0' + number : number),
+  },
+  breakpoints: {
+    640: {
+      slidesPerView: 2,
+    },
+  },
+});
