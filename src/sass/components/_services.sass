@@ -619,6 +619,39 @@
         height: 685px
         object-fit: cover
         object-position: center
+    &__solution
+      padding-bottom: 150px
+    &__list
+      margin-top: 45px
+      li
+        padding: 35px
+        border-bottom: 1px solid #eee
+        position: relative
+        b
+          font-size: 24px
+          font-weight: 600
+          line-height: 1.2
+          letter-spacing: -0.024em
+          display: block
+          max-width: 700px
+        p
+          font-size: 18px
+          line-height: 1.6
+          letter-spacing: -0.024em
+          margin-top: 15px
+          color: $color-gray
+          max-width: 700px
+        span
+          position: absolute
+          top: 35px
+          right: 35px
+          padding: 12px 15px
+          background: rgba(0, 113, 254, 0.05)
+          border-radius: 7px
+          color: $color-blue
+          font-weight: 600
+          line-height: 1.2
+          font-size: 26px
 
 @media(max-width: 1600px)
   .services
@@ -798,6 +831,24 @@
         margin-top: 35px
         height: 600px
 
+  .services-audit__solution
+    padding-bottom: 125px
+
+  .services-audit__list
+    margin-top: 35px
+    li
+      padding: 20px
+      b
+        font-size: 18px
+        max-width: 600px
+      p
+        font-size: 14px
+        max-width: 600px
+      span
+        top: 20px
+        right: 20px
+        font-size: 18px
+
 @media(max-width: 1300px)
   .services-right
     width: 560px
@@ -883,6 +934,14 @@
         font-size: 17px
       .text-lg
         line-height: 1.4
+
+  .services-audit__list li
+    b
+      max-width: 500px
+    p
+      max-width: 500px
+    span
+      font-size: 16px
 
 @media(max-width: 1023px)
   .services-slider__wrapper
@@ -979,6 +1038,13 @@
       .title-md
         font-size: 22px
 
+  .services-audit__list li
+    b
+      font-size: 16px
+      max-width: calc(100% - 100px)
+    p
+      max-width: calc(100% - 100px)
+
 @media(max-width: 768px)
   .services-slider
     overflow-x: auto
@@ -998,6 +1064,18 @@
 
   .services-cleaning__img
     height: 590px
+
+  .services-audit__list li
+    b
+      font-size: 14px
+      max-width: calc(100% - 80px)
+    p
+      font-size: 12px
+      margin-top: 10px
+      max-width: calc(100% - 80px)
+    span
+      padding: 8px
+      font-size: 14px
 
 @media(max-width: 740px)
   .services-team__item
@@ -1117,6 +1195,9 @@
       padding-bottom: 80px
       &-image
         height: 400px
+
+  .services-audit__solution
+    padding-bottom: 80px
 
 @media(max-width: 475px)
   .services-hero .btn
