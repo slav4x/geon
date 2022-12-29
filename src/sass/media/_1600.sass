@@ -66,13 +66,18 @@
       height: 8px
 
   .list
-    li
+    & > li
       padding: 20px 40px
       font-size: 14px
       line-height: 1.4
       &::before
         top: 25px
         left: 15px
+    &-sub
+      b
+        font-size: 16px
+      li::before
+        top: 27px
 
   .title-fixWidth__1
     max-width: 635px
