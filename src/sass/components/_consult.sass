@@ -6,9 +6,16 @@
     align-items: stretch
   &-content
     padding-left: 80px
-    .title-xl
+    .text-lg
+      letter-spacing: -0.024em
+    .text-lg + .title-xl
       margin-top: 10px
+    .title-xl
       margin-bottom: 50px
+      & + .text-lg
+        margin-top: -25px
+        margin-bottom: 45px
+        max-width: 490px
     .form
       max-width: 450px
   &-man
@@ -47,6 +54,8 @@
 @media(max-width: 1600px)
   .consult-content
     padding-left: 60px
+    .title-xl + .text-lg
+      max-width: 400px
 
 @media(max-width: 1300px)
   .consult
@@ -106,6 +115,9 @@
 
   .consult-content .title-xl
     margin-bottom: 35px
+    & + .text-lg
+      margin-top: -20px
+      margin-bottom: 25px
 
 @media(max-width: 475px)
   .consult-man
