@@ -543,6 +543,72 @@
         background-image: url("data:image/svg+xml,%3Csvg width='90' height='90' viewBox='0 0 90 90' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg filter='url(%23filter0_b_1809_12414)'%3E%3Ccircle cx='45' cy='45' r='45' fill='%230071FE'/%3E%3C/g%3E%3Cpath d='M56.5 45.5L39.25 55.4593L39.25 35.5407L56.5 45.5Z' fill='white'/%3E%3Cdefs%3E%3Cfilter id='filter0_b_1809_12414' x='-5' y='-5' width='100' height='100' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeGaussianBlur in='BackgroundImageFix' stdDeviation='2.5'/%3E%3CfeComposite in2='SourceAlpha' operator='in' result='effect1_backgroundBlur_1809_12414'/%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='effect1_backgroundBlur_1809_12414' result='shape'/%3E%3C/filter%3E%3C/defs%3E%3C/svg%3E%0A")
         margin: auto
 
+  &-audit
+    padding: 150px 0
+    counter-reset: audit-counter
+    &__row
+      margin-top: 45px
+      @include flexbox
+      column-gap: 15px
+      row-gap: 15px
+    &__item
+      width: calc(100% / 3 - 15px)
+      border: 1px solid #eee
+      padding: 40px
+      height: 490px
+      @include flexbox
+      flex-direction: column
+      justify-content: space-between
+      transition: .2s
+      &:nth-child(3n+2)
+        flex: 1
+      &:hover
+        color: #fff
+        background: $color-blue
+        border-color: $color-blue
+        .title-md::before
+          color: #fff
+        .text-lg
+          color: #fff
+        .services-audit__icon svg
+          background: #fff
+    &__icon
+      height: 100px
+      width: 100px
+      @include flexbox
+      align-items: center
+      svg
+        width: 100%
+        height: 100%
+        background: $color-blue
+        transition: .2s
+    &__text
+      height: 220px
+      @include flexbox
+      flex-direction: column
+      justify-content: space-between
+      .title-md
+        &::before
+          counter-increment: audit-counter
+          content: counter(audit-counter, decimal-leading-zero) '.'
+          color: $color-blue
+          display: inline
+          padding-right: 10px
+          transition: .2s
+      .text-lg
+        color: $color-gray
+        letter-spacing: -0.024em
+        line-height: 1.6
+        transition: .2s
+    &__target
+      padding: 150px 0
+      .title-lg
+        max-width: 520px
+      .text-lg
+        max-width: 560px
+      .list
+        margin-top: 45px
+
 @media(max-width: 1600px)
   .services
     padding: 125px 0
@@ -693,6 +759,27 @@
       margin-top: 35px
       height: 510px
 
+  .services-audit
+    padding: 125px 0
+    &__row
+      margin-top: 35px
+    &__item
+      padding: 30px
+      height: 360px
+    &__icon
+      width: 60px
+      height: 60px
+    &__text
+      height: 160px
+    &__target
+      padding: 125px 0
+      .list
+        margin-top: 35px
+      .title-lg
+        max-width: 430px
+      .text-lg
+        max-width: 420px
+
 @media(max-width: 1300px)
   .services-right
     width: 560px
@@ -764,6 +851,20 @@
   .services-video
     &__block
       height: 400px
+
+  .services-audit
+    &__item
+      padding: 20px
+      height: 290px
+    &__icon
+      width: 40px
+      height: 40px
+    &__text
+      height: 170px
+      .title-md
+        font-size: 17px
+      .text-lg
+        line-height: 1.4
 
 @media(max-width: 1023px)
   .services-slider__wrapper
@@ -848,6 +949,17 @@
   .services-video
     &__block
       height: 510px
+
+  .services-audit
+    &__item
+      width: calc((100% - 15px) / 2)
+      &:nth-child(3n+2)
+        flex: initial
+      br
+        display: none
+    &__text
+      .title-md
+        font-size: 22px
 
 @media(max-width: 768px)
   .services-slider
@@ -976,6 +1088,13 @@
     padding-bottom: 80px
     &__block
       height: 360px
+
+  .services-audit
+    padding: 80px 0
+    &__item
+      width: 100%
+    &__target
+      padding: 80px 0
 
 @media(max-width: 475px)
   .services-hero .btn
