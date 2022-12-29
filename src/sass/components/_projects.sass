@@ -129,6 +129,72 @@
     &__control
       margin-left: auto
 
+  &-hero
+    color: #fff
+    background-repeat: no-repeat
+    background-position: center
+    background-size: cover
+    position: relative
+    min-height: 100vh
+    padding-top: 108px
+    @include flexbox
+    .container
+      overflow: hidden
+      padding-top: 100px
+      padding-bottom: 100px
+      @include flexbox
+      align-items: flex-end
+      &::before,
+      &::after
+        content: ''
+        position: absolute
+        top: -2000px
+        bottom: -2000px
+        width: 1px
+        background: rgba(255, 255, 255, 0.15)
+      &::before
+        left: 108px
+      &::after
+        right: 108px
+    &::before
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      background: #000
+      opacity: 0.4
+    .breadcrumbs
+      color: #fff
+      li::after
+        background: url(../img/svg/breadcrumbs-arrow-white.svg) no-repeat
+    &__title
+      font-size: 131px
+      line-height: 1.15
+      letter-spacing: -0.024em
+      font-weight: 400
+      margin-top: 15px
+    &__subtitle
+      font-size: 22px
+      line-height: 1.2
+      letter-spacing: -0.024em
+      font-weight: 400
+      margin-top: 15px
+      max-width: 460px
+    &__client
+      margin-top: 125px
+      span
+        display: block
+        font-size: 18px
+        line-height: 1.6
+        letter-spacing: -0.024em
+      p
+        font-size: 22px
+        line-height: 1.6
+        letter-spacing: -0.024em
+        margin-top: 15px
+
 @media(max-width: 1600px)
   .projects-item
     padding: 50px 60px
@@ -181,6 +247,27 @@
     &__slider
       margin-top: 35px
 
+  .projects-hero
+    padding-top: 80px
+    .container
+      padding-top: 70px
+      padding-bottom: 70px
+      &::before
+        left: 80px
+      &::after
+        right: 80px
+    &__title
+      font-size: 100px
+    &__subtitle
+      font-size: 16px
+    &__client
+      margin-top: 85px
+      span
+        font-size: 14px
+      p
+        font-size: 16px
+        margin-top: 10px
+
 @media(max-width: 1300px)
   .projects-item
     padding: 50px
@@ -189,12 +276,22 @@
     left: 50px
     bottom: 50px
 
+@media(max-width: 1200px)
+  .projects-hero .container
+    &::before
+      left: 40px
+    &::after
+      right: 40px
+
 @media(max-width: 1023px)
   .projects-slider
     margin-top: 0
 
   .projects-all
     padding-top: 45px
+
+  .projects-hero__title
+    font-size: 70px
 
 @media(max-width: 960px)
   .project-item
@@ -243,6 +340,19 @@
 
   .projects-equipment
     padding-bottom: 80px
+
+  .projects-hero__title
+    font-size: 50px
+
+  .projects-task
+    padding: 80px 0
+
+@media(max-width: 576px)
+  .projects-hero .container
+    &::before
+      left: 15px
+    &::after
+      right: 15px
 
 @media(max-width: 424px)
   .projects-item__title
