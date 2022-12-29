@@ -1,4 +1,6 @@
 .projects
+  &-others
+    padding-bottom: 150px
   &-slider
     margin-top: 30px
     position: relative
@@ -71,6 +73,36 @@
     + .btn-wrap
       padding: 40px 0
 
+  &-gallery
+    padding-bottom: 150px
+    .title-counter
+      margin-bottom: 0
+    &__control
+      margin-left: auto
+    &__arrow-next
+      margin-left: 15px
+    &__slider
+      padding-right: 20%
+      overflow: hidden
+      margin-top: 45px
+      img
+        width: 100%
+        height: 630px
+        object-fit: cover
+        object-position: center
+
+  &-task
+    padding: 150px 0
+    .title
+      max-width: 900px
+    &__image
+      margin-top: 45px
+      width: 100%
+      max-width: initial
+      height: 800px
+      object-fit: cover
+      object-position: center
+
 @media(max-width: 1600px)
   .projects-item
     padding: 50px 60px
@@ -84,6 +116,24 @@
     left: 60px
     bottom: 60px
 
+  .projects-others
+    padding-bottom: 125px
+
+  .projects-gallery
+    padding-bottom: 125px
+    &__slider
+      margin-top: 35px
+      img
+        height: 500px
+
+  .projects-task
+    padding: 125px 0
+    .title
+      max-width: 690px
+    &__image
+      margin-top: 35px
+      height: 600px
+
 @media(max-width: 1300px)
   .projects-item
     padding: 50px
@@ -91,6 +141,13 @@
   .projects-control
     left: 50px
     bottom: 50px
+
+@media(max-width: 1023px)
+  .projects-slider
+    margin-top: 0
+
+  .projects-all
+    padding-top: 45px
 
 @media(max-width: 960px)
   .project-item
@@ -100,13 +157,6 @@
     bottom: 30px
   .projects-item__title
     font-size: 70px
-
-@media(max-width: 1023px)
-  .projects-slider
-    margin-top: 0
-
-  .projects-all
-    padding-top: 45px
 
 @media(max-width: 610px)
   .projects-item
@@ -119,6 +169,18 @@
     justify-content: space-between
   .projects-item__title
     font-size: 50px
+
+  .projects-others
+    padding-bottom: 80px
+
+  .projects-gallery
+    padding-bottom: 80px
+    &__slider
+      img
+        height: 400px
+
+  .projects-task__image
+    height: 400px
 
 @media(max-width: 424px)
   .projects-item__title

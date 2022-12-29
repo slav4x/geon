@@ -348,3 +348,18 @@ $('.catalog-item').each((i, el) => {
 });
 
 if ($('.company-work').length !== 0) $('.wrapper').css('overflow', 'unset');
+
+const projectsGallerySlider = new Swiper('.projects-gallery__slider', {
+  speed: 1000,
+  spaceBetween: 15,
+  navigation: {
+    nextEl: '.projects-gallery__arrow-next',
+    prevEl: '.projects-gallery__arrow-prev',
+  },
+  pagination: {
+    el: '.projects-gallery__increment',
+    type: 'fraction',
+    formatFractionCurrent: (number) => (number < 10 ? '0' + number : number),
+    formatFractionTotal: (number) => (number < 10 ? '0' + number : number),
+  },
+});

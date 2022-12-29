@@ -1,0 +1,142 @@
+{% extends 'components/_layout.html' %}
+{% set site_title = 'Страница проекта' %}
+{% set home = true %}
+
+{% block content %}
+
+<div class="container container-lines row">
+  <div class="col"></div>
+  <div class="col"></div>
+</div>
+
+<section class="services-hero" style="background-image: url(img/services-audit-bg.jpg);">
+  <div class="container row">
+    <div class="col">
+      <ul class="breadcrumbs">
+        <li><a href="#">Главная</a></li><li><a href="#">Услуги</a></li><li><a href="#">Аудит</a></li>
+      </ul>
+    </div>
+    <div class="col">
+      <h2 class="title-xl">Проведем комплексный аудит очистных сооружений</h2>
+      <p class="text-lg">Оценим работу всей технологической системы, выявим отклонения, предложим оптимальные решения</p>
+      <div class="btn-wrap"><a href="#" class="btn btn-fill btn-icon"><p>Узнать стоимость</p></a></div>
+    </div>
+  </div>
+</section>
+
+<section class="projects-task">
+  <div class="container row">
+    <div class="col"><h4 class="title-sm title-counter">Задача</h4></div>
+    <div class="col">
+      <div class="title">
+        <h2 class="title-lg">Перед нами стояла задача провести комплекс мероприятий по проектированию, расчету, подбору, поставке оборудования, строительству и запуску очистных сооружений складского комплекса Wildberries</h2>
+      </div>
+    </div>
+    <div class="col-fluid"><img src="img/projects-task.jpg" alt="" class="projects-task__image"></div>
+  </div>
+</section>
+
+<section class="projects-gallery">
+  <div class="container">
+    <div class="col-fluid row aic">
+      <h4 class="title-sm title-counter">Галерея проекта</h4>
+      <div class="projects-gallery__control control">
+        <div class="control-arrow projects-gallery__arrow-prev"></div>
+        <div class="control-arrow projects-gallery__arrow-next"></div>
+      </div>
+    </div>
+    <div class="col-fluid">
+      <div class="projects-gallery__slider">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><a href="img/projects/1-1.jpg" data-fancybox="gallery"><img src="img/projects/1-1.jpg" alt=""></a></div>
+          <div class="swiper-slide"><a href="img/projects/1-2.jpg" data-fancybox="gallery"><img src="img/projects/1-2.jpg" alt=""></a></div>
+          <div class="swiper-slide"><a href="img/projects/1-3.jpg" data-fancybox="gallery"><img src="img/projects/1-3.jpg" alt=""></a></div>
+          <div class="swiper-slide"><a href="img/projects/1-4.jpg" data-fancybox="gallery"><img src="img/projects/1-4.jpg" alt=""></a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="projects projects-others">
+  <div class="container row">
+    <div class="col"><h4 class="title-sm title-counter">Другие проекты</h4></div>
+    <div class="col">
+      <div class="title">
+        <h2 class="title-lg">Посмотрите другие<br> завершенные проекты</h2>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="projects-slider">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="projects-item">
+            <img src="img/projects/1.jpg" alt="" class="projects-item__img">
+            <a href="#" class="projects-item__title">Wildberries</a>
+            <div class="projects-item__desc title-sm">Строительство очистных сооружений для склада Wildberries в Краснодаре</div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="projects-item">
+            <img src="img/projects/2.jpg" alt="" class="projects-item__img">
+            <a href="#" class="projects-item__title">Доброград</a>
+            <div class="projects-item__desc title-sm">Строительство очистных сооружений для особой экономической зоны «Доброград»</div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="projects-item">
+            <img src="img/projects/3.jpg" alt="" class="projects-item__img">
+            <a href="#" class="projects-item__title">ПАО «ГАЗ»</a>
+            <div class="projects-item__desc title-sm">Строительство очистных сооружений для ПАО «ГАЗ»</div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="projects-item">
+            <img src="img/projects/4.jpg" alt="" class="projects-item__img">
+            <a href="#" class="projects-item__title">Новая Кузнечиха</a>
+            <div class="projects-item__desc title-sm">Строительство очистных сооружений для ЖК «Новая Кузнечиха»</div>
+          </div>
+        </div>
+      </div>
+      <div class="projects-control control">
+        <div class="control-arrow projects-arrow-prev"></div>
+        <div class="control-increment text-lg projects-increment"></div>
+        <div class="control-arrow projects-arrow-next"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="consult">
+  <div class="container row">
+    <div class="col">
+      <div class="consult-man">
+        <div class="consult-man__img"><img src="img/man-5.jpg" alt=""></div>
+        <div class="consult-man__desc">
+          <div class="text-lg">Васильев Максим</div>
+          <div class="text-sm">Руководитель проекта «Вайлдберриз»</div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="consult-content">
+        <div class="text-lg">Хотите так же?</div>
+        <h2 class="title-xl">Бесплатно проконсультируем по телефону и подберем оборудование</h2>
+        <form action="#" class="form">
+          <label class="label">
+            <p>Ваше имя</p>
+            <input type="text" class="input" placeholder="Александр" />
+          </label>
+          <label class="label">
+            <p>Телефон</p>
+            <input type="tel" class="input masked" placeholder="+7 (000) 000-00-00" />
+          </label>
+          <button class="btn btn-fluid btn-white btn-icon"><p>Позвонить</p></button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
