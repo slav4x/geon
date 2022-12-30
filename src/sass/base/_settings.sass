@@ -89,6 +89,18 @@ input
       right: 0
       width: 1px
       background: #eee
+  &.rtl
+    .col:nth-child(2)::after
+      display: none
+    .col:nth-child(1)::after
+      content: ''
+      position: absolute
+      top: 0
+      bottom: 0
+      right: 0
+      width: 1px
+      background: #eee
+
 .side .col:nth-child(2)::before
   display: none !important
 

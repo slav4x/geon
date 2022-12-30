@@ -1,0 +1,270 @@
+.item
+  &-header
+    min-height: calc(100vh - 108px)
+    @include flexbox
+    flex-direction: column
+    .container
+      flex: 1
+      align-items: stretch
+      .col:nth-child(2)
+        @include flexbox
+        flex-direction: column
+    &__promo
+      position: relative
+      flex: 1
+      margin-left: 1px
+    &__pic
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      width: 100%
+      height: 100%
+      object-fit: cover
+      object-position: center
+    &__top
+      padding: 35px 0
+      position: relative
+      z-index: 10
+      .title-lg
+        margin-top: 15px
+  &-nav
+    width: calc(100% - 2px)
+    margin-left: 1px
+    border-bottom: 1px solid #eee
+    border-top: 1px solid #eee
+    background: #fff
+    order: -1
+    position: sticky
+    z-index: 9999
+    top: 107px
+    @include flexbox
+    align-items: center
+    justify-content: space-between
+    letter-spacing: -0.024em
+    color: $color-gray
+    padding: 17px 25px
+    li
+      a
+        padding: 10px 15px
+        border: 1px solid #fff
+        border-radius: 5px
+        display: block
+        transition: .3s
+        &:hover
+          color: $color-blue
+      &.active a
+        color: $color-blue
+        border-color: $color-blue
+  &-wrapper
+    .row
+      align-items: stretch
+    .col
+      border-bottom: 1px solid #eee
+    & + .projects-equipment
+      padding-top: 80px
+      margin: 0 1px
+      overflow: hidden
+  &-content
+    padding: 0 40px
+  &-section
+    padding-top: 125px
+    &:first-child
+      padding-top: 80px
+    &:last-child
+      padding-bottom: 80px
+    &__title
+      font-size: 40px
+      line-height: 1.2
+      font-weight: 600
+      letter-spacing: -0.024em
+      margin-bottom: 25px
+    &__text
+      font-size: 18px
+      line-height: 1.6
+      color: $color-gray
+      letter-spacing: -0.024em
+      max-width: 870px
+      b
+        font-weight: 600
+        color: $color-black
+      p
+        margin-top: 25px
+        &:first-child
+          margin-top: 0
+      ul
+        margin-top: 25px
+        &:first-child
+          margin-top: 0
+        li
+          margin-top: 10px
+          position: relative
+          padding-left: 34px
+          &:first-child
+            margin-top: 0
+          &::before
+            content: ''
+            position: absolute
+            top: 14px
+            left: 0
+            width: 14px
+            height: 3px
+            background: $color-blue
+
+  &-gallery
+    width: 100%
+    margin-top: 25px
+    overflow: hidden
+    padding-right: 45px
+    img
+      height: 640px
+      width: 100%
+      object-fit: cover
+      object-position: center
+      max-width: initial
+    &__control
+      margin-left: auto
+
+  &-spec
+    @include flexbox
+    align-items: flex-start
+    margin-top: -40px
+    li
+      width: 50%
+      margin-top: 40px
+      h4
+        font-weight: 400
+        line-height: 1.1
+        letter-spacing: -0.024em
+        font-size: 50px
+        span
+          font-size: 80px
+      .text-lg
+        margin-top: 15px
+
+  &-material
+    &__blue
+      background: $color-blue
+      color: #fff
+      padding: 50px 40px
+      position: relative
+      overflow: hidden
+      h3
+        font-weight: 400
+        font-size: 38px
+        line-height: 1.2
+        letter-spacing: -0.024em
+        max-width: 700px
+      .text-lg
+        margin-top: 25px
+        opacity: 0.8
+        max-width: 605px
+      img
+        position: absolute
+        left: 770px
+        top: 25px
+
+  &-docs
+    li
+      margin-top: 10px
+      &:first-child
+        margin-top: 0
+      a
+        @include flexbox
+        align-items: center
+        border: 1px solid #eee
+        padding: 15px
+        min-height: 100px
+        img
+          width: 60px
+        p
+          width: 180px
+          text-align: center
+          color: $color-blue
+          font-size: 18px
+        b
+          font-weight: 600
+          width: calc(100% - 60px - 180px)
+          padding: 0 30px
+          font-size: 22px
+          line-height: 1.2
+          letter-spacing: -0.024em
+
+.none-mg
+  margin-bottom: 0 !important
+
+.bg::after
+  content: ''
+  position: absolute
+  top: -150px
+  bottom: -150px
+  left: 300px
+  right: 300px
+  background: #fff
+  z-index: -1
+
+@media(max-width: 1600px)
+  .item
+    &-header
+      min-height: calc(100vh - 80px)
+    &-nav
+      font-size: 13px
+      padding: 10px 13px
+      top: 79px
+      li a
+        padding: 8px 12px
+    &-content
+      padding: 0 25px
+    &-section
+      padding-top: 60px
+      &:first-child
+        padding-top: 60px
+      &:last-child
+        padding-bottom: 60px
+      &__title
+        font-size: 26px
+        margin-bottom: 25px
+      &__text
+        font-size: 14px
+        max-width: 725px
+        ul li::before
+          top: 10px
+    &-gallery
+      padding-right: 85px
+      img
+        height: 400px
+    &-wrapper + .projects-equipment
+      padding-top: 60px
+    &-spec
+      margin-top: -35px
+      li
+        margin-top: 35px
+        h4
+          font-size: 30px
+          span
+            font-size: 60px
+        .text-lg
+          margin-top: 10px
+    &-material
+      &__blue
+        padding: 40px 30px
+        h3
+          font-size: 30px
+          max-width: 395px
+        .text-lg
+          max-width: 395px
+        img
+          left: 470px
+    &-docs
+      li
+        a
+          img
+            width: 60px
+          p
+            width: 120px
+            font-size: 14px
+          b
+            width: calc(100% - 60px - 120px)
+            padding: 0 30px
+            font-size: 16px
