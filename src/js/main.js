@@ -342,6 +342,11 @@ $('.catalog-sort').click(function () {
 
 const triplets = (number) => number.toString().replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
 
+$('.triplets').each((i, el) => {
+  const price = parseInt($(el).text());
+  $(el).text(triplets(price));
+});
+
 $('.catalog-item').each((i, el) => {
   const price = parseInt($(el).data('price'));
   $('.catalog-item__price', el).text(triplets(price));
@@ -407,8 +412,11 @@ const itemNav = [];
 const itemSection = $('.item-section');
 
 itemSection.each((i, el) => {
+  const title = $(el).find('.item-section__title').text();
   $(el).attr('data-id', i);
-  itemNav.push($(el).find('.item-section__title').text());
+  itemNav.push(title);
+
+  if (title === 'Описание') $(el).attr('id', 'description');
 });
 
 itemNav.forEach((title, i) => {
@@ -426,11 +434,22 @@ $('.item-nav li').on('click', function (event) {
   );
 });
 
+$('.item-card__desc-more').on('click', function (event) {
+  event.preventDefault();
+  const id = $(this).attr('href');
+  $('html, body').animate(
+    {
+      scrollTop: $(id).offset().top - $('.header').outerHeight(),
+    },
+    1000
+  );
+});
+
 $(window).on('scroll', () => {
-  const position = $(this).scrollTop();
+  const position = $(this).scrollTop() + $('.header').outerHeight();
 
   itemSection.each(function () {
-    const top = $(this).offset().top - $('.header').outerHeight() - 5;
+    const top = $(this).offset().top - $('.header').outerHeight();
     const bottom = top + $(this).outerHeight();
 
     if (position >= top && position <= bottom) {
@@ -440,4 +459,10 @@ $(window).on('scroll', () => {
       $('.item-nav li').removeClass('active');
     }
   });
+
+  if (position > $('.item-wrapper').offset().top) {
+    $('.item-card.fixed').css('opacity', '1');
+  } else {
+    $('.item-card.fixed').css('opacity', '0');
+  }
 });

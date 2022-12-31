@@ -191,6 +191,118 @@
           line-height: 1.2
           letter-spacing: -0.024em
 
+  &-card
+    padding: 35px 50px
+    @include flexbox
+    flex-direction: column
+    justify-content: space-between
+    height: 100%
+    &.fixed
+      height: initial
+      position: sticky
+      top: calc(108px + 76px)
+      transition: .2s
+      opacity: 0
+      .item-card__material,
+      .item-card__price,
+      .item-card__form
+        margin-top: 30px
+    &__back
+      margin-bottom: 10px
+      font-size: 18px
+      color: $color-gray
+      @include flexbox
+      align-items: center
+      &::before
+        content: ''
+        display: block
+        width: 5px
+        height: 8px
+        background-image: url("data:image/svg+xml,%3Csvg width='5' height='8' viewBox='0 0 5 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 7L1 4L4 1' stroke='%23435266'/%3E%3C/svg%3E%0A")
+        margin-right: 8px
+        margin-top: 2px
+    &__title
+      font-weight: 600
+      font-size: 25px
+      line-height: 1.5
+      letter-spacing: -0.024em
+    &__desc
+      font-size: 16px
+      p
+        overflow: hidden
+        display: -webkit-box
+        -webkit-line-clamp: 3
+        -webkit-box-orient: vertical
+        line-height: 1.6
+      &-more
+        @include flexbox
+        align-items: center
+        color: $color-blue
+        margin-top: 20px
+        &::after
+          content: ''
+          width: 10px
+          height: 8px
+          display: block
+          background-image: url("data:image/svg+xml,%3Csvg width='10' height='8' viewBox='0 0 10 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.35355 4.35355C9.54882 4.15829 9.54882 3.84171 9.35355 3.64645L6.17157 0.464466C5.97631 0.269203 5.65973 0.269203 5.46447 0.464466C5.2692 0.659728 5.2692 0.97631 5.46447 1.17157L8.29289 4L5.46447 6.82843C5.2692 7.02369 5.2692 7.34027 5.46447 7.53553C5.65973 7.7308 5.97631 7.7308 6.17157 7.53553L9.35355 4.35355ZM4.37114e-08 4.5L9 4.5L9 3.5L-4.37114e-08 3.5L4.37114e-08 4.5Z' fill='%230071FE'/%3E%3C/svg%3E%0A")
+          margin-left: 10px
+          margin-top: 3px
+    &__price
+      font-size: 45px
+      line-height: 1.15
+      letter-spacing: -0.024em
+      font-weight: 600
+    &__material
+      @include flexbox
+      align-items: flex-start
+      justify-content: space-between
+      b
+        display: block
+        font-weight: 600
+        font-size: 15px
+        width: 100%
+      &-item
+        border: 1px solid #eee
+        padding: 15px
+        width: calc(100% / 2 - 5px)
+        margin-top: 15px
+        p
+          margin-top: 10px
+          text-align: center
+          font-size: 15px
+        img
+          width: 100%
+          height: 150px
+          object-fit: scale-down
+          object-position: center
+        &.active
+          color: $color-blue
+          border-color: $color-blue
+    &__form
+      b
+        width: 100%
+        display: block
+        font-weight: 600
+        font-size: 15px
+      input
+        width: 100%
+        display: block
+        margin-top: 15px
+        border: 1px solid #eee
+        height: 75px
+        padding-left: 15px
+        font-size: 18px
+        @include placeholder
+          color: $color-gray
+          opacity: 0.6
+      .btn
+        margin-top: 15px
+        text-align: center
+        p
+          width: 100%
+      .checkbox
+        margin-top: 15px
+
 .none-mg
   margin-bottom: 0 !important
 
@@ -268,3 +380,36 @@
             width: calc(100% - 60px - 120px)
             padding: 0 30px
             font-size: 16px
+
+    &-card
+      padding: 20px 30px
+      &.fixed
+        top: calc(80px + 55px)
+      &__desc
+        font-size: 13px
+        &-more
+          margin-top: 15px
+          &::after
+            margin-top: 2px
+      &__price
+        font-size: 30px
+      &__material
+        b
+          font-size: 13px
+        &-item
+          p
+            font-size: 14px
+          img
+            height: 90px
+      &__form
+        b
+          font-size: 13px
+        input
+          height: 60px
+          font-size: 14px
+      &__back
+        font-size: 14px
+        &::before
+          margin-top: 1px
+      &__title
+        font-size: 20px

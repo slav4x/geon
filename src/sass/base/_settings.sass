@@ -591,3 +591,37 @@ input
 
 .fancybox__thumbs
   display: none
+
+.checkbox
+  display: block
+  font-size: 16px
+  color: $color-gray
+  cursor: pointer
+  p
+    position: relative
+    padding-left: 35px
+    &::before
+      content: ''
+      width: 22px
+      height: 22px
+      border: 1px solid $color-blue
+      position: absolute
+      top: 0
+      left: 0
+      border-radius: 3px
+    &::after
+      content: ''
+      width: 22px
+      height: 22px
+      position: absolute
+      top: 0
+      left: 0
+      background-image: url("data:image/svg+xml,%3Csvg width='22' height='22' viewBox='0 0 22 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.4707 9.7556L9.92168 12.9411L15.5295 7.76465' stroke='%233C7CF6' stroke-width='2'/%3E%3C/svg%3E%0A")
+      opacity: 0
+      transition: .2s
+  a
+    color: $color-blue
+  input
+    @include visually-hidden
+    &:checked + p::after
+      opacity: 1
