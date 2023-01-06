@@ -97,20 +97,21 @@
 
   &-services
     padding-bottom: 150px
-    .title
-      margin-top: 25px
+    .col-fluid
+      .title
+        margin-top: 25px
     &__list
-      margin: 0 1px
-      column-count: 3
-      column-gap: 0
-      column-rule: solid 1px #eee
-      border-bottom: 1px solid #eee
+      border-top: 1px solid #eee
+      margin-left: 1px
       font-size: 22px
       line-height: 1.2
       margin-top: 45px
       counter-reset: services-counter
+      display: grid
+      grid-template-columns: repeat(3, 1fr)
       li
-        border-top: 1px solid #eee
+        border-bottom: 1px solid #eee
+        border-right: 1px solid #eee
         padding: 25px 25px 25px 90px
         position: relative
         &::before
@@ -639,7 +640,7 @@
       object-position: top 0 left -40px
 
   .company-services__list
-    column-count: 2
+    grid-template-columns: repeat(2, 1fr)
 
   .company-stat
     padding: 35px 0
@@ -689,7 +690,7 @@
 
 @media(max-width: 740px)
   .company-services__list
-    column-count: 1
+    grid-template-columns: repeat(1, 1fr)
 
 @media(max-width: 640px)
   .company-team__grid
