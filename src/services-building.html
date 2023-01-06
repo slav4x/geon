@@ -1,0 +1,77 @@
+{% extends 'components/_layout.html' %}
+{% set site_title = 'Услуги - Строительство' %}
+{% set home = true %}
+
+{% block content %}
+
+<div class="container container-lines row">
+  <div class="col"></div>
+  <div class="col"></div>
+</div>
+
+<section class="services-hero" style="background-image: url(img/services-building-bg.jpg);">
+  <div class="container row">
+    <div class="col">
+      <ul class="breadcrumbs">
+        <li><a href="#">Главная</a></li><li><a href="#">Услуги</a></li><li><a href="#">Строительство</a></li>
+      </ul>
+    </div>
+    <div class="col">
+      <h2 class="title-xl">Строительство очистных сооружений</h2>
+      <p class="text-lg">Построим, запустим очистные сооружения за 4 месяца и дадим гарантию  5 лет на работу всего оборудования</p>
+      <div class="btn-wrap"><a href="#" class="btn btn-fill btn-icon"><p>Узнать стоимость</p></a></div>
+    </div>
+  </div>
+</section>
+
+<section class="services-think">
+  <div class="container row">
+    <div class="col"><h4 class="title-sm title-counter">Думаем о клиентах</h4></div>
+    <div class="col">
+      <div class="title">
+        <h2 class="title-lg">Мы всегда учитываем задачи и интересы заказчиков, <span>строим так, как удобно и выгодно вам</span>, соблюдая требования санитарно-эпидемиологического и природоохранного законодательства</h2>
+        <div class="text-lg">С увеличением темпов строительства растет потребность в очистных сооружениях. Крупные заводы-производители завышают цены, диктуют технологии и сроки поставок.</div>
+      </div>
+      <img src="img/services-think.jpg" alt="" class="services-think__img">
+    </div>
+  </div>
+</section>
+
+{% include 'components/company-map.html' %}
+
+{% include 'components/company-brands.html' %}
+
+{% include 'components/company-sertificate.html' %}
+
+<section class="consult">
+  <div class="container row">
+    <div class="col">
+      <div class="consult-man">
+        <div class="consult-man__img"><img src="img/man-4.jpg" alt=""></div>
+        <div class="consult-man__desc">
+          <div class="text-lg">Вздыхалин Юрий</div>
+          <div class="text-sm">Технический директор</div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="consult-content">
+        <h2 class="title-xl">Очистим ваши стоки до требуемых норм</h2>
+        <div class="text-lg">Оставьте заявку на сайте, наш менеджер свяжется с вами в течение 15 минут и пришлет план работ с точными сроками</div>
+        <form action="#" class="form">
+          <label class="label">
+            <p>Ваше имя</p>
+            <input type="text" class="input" placeholder="Александр" />
+          </label>
+          <label class="label">
+            <p>Телефон</p>
+            <input type="tel" class="input masked" placeholder="+7 (000) 000-00-00" />
+          </label>
+          <button class="btn btn-fluid btn-white btn-icon"><p>Позвонить</p></button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
