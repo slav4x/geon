@@ -1,6 +1,6 @@
 .item
   &-header
-    min-height: calc(100vh - 108px)
+    min-height: calc(var(--app-height) - 108px)
     @include flexbox
     flex-direction: column
     .container
@@ -39,12 +39,15 @@
     position: sticky
     z-index: 9999
     top: 107px
-    @include flexbox
-    align-items: center
-    justify-content: space-between
     letter-spacing: -0.024em
     color: $color-gray
-    padding: 17px 25px
+    ul
+      padding: 17px 25px
+      @include flexbox
+      flex-wrap: nowrap
+      white-space: nowrap
+      align-items: center
+      justify-content: space-between
     li
       a
         padding: 10px 15px
@@ -206,7 +209,7 @@
       .item-card__material,
       .item-card__price,
       .item-card__form
-        margin-top: 30px
+        margin-top: 15px
     &__back
       margin-bottom: 10px
       font-size: 18px
@@ -319,11 +322,12 @@
 @media(max-width: 1600px)
   .item
     &-header
-      min-height: calc(100vh - 80px)
+      min-height: calc(var(--app-height) - 80px)
     &-nav
       font-size: 13px
-      padding: 10px 13px
       top: 79px
+      ul
+        padding: 10px 13px
       li a
         padding: 8px 12px
     &-content
@@ -413,3 +417,34 @@
           margin-top: 1px
       &__title
         font-size: 20px
+
+@media(max-width: 1200px)
+  .item-nav
+    &::after
+      content: ''
+      position: absolute
+      top: 0
+      bottom: 0
+      left: 0
+      width: 30px
+      background: linear-gradient(90deg, #fff, rgba(255,255,255, 0))
+      z-index: 100
+    &::before
+      content: ''
+      position: absolute
+      top: 0
+      bottom: 0
+      right: 0
+      width: 30px
+      background: linear-gradient(270deg, #fff, rgba(255,255,255, 0))
+      z-index: 100
+    ul
+      -ms-overflow-style: none
+      scrollbar-width: none
+      overflow-x: auto
+      &::-webkit-scrollbar
+        display: none
+    li
+      margin-right: 20px
+      &:last-child
+        margin-right: 0
