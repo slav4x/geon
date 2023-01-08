@@ -256,10 +256,11 @@ const companyBrands = new Swiper('.company-brands__slider', {
 });
 
 $('.services-faq__item').click(function () {
-  $(this).toggleClass('open');
+  $(this).addClass('open');
 
-  $('.services-faq__item .services-faq__text').slideUp(300);
-  $(this).find('.services-faq__text').slideToggle(300);
+  $(this).find('.services-faq__text').slideToggle();
+  $(this).prevAll('.services-faq__item').removeClass('open').find('.services-faq__text').slideUp();
+  $(this).nextAll('.services-faq__item').removeClass('open').find('.services-faq__text').slideUp();
 });
 
 const newsPage = $('.news');
