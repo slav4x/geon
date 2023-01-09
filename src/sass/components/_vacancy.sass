@@ -66,6 +66,41 @@
       margin-top: 15px
     .btn
       margin-top: auto
+  &-cv
+    background: $color-blue
+    padding: 50px 0
+    &__text
+      color: #fff
+      flex: 1
+      padding-right: 100px
+      .text-lg
+        margin-top: 25px
+        opacity: 0.8
+    &__form
+      background: #fff
+      width: 690px
+      padding: 50px
+      flex-direction: row
+      justify-content: space-between
+      .label
+        width: calc(100% / 2 - 10px)
+        &:nth-child(3)
+          width: 100%
+      .btn
+        width: calc(100% / 2 - 10px)
+        justify-content: center
+        padding-left: 0
+        padding-right: 0
+      .btn-icon::after
+        transform: rotate(-90deg)
+
+@media(max-width: 1820px)
+  .vacancy-cv__text
+    padding-right: 30px
+
+@media(max-width: 1740px)
+  .vacancy-cv__form
+    width: 555px
 
 @media(max-width: 1600px)
   .vacancy
@@ -97,11 +132,27 @@
       .btn
         margin-top: auto
 
+  .vacancy-cv__form
+    padding: 30px
+    .label
+      width: 100%
+
+  .vacancy
+    padding-bottom: 125px
+
 @media(max-width: 1300px)
   .vacancy
     &-item
       &__title
         font-size: 22px
+
+  .vacancy-cv
+    padding: 40px 0
+  .vacancy-cv__text
+    .title-xl
+      font-size: 34px
+  .vacancy-cv__form
+    width: 495px
 
 @media(max-width: 1023px)
   .vacancy
@@ -113,3 +164,21 @@
         font-size: 22px
   .vacancy-grid__two .vacancy-item:nth-child(2)
     width: 100% !important
+
+  .vacancy-cv__form
+    width: 330px
+    .btn
+      width: 100%
+
+@media(max-width: 767px)
+  .vacancy-cv__text
+    padding-right: 0
+    flex: initial
+    width: 100%
+  .vacancy-cv__form
+    width: 100%
+    margin-top: 40px
+
+@media(max-width: 610px)
+  .vacancy
+    padding-bottom: 80px

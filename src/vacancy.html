@@ -1,5 +1,5 @@
 {% extends 'components/_layout.html' %}
-{% set site_title = 'Вакансии' %}
+{% set site_title = 'Работа в Геон' %}
 {% set home = true %}
 
 {% block content %}
@@ -107,6 +107,31 @@
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="vacancy-cv">
+  <div class="container row aic">
+    <div class="vacancy-cv__text">
+      <h2 class="title-xl">Отправьте нам свое резюме, если не нашлось подходящей вакансий</h2>
+      <p class="text-lg">Мы с радостью предложим вам место, если вы готовы меняться и изменять мир</p>
+    </div>
+    <form action="#" class="form form-black vacancy-cv__form">
+      <label class="label">
+        <p>Ваше имя</p>
+        <input type="text" class="input" placeholder="Александр" />
+      </label>
+      <label class="label">
+        <p>Телефон</p>
+        <input type="tel" class="input masked" placeholder="+7 (000) 000-00-00" />
+      </label>
+      <label class="label">
+        <p>Сопроводительное сообщение</p>
+        <input type="text" class="input" placeholder="Сопроводительное сообщение" />
+      </label>
+      <button class="btn btn-outline btn-icon"><p>Загрузить резюме</p></button>
+      <button class="btn btn-fill"><p>Отправить</p></button>
+    </form>
   </div>
 </section>
 
