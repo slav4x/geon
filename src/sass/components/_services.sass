@@ -728,6 +728,22 @@
           color: $color-blue
           padding-right: 10px
 
+  &-building .services-erp__block
+    padding: 100px 0
+    margin: 0
+    .services-erp__text .title-xl
+      margin-top: 0
+      max-width: 890px
+    .services-erp__text .text-lg
+      max-width: 730px
+    .btn
+      justify-content: center
+    .form
+      flex-direction: row
+      justify-content: space-between
+    .label
+      width: calc(100% / 2 - 10px)
+
 @media(max-width: 1600px)
   .services
     padding: 125px 0
@@ -965,6 +981,12 @@
       p
         font-size: 16px
 
+  .services-building .services-erp__block
+    .services-erp__text .title-xl
+      max-width: 650px
+    .services-erp__text .text-lg
+      max-width: 530px
+
 @media(max-width: 1300px)
   .services-right
     width: 560px
@@ -1070,6 +1092,17 @@
         width: 42px
       p
         font-size: 16px
+
+  .services-building .services-erp__block
+    padding: 40px 0
+    .services-erp__text
+      max-width: 410px
+    .services-erp__form
+      max-width: 490px
+      margin-left: auto
+      flex-direction: column
+      .label
+        width: 100%
 
 @media(max-width: 1023px)
   .services-slider__wrapper
@@ -1188,6 +1221,13 @@
       margin-right: 0 !important
       margin-top: 10px !important
 
+  .services-building .services-erp__block
+    padding: 30px 0
+    .services-erp__text
+      max-width: 350px
+    .services-erp__form
+      max-width: calc(100% - 350px - 25px)
+
 @media(max-width: 768px)
   .services-slider
     overflow-x: auto
@@ -1259,6 +1299,14 @@
       left: -50%
       right: -50%
       bottom: -70px
+
+  .services-building .services-erp__block
+    padding: 30px 0
+    .services-erp__text
+      max-width: 100%
+    .services-erp__form
+      max-width: 100%
+      margin-top: 40px
 
 @media(max-width: 610px)
   .services
@@ -1382,3 +1430,11 @@
     width: 100%
     p
       flex: 1
+
+@media(min-width: 1600px)
+  .services-building + .company-about
+    padding-top: 150px
+
+@media(min-width: 1023px)
+  .services-building + .company-about
+    padding-top: 125px
