@@ -1,0 +1,115 @@
+.vacancy
+  padding-bottom: 150px
+  .title-lg
+    max-width: 500px
+  .text-lg
+    max-width: 420px
+  &-grid
+    @include flexbox
+    margin-top: 30px
+    &__one
+      .vacancy-item
+        margin-left: calc(100% / 3)
+        width: calc(100% / 3)
+    &__two
+      .vacancy-item
+        &:first-child
+          margin-left: calc(100% / 3)
+          width: calc(100% / 3)
+        &:nth-child(2)
+          width: calc(100% / 3 - 15px) !important
+  &-item
+    width: calc(100% / 3 - 15px)
+    margin-right: 15px
+    margin-top: 15px
+    border: 1px solid #eee
+    padding: 25px
+    @include flexbox
+    flex-direction: column
+    justify-content: space-between
+    background: #fff
+    &:nth-child(3n+2)
+      flex: 1
+      &:last-child
+        width: calc(100% / 3)
+        flex: initial
+    &:nth-child(3n),
+    &:last-child
+      margin-right: 0
+    &__content
+      margin-bottom: 55px
+    &__city
+      font-size: 18px
+      color: $color-gray
+      @include flexbox
+      align-items: center
+      &::before
+        content: ''
+        width: 24px
+        height: 24px
+        display: block
+        background-image: url("data:image/svg+xml,%3Csvg width='24' height='25' viewBox='0 0 24 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 10.9167C20 16.3445 13.6 22 12 22C10.4 22 4 16.3445 4 10.9167C4 6.54441 7.58172 3 12 3C16.4183 3 20 6.54441 20 10.9167Z' stroke='%23587A87' stroke-width='1.5'/%3E%3Ccircle r='3' transform='matrix(-1 0 0 1 12 10.5)' stroke='%23587A87' stroke-width='1.5'/%3E%3C/svg%3E%0A")
+        margin-right: 15px
+    &__title
+      margin-top: 25px
+      font-size: 32px
+      font-weight: 600
+      line-height: 1.2
+      letter-spacing: -0.024em
+    &__subtitle
+      margin-top: 25px
+      font-size: 18px
+      font-weight: 600
+      line-height: 1.2
+      letter-spacing: -0.024em
+    .list
+      margin-top: 15px
+    .btn
+      margin-top: auto
+
+@media(max-width: 1600px)
+  .vacancy
+    padding-bottom: 125px
+    .title-lg
+      max-width: 370px
+    .text-lg
+      max-width: 320px
+    &-grid
+      margin-top: 20px
+    &-item
+      &__content
+        margin-bottom: 35px
+      &__city
+        font-size: 14px
+        &::before
+          width: 16px
+          height: 16px
+          display: block
+          background-image: url("data:image/svg+xml,%3Csvg width='17' height='16' viewBox='0 0 17 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.8334 6.94453C13.8334 10.5631 9.56675 14.3334 8.50008 14.3334C7.43341 14.3334 3.16675 10.5631 3.16675 6.94453C3.16675 4.02969 5.55456 1.66675 8.50008 1.66675C11.4456 1.66675 13.8334 4.02969 13.8334 6.94453Z' stroke='%23587A87'/%3E%3Ccircle r='2' transform='matrix(-1 0 0 1 8.5 6.66675)' stroke='%23587A87'/%3E%3C/svg%3E%0A")
+      &__title
+        margin-top: 15px
+        font-size: 26px
+      &__subtitle
+        margin-top: 15px
+        font-size: 14px
+      .list
+        margin-top: 15px
+      .btn
+        margin-top: auto
+
+@media(max-width: 1300px)
+  .vacancy
+    &-item
+      &__title
+        font-size: 22px
+
+@media(max-width: 1023px)
+  .vacancy
+    &-item
+      width: 100% !important
+      margin-right: 0 !important
+      margin-left: 0 !important
+      &__title
+        font-size: 22px
+  .vacancy-grid__two .vacancy-item:nth-child(2)
+    width: 100% !important

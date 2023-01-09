@@ -1,0 +1,113 @@
+{% extends 'components/_layout.html' %}
+{% set site_title = 'Вакансии' %}
+{% set home = true %}
+
+{% block content %}
+
+<div class="container container-lines row">
+  <div class="col"></div>
+  <div class="col"></div>
+</div>
+
+<section class="services-hero" style="background-image: url(img/vacancy-bg.jpg);">
+  <div class="container row">
+    <div class="col">
+      <ul class="breadcrumbs">
+        <li><a href="#">Главная</a></li><li><a href="#">Вакансии</a></li>
+      </ul>
+    </div>
+    <div class="col">
+      <h2 class="title-xl">Работаем с теми, кто готов менять мир вокруг себя</h2>
+      <p class="text-lg">В нашей компании вы найдете единомышленников, кому нравится познавать мир и внедрять новое в уже привычные процессы</p>
+      <div class="btn-wrap"><a href="#" class="btn btn-fill btn-icon"><p>Узнать вакансии</p></a></div>
+    </div>
+  </div>
+</section>
+
+<section class="company-about">
+  <div class="container row">
+    <div class="col"><h4 class="title-sm title-counter">О нас</h4></div>
+    <div class="col">
+      <div class="title">
+        <h2 class="title-lg">Ценим инициативу и доверяем нашим сотрудникам</h2>
+        <div class="text-lg">Мы даем все инструменты для достижения целей и делаем ставку на нестандартный подход к задачам</div>
+      </div>
+      <ul class="company-about__stat">
+        <li>
+          <div class="company-about__stat-counter blue">
+            <h3 data-counter>13</h3>
+            <h4 data-counter>лет</h4>
+          </div>
+          <p class="text-lg">средний стаж сотрудников</p>
+        </li>
+        <li>
+          <div class="company-about__stat-counter">
+            <h3 data-counter>37</h3>
+            <h4 data-counter>типов</h4>
+          </div>
+          <p class="text-lg">изготовляемого оборудования</p>
+        </li>
+      </ul>
+      <div class="company-director">
+        <img src="img/plus-2.jpg" alt="">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="vacancy">
+  <div class="container row">
+    <div class="col"><h4 class="title-sm title-counter">Вакансии</h4></div>
+    <div class="col">
+      <div class="title">
+        <h2 class="title-lg">Рады видеть в команде классных людей</h2>
+        <div class="text-lg">Станьте частью нашего коллектива профессионалов, увлеченных своим делом</div>
+      </div>
+    </div>
+    <div class="col-fluid">
+      <div class="vacancy-grid">
+        <div class="vacancy-item">
+          <div class="vacancy-item__content">
+            <div class="vacancy-item__city">Нижний Новгород</div>
+            <div class="vacancy-item__title">Руководитель проектов</div>
+            <div class="vacancy-item__subtitle">Чем предстоит заниматься</div>
+            <ul class="list">
+              <li>Опыт работы в сфере строительной инженерии (желателен)</li>
+              <li>Законченное высшее образование -техническое или строительное (желательно)</li>
+              <li>Опыт работы в В2В продажах (желателен)</li>
+            </ul>
+          </div>
+          <a href="#" class="btn btn-fluid btn-outline btn-icon"><p>Страница вакансии</p></a>
+        </div>
+        <div class="vacancy-item">
+          <div class="vacancy-item__content">
+            <div class="vacancy-item__city">Нижний Новгород</div>
+            <div class="vacancy-item__title">Руководитель проектов</div>
+            <div class="vacancy-item__subtitle">Чем предстоит заниматься</div>
+            <ul class="list">
+              <li>Опыт работы в сфере строительной инженерии (желателен)</li>
+              <li>Законченное высшее образование -техническое или строительное (желательно)</li>
+              <li>Опыт работы в В2В продажах (желателен)</li>
+            </ul>
+          </div>
+          <a href="#" class="btn btn-fluid btn-outline btn-icon"><p>Страница вакансии</p></a>
+        </div>
+        <div class="vacancy-item">
+          <div class="vacancy-item__content">
+            <div class="vacancy-item__city">Нижний Новгород</div>
+            <div class="vacancy-item__title">Руководитель проектов</div>
+            <div class="vacancy-item__subtitle">Чем предстоит заниматься</div>
+            <ul class="list">
+              <li>Опыт работы в сфере строительной инженерии (желателен)</li>
+              <li>Законченное высшее образование -техническое или строительное (желательно)</li>
+              <li>Опыт работы в В2В продажах (желателен)</li>
+            </ul>
+          </div>
+          <a href="#" class="btn btn-fluid btn-outline btn-icon"><p>Страница вакансии</p></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

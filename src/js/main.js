@@ -463,3 +463,10 @@ if ($('.item-wrapper').length !== 0) {
     }
   });
 }
+
+const vacancyGrid = $('.vacancy-grid');
+if (vacancyGrid.length !== 0) {
+  const num = $('.vacancy-item').length;
+  if (num === 1) vacancyGrid.addClass('vacancy-grid__one');
+  if (num === 2) vacancyGrid.addClass('vacancy-grid__two');
+}
