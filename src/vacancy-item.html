@@ -1,0 +1,95 @@
+{% extends 'components/_layout.html' %}
+{% set site_title = 'Вакансия' %}
+{% set home = false %}
+
+{% block content %}
+
+<section class="vacancy-page">
+  <div class="container row">
+    <div class="col">
+      <div class="vacancy-sidebar">
+        <div class="vacancy-sidebar__head">
+          <div class="vacancy-item__city">Нижний Новгород</div>
+          <h2 class="title-lg">Руководитель проектов</h2>
+          <div class="text-lg">Работаем с теми, кто готов менять мир вокруг себя. В нашей компании вы найдете единомышленников, кому нравится познавать мир и внедрять новое в уже привычные процессы</div>
+        </div>
+        <a href="#" class="btn btn-fill btn-fluid btn-icon"><p>Вернуться назад</p></a>
+      </div>
+    </div>
+    <div class="col">
+      <div class="vacancy-content">
+        {# <div class="vacancy-section">
+          <h2 class="title-md">Вариант блока с текстом</h2>
+          <div class="text-lg vacancy-section__text">
+            <p>text</p>
+            <p>text</p>
+          </div>
+        </div> #}
+        <div class="vacancy-section">
+          <h2 class="title-md">Что вы получите</h2>
+          <ul class="list">
+            <li>Подробное обучение продукту</li>
+            <li>Отсутствие потолка в заработной плате</li>
+            <li>График работы 5/2</li>
+            <li>Оформление с первого дня в соответствии с ТК РФ</li>
+            <li>Возможность карьерного роста</li>
+            <li>Полная компенсация представительских и командировочных расходов</li>
+            <li>Предоставление корпоративной связи</li>
+            <li>Регулярное обучение за счет компании. Система наставничества, своя База знаний о нашем продукте в электронном виде, регулярные внутренние и сторонние тренинги</li>
+          </ul>
+        </div>
+        <div class="vacancy-section">
+          <h2 class="title-md">Чем нужно будет заниматься</h2>
+          <ul class="list">
+            <li>Обработкой входящих заявок</li>
+            <li>Поиском новых клиентов (база предоставляется)</li>
+            <li>Подготовкой технико-коммерческих предложений</li>
+            <li>Проведением встреч с потенциальными клиентами</li>
+            <li>Сопровождением сделок: от стадии продажи до сдачи под ключ объекта или оборудования</li>
+            <li>Ведением клиентской базы в CRM</li>
+          </ul>
+        </div>
+        <div class="vacancy-section">
+          <h2 class="title-md">Особым преимуществом для вас будет</h2>
+          <ul class="list">
+            <li>Опыт работы в сфере строительной инженерии (желателен)</li>
+            <li>Законченное высшее образование -техническое или строительное (желательно)</li>
+            <li>Опыт работы в В2В продажах (желателен)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="vacancy-job">
+        <div class="vacancy-job__title">
+          <h2 class="title-lg">Откликнуться на вакансию</h2>
+          <p class="text-lg">Заполните форму и наш HR-менеджер свяжется с вами в случае заинтересованности</p>
+        </div>
+        <form action="#" class="form form-black vacancy-job__form">
+          <label class="label">
+            <p>Ваше имя</p>
+            <input type="text" class="input" placeholder="Александр" />
+          </label>
+          <label class="label">
+            <p>Телефон</p>
+            <input type="tel" class="input masked" placeholder="+7 (000) 000-00-00" />
+          </label>
+          <label class="label">
+            <p>E-mail</p>
+            <input type="email" class="input" placeholder="info@geongroup.ru" />
+          </label>
+          <label class="label">
+            <p>Сопроводительное сообщение</p>
+            <input type="text" class="input" placeholder="Сопроводительное сообщение" />
+          </label>
+          <button class="btn btn-outline btn-icon"><p>Загрузить резюме</p></button>
+          <button class="btn btn-fill"><p>Отправить</p></button>
+          <label class="checkbox">
+            <input type="checkbox" checked required>
+            <p>Согласие с <a href="#">политикой обработки данных</a></p>
+          </label>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

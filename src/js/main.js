@@ -470,3 +470,5 @@ if (vacancyGrid.length !== 0) {
   if (num === 1) vacancyGrid.addClass('vacancy-grid__one');
   if (num === 2) vacancyGrid.addClass('vacancy-grid__two');
 }
+
+if ($('.vacancy-page').length !== 0) $('.wrapper').css('overflow', 'unset');

@@ -94,6 +94,68 @@
       .btn-icon::after
         transform: rotate(-90deg)
 
+  &-page
+    .container
+      max-width: 10000px !important
+      padding: 0 !important
+    .row
+      align-items: stretch
+  &-content
+    padding: 45px 45px 150px
+  &-section
+    padding-bottom: 90px
+    &:last-child
+      padding-bottom: 0
+    .list
+      margin-top: 15px
+    &__text
+      p
+        margin-top: 15px
+
+  &-sidebar
+    background: #f9f9f9
+    height: calc(100vh - 108px)
+    position: sticky
+    top: 108px
+    padding: 45px 108px
+    @include flexbox
+    flex-direction: column
+    justify-content: space-between
+    .title-lg
+      margin-top: 25px
+    .text-lg
+      color: $color-gray
+      margin-top: 25px
+    .btn
+      margin-top: auto
+
+  &-job
+    background: $color-blue
+    padding: 145px 120px
+    &__title
+      color: #fff
+      padding-bottom: 35px
+      .text-lg
+        margin-top: 15px
+        max-width: 475px
+    &__form
+      background: #fff
+      width: 100%
+      padding: 50px
+      justify-content: space-between
+      flex-direction: row
+      .label
+        width: 100%
+        &:nth-child(-n+2)
+          width: calc(100% / 2 - 10px)
+      .btn
+        width: calc(100% / 2 - 10px)
+        justify-content: center
+      .btn-icon::after
+        transform: rotate(-90deg)
+      .checkbox
+        margin-top: 50px
+
 @media(max-width: 1820px)
   .vacancy-cv__text
     padding-right: 30px
@@ -139,6 +201,24 @@
 
   .vacancy
     padding-bottom: 125px
+    &-sidebar
+      height: calc(100vh - 80px)
+      top: 80px
+      padding: 40px 80px
+      .title-lg
+        margin-top: 15px
+      .text-lg
+        margin-top: 15px
+    &-content
+      padding: 40px 40px 125px
+    &-section
+      padding-bottom: 80px
+    &-job
+      padding: 40px
+      &__form
+        padding: 30px
+        .checkbox
+          margin-top: 25px
 
 @media(max-width: 1300px)
   .vacancy
@@ -153,6 +233,10 @@
       font-size: 34px
   .vacancy-cv__form
     width: 495px
+
+@media(max-width: 1200px)
+  .vacancy-sidebar
+    padding: 40px
 
 @media(max-width: 1023px)
   .vacancy
@@ -170,6 +254,14 @@
     .btn
       width: 100%
 
+  .vacancy-sidebar
+    height: auto
+    .btn
+      display: none
+
+  .vacancy-content
+    padding-bottom: 80px
+
 @media(max-width: 767px)
   .vacancy-cv__text
     padding-right: 0
@@ -182,3 +274,18 @@
 @media(max-width: 610px)
   .vacancy
     padding-bottom: 80px
+
+@media(max-width: 576px)
+  .vacancy-sidebar,
+  .vacancy-job
+    padding: 30px 15px
+  .vacancy-content
+    padding: 30px 15px 60px
+  .vacancy-section
+    padding-bottom: 60px
+
+  .vacancy-job__title
+    padding-bottom: 25px
+  .vacancy-job__form .label:nth-child(-n+2),
+  .vacancy-job__form .btn
+    width: 100%
