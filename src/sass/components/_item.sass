@@ -319,6 +319,45 @@
   background: #fff
   z-index: -1
 
+.table
+  border: 1px solid #eee
+  border-bottom: 0
+  &-row
+    border-bottom: 1px solid #eee
+    @include flexbox
+    font-size: 17px
+    font-weight: 600
+    line-height: 1.4
+    &:first-child
+      background: #fafafa
+      .table-col
+        &:not(:first-child)
+          text-align: center
+          justify-content: center
+          flex-direction: column
+          padding: 8px 0
+    &:not(:first-child)
+      .table-col:not(:first-child)
+        justify-content: flex-end
+  &-col
+    flex: 1
+    @include flexbox
+    align-items: center
+    border-right: 1px solid #eee
+    padding: 15px 20px
+    i
+      font-style: normal
+      color: $color-gray
+    &:first-child
+      width: 250px
+      flex: initial
+    &:last-child
+      border-right: 0
+  &-switch
+    color: $color-blue
+    &:nth-child(n+3)
+      display: none
+
 @media(max-width: 1600px)
   .item
     &-header
@@ -418,6 +457,14 @@
       &__title
         font-size: 20px
 
+  .table
+    &-row
+      font-size: 14px
+    &-col
+      padding: 12px
+      &:first-child
+        width: 220px
+
 @media(max-width: 1300px)
   .item-header__top .title-lg
     font-size: 26px
@@ -446,6 +493,10 @@
   .item-docs li a b
     padding: 0 15px
     font-size: 14px
+
+  .table
+    &-row
+      font-size: 12px
 
 @media(max-width: 1200px)
   .item-nav
@@ -477,6 +528,11 @@
       margin-right: 20px
       &:last-child
         margin-right: 0
+
+  .table
+    &-col
+      &:first-child
+        width: 140px
 
 @media(max-width: 1023px)
   .item-header__promo
@@ -530,6 +586,24 @@
 
   .hd
     display: none
+
+@media(max-width: 768px)
+  .table
+    &-row
+      font-size: 11px
+    &-col
+      &:first-child
+        width: 100px
+
+@media(max-width: 610px)
+  .table
+    &-row
+      font-size: 8px
+      letter-spacing: -0.012em
+    &-col
+      padding: 5px
+      &:first-child
+        width: 65px
 
 @media(max-width: 576px)
   .item-header__pic

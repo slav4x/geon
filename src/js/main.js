@@ -472,3 +472,14 @@ if (vacancyGrid.length !== 0) {
 }
 
 if ($('.vacancy-page').length !== 0) $('.wrapper').css('overflow', 'unset');
+
+$('.table-row').each(function (i, row) {
+  $('.table-col', row).each(function (i, col) {
+    const content = $(col).html();
+    const newContent = content.replace(/\|/g, '</span><span class="table-switch">');
+    $(col).html(`<span>${newContent}</span>`);
+
+    // const newContent = $(col).html();
+    // newContent.replace(/|/g, '-');
+  });
+});
