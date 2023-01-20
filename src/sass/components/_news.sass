@@ -220,9 +220,18 @@
     &__pic
       height: 340px
       width: 100%
-      object-fit: cover
-      object-position: center
       margin-bottom: 25px
+      position: relative
+      overflow: hidden
+      img
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        object-fit: cover
+        object-position: center
+        transition: .3s
     .text-lg
       color: $color-gray
     &__title
@@ -230,7 +239,11 @@
       font-size: 25px
       font-weight: 600
       line-height: 1.2
-      letter-spacing: -0.024em
+      span
+        letter-spacing: -0.024em
+        border-bottom: 1px solid transparent
+        transition: .2s
+        padding-bottom: 1px
       & + .text-lg
         overflow: hidden
         display: -webkit-box
@@ -260,8 +273,13 @@
         right: 0
         bottom: 0
         z-index: 100
-    &:hover .news-item__link::after
-      margin-left: 25px
+    &:hover
+      .news-item__link::after
+        margin-left: 25px
+      .news-item__pic img
+        transform: scale(1.1)
+      .news-item__title span
+        border-color: rgba(0,0,0,.2)
 
 @media(max-width: 1600px)
   .news
