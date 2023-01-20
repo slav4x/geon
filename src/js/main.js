@@ -483,3 +483,5 @@ $('.table-row').each(function (i, row) {
     // newContent.replace(/|/g, '-');
   });
 });
+
+if ($('.catalog-section__title').length !== 0) $('.wrapper').css('overflow', 'unset');
