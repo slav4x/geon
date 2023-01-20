@@ -1,0 +1,201 @@
+.onepage + .footer
+  display: none
+
+.onepage
+  background: $color-blue
+  color: #fff
+  height: 100vh
+  padding-top: 108px
+  .container
+    overflow: hidden
+    height: 100%
+  .col
+    position: relative
+    &::before,
+    &:nth-child(2)::after
+      content: ''
+      position: absolute
+      top: -2000px
+      bottom: -2000px
+      width: 1px
+      background: rgba(255, 255, 255, 0.15)
+    &::before
+      left: 0
+    &:nth-child(2)::after
+      right: 0
+  &-sidebar
+    padding: 80px 0
+    @include flexbox
+    flex-direction: column
+    align-items: flex-start
+    height: 100%
+    &__text
+      h2
+        font-size: 48px
+        letter-spacing: -0.024em
+        line-height: 1.15
+        font-weight: 600
+      h3
+        font-size: 18px
+        margin-top: 25px
+        font-weight: 400
+        line-height: 1.6
+        letter-spacing: -0.024em
+    &__thanks
+      h2
+        max-width: 460px
+    &__404
+      margin: auto 0
+      h2
+        max-width: 500px
+        font-size: 68px
+    &__bottom
+      margin-top: auto
+    &__form
+      max-width: 500px
+      padding-right: 30px
+      h4
+        font-size: 30px
+        font-weight: 600
+        line-height: 1.25
+        letter-spacing: -0.024em
+        margin-bottom: 35px
+      .btn
+        justify-content: center
+  &-title
+    position: relative
+    height: calc(100% + 108px)
+    margin-top: -108px
+    &__center
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      @include flexbox
+      flex-wrap: nowrap
+      flex-direction: column
+      align-items: center
+      justify-content: center
+      letter-spacing: -0.024em
+      line-height: 1.15
+      font-weight: 600
+      span
+        opacity: 0.3
+        &:nth-child(4)
+          opacity: 1
+    &__thanks
+      font-size: 196px
+    &__404
+      font-size: 450px
+      line-height: 1
+
+@media(max-width: 1600px)
+  .onepage
+    padding-top: 80px
+    &-sidebar
+      padding: 70px 0
+      &__text
+        h2
+          font-size: 42px
+        h3
+          font-size: 14px
+          margin-top: 15px
+      &__thanks h2
+        max-width: 390px
+      &__404  h2
+        max-width: 380px
+        font-size: 50px
+      &__form h4
+        margin-bottom: 25px
+        font-size: 24px
+    &-title
+      height: calc(100% + 80px)
+      margin-top: -80px
+      &__thanks
+        font-size: 160px
+      &__404
+        font-size: 320px
+
+@media(max-width: 1440px)
+  .onepage
+    &-title
+      &__thanks
+        font-size: 140px
+
+@media(max-width: 1340px)
+  .onepage
+    &-sidebar
+      &__text h2
+        font-size: 34px
+      &__thanks h2
+        max-width: 330px
+      &__404 h2
+        max-width: 300px
+        font-size: 40px
+      &__form
+        padding-right: 15px
+        h4
+          font-size: 20px
+
+@media(max-width: 1200px)
+  .onepage
+    &-title
+      &__thanks
+        font-size: 120px
+      &__404
+        font-size: 240px
+
+@media(max-width: 1024px)
+  .onepage
+    height: auto
+    min-height: var(--app-height)
+    .col
+      &::before, &::after
+        display: none !important
+      &:nth-child(2)
+        order: -1
+    &-title
+      height: 400px
+      margin-top: 0
+      &::before
+        content: ''
+        position: absolute
+        bottom: 0
+        left: -1000px
+        right: -1000px
+        height: 1px
+        background: rgba(255, 255, 255, 0.15)
+      &__center
+        flex-direction: row
+        span
+          margin: 0 30px
+    &-sidebar
+      padding: 60px 0
+      align-items: center
+      text-align: center
+      &__404
+        margin-top: 0
+        margin-bottom: 40px
+      &__form
+        margin-top: 40px
+        text-align: left
+        padding-right: 0
+        max-width: 100%
+      &__thanks h2
+        max-width: 100%
+
+@media(max-width: 610px)
+  .onepage
+    &-title
+      height: 220px
+      span
+        margin: 0 10px
+      &__404
+        font-size: 110px
+      &__thanks
+        font-size: 60px
+    &-sidebar
+      padding: 40px 0
+      &__404 h2
+        font-size: 34px
