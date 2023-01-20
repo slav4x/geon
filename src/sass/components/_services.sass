@@ -571,17 +571,18 @@
         .text-lg
           color: #fff
         .services-audit__icon svg
-          background: #fff
+          path, circle, rect
+            stroke: #fff
     &__icon
-      height: 100px
-      width: 100px
+      height: 88px
+      // width: 100px
       @include flexbox
       align-items: center
       svg
-        width: 100%
+        width: auto
         height: 100%
-        background: $color-blue
-        transition: .2s
+        path, circle, rect
+          transition: .2s
     &__text
       height: 220px
       @include flexbox
@@ -902,7 +903,7 @@
       padding: 30px
       height: 360px
     &__icon
-      width: 60px
+      // width: 60px
       height: 60px
     &__text
       height: 160px
@@ -1064,7 +1065,7 @@
       padding: 20px
       height: 290px
     &__icon
-      width: 40px
+      // width: 40px
       height: 40px
     &__text
       height: 170px
