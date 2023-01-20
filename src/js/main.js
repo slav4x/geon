@@ -256,7 +256,7 @@ const companyBrands = new Swiper('.company-brands__slider', {
 });
 
 $('.services-faq__item').click(function () {
-  $(this).addClass('open');
+  $(this).toggleClass('open');
 
   $(this).find('.services-faq__text').slideToggle();
   $(this).prevAll('.services-faq__item').removeClass('open').find('.services-faq__text').slideUp();
@@ -300,6 +300,8 @@ $('.solutions-section').each(function (i, el) {
 });
 
 function stepsFadeIn() {
+  $('.services-steps__list li').removeClass('active');
+  $(this).addClass('active');
   const elIndex = $(this).index();
   $('.services-steps__images img.active').removeClass('active');
   $('.services-steps__images img').eq(elIndex).addClass('active');
