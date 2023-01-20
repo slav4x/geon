@@ -709,12 +709,7 @@
       margin-top: 15px
       padding: 60px 30px
       border: 1px solid #eee
-      img
-        height: 56px
-        width: 56px
-        object-fit: scale-down
-        object-position: center
-        margin-bottom: 60px
+      transition: .2s
       &:nth-child(3n+2)
         flex: 1
       &:nth-child(3n)
@@ -728,6 +723,26 @@
           content: counter(take-counter, decimal-leading-zero) '.'
           color: $color-blue
           padding-right: 10px
+          transition: .2s
+      &:hover
+        color: #fff
+        background: $color-blue
+        border-color: $color-blue
+        p::before
+          color: #fff
+        .services-take__icon svg
+          path, circle, rect
+            stroke: #fff
+    &__icon
+      height: 56px
+      margin-bottom: 60px
+      @include flexbox
+      align-items: center
+      svg
+        width: auto
+        height: 100%
+        path, circle, rect
+          transition: .2s
 
   &-building .services-erp__block
     padding: 100px 0
@@ -1088,11 +1103,10 @@
       margin-top: 10px
     &__item
       padding: 25px
-      img
-        height: 42px
-        width: 42px
       p
         font-size: 16px
+    &__icon
+      height: 42px
 
   .services-building .services-erp__block
     padding: 40px 0
@@ -1420,11 +1434,12 @@
       padding: 20px
       @include flexbox
       align-items: center
-      img
-        margin: 0
       p
         width: calc(100% - 42px - 20px)
         margin-left: auto
+    &__icon
+      width: 42px
+      margin: 0
 
 @media(max-width: 475px)
   .services-hero .btn
