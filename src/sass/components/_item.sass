@@ -231,12 +231,18 @@
       letter-spacing: -0.024em
     &__desc
       font-size: 16px
-      p
+      div
         overflow: hidden
         display: -webkit-box
         -webkit-line-clamp: 3
         -webkit-box-orient: vertical
         line-height: 1.6
+        p
+          margin-top: 15px
+          &:first-child
+            margin-top: 0
+      &-big div
+        -webkit-line-clamp: 13
       &-more
         @include flexbox
         align-items: center
