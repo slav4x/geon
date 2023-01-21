@@ -35,9 +35,10 @@
       font-size: 130px
       line-height: 1.15
       max-width: 900px
-      @include flexbox
-      flex-direction: column
-      align-items: flex-start
+      display: inline-block
+      // @include flexbox
+      // flex-direction: column
+      // align-items: flex-start
       &::before
         content: ''
         position: absolute
@@ -46,25 +47,29 @@
         right: 0
         bottom: 0
       span
-        position: relative
-        &::after
-          content: ''
-          position: absolute
-          bottom: -6px
-          left: 0
-          right: 0
-          width: 0%
-          height: 3px
-          background: #fff
-          transition: .3s
+        padding-bottom: 3px
+        border-bottom: 3px solid transparent
+        transition: .4s
+      // span
+      //   position: relative
+      //   &::after
+      //     content: ''
+      //     position: absolute
+      //     bottom: -6px
+      //     left: 0
+      //     right: 0
+      //     width: 0%
+      //     height: 3px
+      //     background: #fff
+      //     transition: .3s
     &__desc
       margin-top: 30px
       max-width: 500px
     &:hover
       .projects-item__img
         transform: scale(1.05)
-      .projects-item__title span::after
-        width: 100%
+      .projects-item__title span
+        border-color: rgba(255,255,255,.7)
   &-all
     padding-top: 85px
     .breadcrumbs

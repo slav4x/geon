@@ -215,10 +215,10 @@ $('input').each(function (i, el) {
   });
 });
 
-$('.projects-item__title').each(function (i, el) {
-  const title = $(el).text().split(' ');
-  $(el).html(title.map((e) => `<span>${e}</span>`));
-});
+// $('.projects-item__title').each(function (i, el) {
+//   const title = $(el).text().split(' ');
+//   $(el).html(title.map((e) => ` <span>${e}</span> `));
+// });
 
 let isOpen = false;
 $('.header-burger').click(function () {
