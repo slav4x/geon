@@ -487,3 +487,22 @@ $('.table-row').each(function (i, row) {
 });
 
 if ($('.catalog-section__title').length !== 0) $('.wrapper').css('overflow', 'unset');
+
+$('[data-open-popup]').click(function () {
+  const popup = $(this).attr('data-open-popup');
+  $('body').css('overflow', 'hidden');
+  $(`.popup[data-popup="${popup}"]`).addClass('open');
+});
+
+$('.popup-close, .popup-bg').click(() => {
+  $('.popup').removeClass('open');
+  $('body').removeAttr('style');
+});
+
+$('.file input').change(function () {
+  if ($(this).val() != '')
+    $(this)
+      .prev()
+      .text('Выбрано файлов: ' + $(this)[0].files.length);
+  else $(this).prev().text('Прикрепить файл');
+});
