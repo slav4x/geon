@@ -215,11 +215,6 @@ $('input').each(function (i, el) {
   });
 });
 
-// $('.projects-item__title').each(function (i, el) {
-//   const title = $(el).text().split(' ');
-//   $(el).html(title.map((e) => ` <span>${e}</span> `));
-// });
-
 let isOpen = false;
 $('.header-burger').click(function () {
   isOpen = !isOpen;
@@ -505,4 +500,44 @@ $('.file input').change(function () {
       .prev()
       .text('Выбрано файлов: ' + $(this)[0].files.length);
   else $(this).prev().text('Прикрепить файл');
+});
+
+const options = {
+  root: null,
+  rootMargin: '-35px',
+  threshold: 1,
+};
+
+const observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      const item = entry.target;
+      const id = item.getAttribute('data-id');
+
+      // document.querySelector('.company-work__images-placeholder').style.animation = 'changeImg 1s ease';
+
+      // setTimeout(() => {
+      const imgs = document.querySelectorAll('.company-work__images img');
+      imgs.forEach((i) => {
+        i.style.zIndex = 2;
+      });
+
+      const img = document.querySelector('.company-work__images img:nth-child(' + id + ')');
+      img.style.zIndex = 5;
+      // }, 500);
+
+      // setTimeout(() => {
+      //   document.querySelector('.company-work__images-placeholder').style.animation = null;
+      // }, 1000);
+
+      // document.querySelector('.company-work__images-placeholder').style.animation = null;
+      // document.querySelector('.company-work__images-placeholder').offsetHeight;
+      // document.querySelector('.company-work__images-placeholder').style.animation = 'changeImg 1s ease';
+    }
+  });
+}, options);
+
+const arr = document.querySelectorAll('.company-work__item');
+arr.forEach((i) => {
+  observer.observe(i);
 });
