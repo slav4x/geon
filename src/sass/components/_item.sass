@@ -1,14 +1,16 @@
 .item
   &-header
-    min-height: calc(var(--app-height) - 108px)
+    height: calc(var(--app-height) - 108px)
     @include flexbox
     flex-direction: column
     .container
-      flex: 1
+      height: 100%
       align-items: stretch
       .col:nth-child(2)
         @include flexbox
         flex-direction: column
+      .col
+        height: 100%
     &__promo
       position: relative
       flex: 1
@@ -230,19 +232,19 @@
       line-height: 1.5
       letter-spacing: -0.024em
     &__desc
-      font-size: 16px
+      flex: 1
+      overflow: hidden
       div
-        overflow: hidden
         display: -webkit-box
-        -webkit-line-clamp: 3
         -webkit-box-orient: vertical
+        height: calc(100% - 38px)
+        font-size: 16px
         line-height: 1.6
+        overflow: hidden
         p
-          margin-top: 15px
+          // margin-top: 15px
           &:first-child
-            margin-top: 0
-      &-big div
-        -webkit-line-clamp: 13
+            margin-top: 0 !important
       &-more
         @include flexbox
         align-items: center
@@ -257,11 +259,13 @@
           margin-left: 10px
           margin-top: 3px
     &__price
+      margin-top: 30px
       font-size: 45px
       line-height: 1.15
       letter-spacing: -0.024em
       font-weight: 600
     &__material
+      margin-top: 30px
       @include flexbox
       align-items: flex-start
       justify-content: space-between
@@ -288,6 +292,7 @@
           color: $color-blue
           border-color: $color-blue
     &__form
+      margin-top: 30px
       b
         width: 100%
         display: block
@@ -367,7 +372,7 @@
 @media(max-width: 1600px)
   .item
     &-header
-      min-height: calc(var(--app-height) - 80px)
+      height: calc(var(--app-height) - 80px)
     &-nav
       font-size: 13px
       top: 79px
@@ -435,14 +440,19 @@
       &.fixed
         top: calc(80px + 55px)
       &__desc
+        height: calc(100% - 30px)
         font-size: 13px
+        div
+          font-size: 13px
         &-more
           margin-top: 15px
           &::after
             margin-top: 2px
       &__price
+        margin-top: 25px
         font-size: 30px
       &__material
+        margin-top: 25px
         b
           font-size: 13px
         &-item
@@ -451,6 +461,7 @@
           img
             height: 90px
       &__form
+        margin-top: 25px
         b
           font-size: 13px
         input
@@ -541,6 +552,12 @@
         width: 140px
 
 @media(max-width: 1023px)
+  .item-header
+    height: auto
+    .container
+      height: auto
+    .col
+      height: auto
   .item-header__promo
     flex: initial
     order: -1

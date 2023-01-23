@@ -471,14 +471,13 @@ if (vacancyGrid.length !== 0) {
 if ($('.vacancy-page').length !== 0) $('.wrapper').css('overflow', 'unset');
 
 $('.table-row').each(function (i, row) {
-  $('.table-col', row).each(function (i, col) {
-    const content = $(col).html();
-    const newContent = content.replace(/\|/g, '</span><span class="table-switch">');
-    $(col).html(`<span>${newContent}</span>`);
-
-    // const newContent = $(col).html();
-    // newContent.replace(/|/g, '-');
-  });
+  if (i === 0) {
+    $('.table-col', row).each(function (i, col) {
+      const content = $(col).html();
+      const newContent = content.replace(/\|/g, '</span><span class="table-switch">');
+      $(col).html(`<span>${newContent}</span>`);
+    });
+  }
 });
 
 if ($('.catalog-section__title').length !== 0) $('.wrapper').css('overflow', 'unset');
@@ -541,3 +540,29 @@ const arr = document.querySelectorAll('.company-work__item');
 arr.forEach((i) => {
   observer.observe(i);
 });
+
+const itemDesc = $('.item-card__desc div');
+
+const itemDescHeight = itemDesc.outerHeight();
+if (itemDescHeight === 0) $('.item-card__desc').hide();
+
+const itemDescFontSize = parseInt(itemDesc.css('font-size'));
+const itemDescLineHeight = 1.6;
+let itemDescLineCamp = Math.floor(itemDescHeight / (itemDescFontSize * itemDescLineHeight));
+if (itemDescLineCamp > 12) itemDescLineCamp = 12;
+
+const itemDescWrapper = (i) => i * (itemDescFontSize * itemDescLineHeight);
+const itemDescOptions = () => {
+  if ($(window).width() > 1024) {
+    return {
+      '-webkit-line-clamp': `${itemDescLineCamp}`,
+      height: `${itemDescWrapper(itemDescLineCamp)}px`,
+    };
+  }
+  return {
+    '-webkit-line-clamp': `3`,
+    height: `${itemDescWrapper(3)}px`,
+  };
+};
+
+itemDesc.css(itemDescOptions());
