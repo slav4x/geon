@@ -631,6 +631,17 @@ input
     @include visually-hidden
     &:checked + p::after
       opacity: 1
+  &-margin
+    margin-top: 20px
+  &-white
+    color: rgba(255,255,255,.6)
+    p
+      &::before
+        border-color: #fff
+      &::after
+        background-image: url("data:image/svg+xml,%3Csvg width='22' height='22' viewBox='0 0 22 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.4707 9.7556L9.92168 12.9411L15.5295 7.76465' stroke='white' stroke-width='2'/%3E%3C/svg%3E%0A")
+    a
+      color: #fff
 
 .file
   &::before
