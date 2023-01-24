@@ -177,8 +177,6 @@ input
       color: $color-black
     p
       margin-top: 10px
-    li::before
-      top: 42px
     ul
       margin-top: 10px
       list-style: disc
@@ -381,6 +379,12 @@ input
         color: $color-gray
     .label::before
       background: $color-blue
+  &-file
+    padding-left: 0 !important
+    padding-right: 0 !important
+    justify-content: center
+    input
+      @include visually-hidden
 
 .label
   display: block

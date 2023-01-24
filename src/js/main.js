@@ -486,6 +486,13 @@ $('[data-open-popup]').click(function () {
   const popup = $(this).attr('data-open-popup');
   $('body').css('overflow', 'hidden');
   $(`.popup[data-popup="${popup}"]`).addClass('open');
+
+  if (popup === 'popup-sertificate') {
+    const title = $(this).parent().find('h3').text();
+    const file = $(this).attr('data-file');
+    $(`.popup[data-popup="${popup}"]`).find('h3.title-lg').text(title);
+    $(`.popup[data-popup="${popup}"]`).find('input[name="urlfile"]').val(file);
+  }
 });
 
 $('.popup-close, .popup-bg').click(() => {
@@ -493,10 +500,11 @@ $('.popup-close, .popup-bg').click(() => {
   $('body').removeAttr('style');
 });
 
-$('.file input').change(function () {
+$('.file input, .form-file input').change(function () {
   if ($(this).val() != '')
     $(this)
-      .prev()
+      .parent()
+      .find('p')
       .text('Выбрано файлов: ' + $(this)[0].files.length);
   else $(this).prev().text('Прикрепить файл');
 });
@@ -566,3 +574,23 @@ const itemDescOptions = () => {
 };
 
 itemDesc.css(itemDescOptions());
+
+$('.go-vacancy').on('click', function (event) {
+  event.preventDefault();
+  $('html, body').animate(
+    {
+      scrollTop: $('.vacancy').offset().top - 125,
+    },
+    1000
+  );
+});
+
+$('.go-vacancy-job').on('click', function (event) {
+  event.preventDefault();
+  $('html, body').animate(
+    {
+      scrollTop: $('.vacancy-job').offset().top - $('.header').outerHeight() + 1,
+    },
+    1000
+  );
+});

@@ -24,8 +24,39 @@
           <p>Точные сроки всего проекта</p>
         </li>
       </ul>
-      <div class="btn-wrap"><a href="#" class="btn btn-white btn-fluid btn-icon"><p>Заказать</p></a></div>
+      <div class="btn-wrap"><a href="javascript:;" data-open-popup="popup-survey" class="btn btn-white btn-fluid btn-icon"><p>Заказать</p></a></div>
     </div>
     <img src="img/services-survey.png" alt="" class="services-survey__img">
   </div>
 </section>
+
+<div class="popup" data-popup="popup-survey">
+  <div class="popup-bg"></div>
+  <div class="popup-layout">
+    <div class="popup-close"></div>
+    <div class="popup-top">
+      <h3 class="title-lg">Предпроектное обследование</h3>
+      <h4 class="text-lg">Укажите ваши данные, наш инженер свяжется с вами в течение 15 минут и ответит на все ваши вопросы</h4>
+    </div>
+    <div class="popup-middle">
+      <form action="#" class="form form-black">
+        <label class="label">
+          <p>Ваше имя</p>
+          <input type="text" class="input" placeholder="Александр" />
+        </label>
+        <label class="label">
+          <p>Телефон</p>
+          <input type="tel" class="input masked" placeholder="+7 (000) 000-00-00" />
+        </label>
+        <div class="btn-wrap">
+          <button class="btn btn-fluid btn-fill"><p>Заказать</p></button>
+        </div>
+        <label class="checkbox">
+          <input type="checkbox" checked required>
+          <p>Согласие с <a href="#">политикой обработки данных</a></p>
+        </label>
+      </form>
+    </div>
+    <div class="popup-bottom">© 2023 Группа компаний ГЕОН. Все права сайта защищены</div>
+  </div>
+</div>
