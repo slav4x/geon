@@ -107,10 +107,10 @@ const scrollSlider = () => {
       let img;
 
       if (versus >= 0) {
-        img = -130 + (pos / 100) * 13;
+        img = (pos / 100) * 5.2;
         if (versus >= servicesSliderWrapperWidth - servicesContainerWidth) {
           pos = servicesSliderWrapperWidth - servicesContainerWidth;
-          img = -130 + (pos / 100) * 13;
+          img = (pos / 100) * 5.2;
         }
       } else {
         pos = 0;
@@ -119,7 +119,7 @@ const scrollSlider = () => {
       servicesSliderWrapper.css('transform', `translate3d(-${pos}px, 0, 0)`);
 
       $('.services-item__img img').each(function (i, el) {
-        $(el).css('transform', `translate3d(${img}px, 0, 0) scale(1.5)`);
+        $(el).css('transform', `translate3d(${img * -1}px, 0, 0)`);
       });
     });
   } else {
@@ -213,7 +213,7 @@ const companyWorkChange = () => {
 
           const img = document.querySelector('.company-work__images img:nth-child(' + id + ')');
           img.style.zIndex = 5;
-          // }, 500);
+          // }, 250);
 
           // setTimeout(() => {
           //   document.querySelector('.company-work__images-placeholder').style.animation = null;
@@ -221,7 +221,7 @@ const companyWorkChange = () => {
 
           // document.querySelector('.company-work__images-placeholder').style.animation = null;
           // document.querySelector('.company-work__images-placeholder').offsetHeight;
-          // document.querySelector('.company-work__images-placeholder').style.animation = 'changeImg 1s ease';
+          // document.querySelector('.company-work__images-placeholder').style.animation = 'changeImg .5s ease';
         }
       });
     },
