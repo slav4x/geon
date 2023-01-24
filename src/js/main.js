@@ -147,7 +147,7 @@ const projectsSlider = new Swiper('.projects-slider', {
   loop: true,
   speed: 1000,
   autoplay: {
-    delay: 5000,
+    delay: 4000,
     disableOnInteraction: false,
   },
   navigation: {
@@ -163,6 +163,25 @@ const projectsSlider = new Swiper('.projects-slider', {
   noSwiping: true,
   noSwipingClass: 'swiper-slide',
 });
+
+const observerProjects = new IntersectionObserver(
+  (entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        projectsSlider.autoplay.start();
+      } else {
+        projectsSlider.autoplay.stop();
+      }
+    });
+  },
+  {
+    root: null,
+    rootMargin: '150px',
+    threshold: 1,
+  }
+);
+
+observerProjects.observe(document.querySelector('.projects-slider'));
 
 $('[data-counter]').each(function (i, el) {
   const num = $(el).text();
