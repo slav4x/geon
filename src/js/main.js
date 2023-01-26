@@ -469,11 +469,10 @@ $(document).ready(function () {
   });
 
   $('input').each(function (i, el) {
-    $(el).click(function () {
-      $(this).val() !== '' ? $(this).closest('label').addClass('fill') : $(this).closest('label').removeClass('fill');
-    });
-    $(el).change(function () {
-      $(this).val() !== '' ? $(this).closest('label').addClass('fill') : $(this).closest('label').removeClass('fill');
+    $(el).blur(function () {
+      $(this).val() === '+7 ' || $(this).val() === ''
+        ? $(this).closest('label').removeClass('fill')
+        : $(this).closest('label').addClass('fill');
     });
   });
 

@@ -359,6 +359,7 @@
     i
       font-style: normal
       color: $color-gray
+      display: block
     &:first-child
       width: 250px
       flex: initial
@@ -610,13 +611,19 @@
   .hd
     display: none
 
-@media(max-width: 768px)
+  .item-spec li
+    width: 50%
+
+@media(max-width: 767px)
   .table
     &-row
       font-size: 11px
     &-col
       &:first-child
         width: 100px
+
+  .item-spec li
+    width: 100%
 
 @media(max-width: 610px)
   .table
