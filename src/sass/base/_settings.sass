@@ -662,3 +662,44 @@ input
       margin-right: 10px
   input
     @include visually-hidden
+
+.modal
+  position: fixed
+  bottom: 0
+  left: 108px
+  max-width: 550px
+  width: 100%
+  padding: 25px
+  background: #05173f url(../img/modal-pattern.png) no-repeat top left
+  background-size: cover
+  color: #fff
+  z-index: 100
+  overflow: hidden
+  display: none
+  &-close
+    width: 36px
+    height: 36px
+    position: absolute
+    z-index: 5
+    top: 0
+    right: 0
+    background: rgba(255, 255, 255, 0.1)
+    cursor: pointer
+  &-item
+    position: absolute
+    bottom: 0
+    right: -160px
+  h3
+    font-size: 20px
+    letter-spacing: -0.024em
+    line-height: 1.2
+    font-weight: 400
+    max-width: 260px
+    margin-bottom: 25px
+  a
+    display: inline-block
+    padding: 20px 40px
+    background: $color-blue
+    font-size: 18px
+    line-height: 1.2
+    letter-spacing: -0.024em

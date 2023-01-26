@@ -568,4 +568,10 @@ $(document).ready(function () {
   $('.go-vacancy-job').on('click', () => {
     $('html, body').animate({ scrollTop: $('.vacancy-job').offset().top - $('.header').outerHeight() + 1 }, 1000);
   });
+
+  setTimeout(() => {
+    $('.modal').fadeIn(300);
+  }, 10000);
+
+  $('.modal-close').click(() => $('.modal').fadeOut(300));
 });
