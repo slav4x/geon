@@ -374,11 +374,12 @@
       position: relative
     &__images
       width: 760px
-      background: #eee
+      background: #fff
       margin-left: auto
       height: calc(100vh - 108px - 80px)
       position: sticky
       top: calc(108px + 40px)
+      overflow: hidden
       img
         position: absolute
         top: 0
@@ -390,16 +391,9 @@
         object-fit: cover
         object-position: center
         z-index: 2
+        transition: top .7s
         &:first-child
           z-index: 3
-      &-placeholder
-        position: absolute
-        top: 0
-        bottom: 100%
-        left: 0
-        right: 0
-        z-index: 10
-        background: #fff
     &__content
       width: calc(100% - 760px - 40px)
       max-width: 810px
@@ -440,14 +434,16 @@
         margin-top: 35px
       img
         display: none
-
-@keyframes changeImg
-  0%
-    bottom: 100%
-  50%
-    bottom: 0%
-  100%
-    bottom: 100%
+      &[data-id="1"] .text-lg
+        max-width: 711px
+      &[data-id="2"] .text-lg
+        max-width: 500px
+      &[data-id="3"] .text-lg
+        max-width: 620px
+      &[data-id="4"] .text-lg
+        max-width: 540px
+      &[data-id="5"] .text-lg
+        max-width: 650px
 
 @media(max-width: 1600px)
   .company-header
@@ -603,6 +599,16 @@
       min-height: calc(100vh - 80px - 40px - 80px)
       .text-lg
         margin-top: 15px
+      &[data-id="1"] .text-lg
+        max-width: 560px
+      &[data-id="2"] .text-lg
+        max-width: 400px
+      &[data-id="3"] .text-lg
+        max-width: 520px
+      &[data-id="4"] .text-lg
+        max-width: 440px
+      &[data-id="5"] .text-lg
+        max-width: 500px
 
 @media(max-width: 1300px)
   .company-header

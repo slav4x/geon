@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 /* eslint-disable operator-linebreak */
 /* eslint-disable no-inner-declarations */
 
@@ -197,37 +198,27 @@ const burgerMenu = () => {
 
 const companyWorkChange = () => {
   const observer = new IntersectionObserver(
-    (entries, observer) => {
+    (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           const item = entry.target;
           const id = item.getAttribute('data-id');
 
-          // document.querySelector('.company-work__images-placeholder').style.animation = 'changeImg 1s ease';
-
-          // setTimeout(() => {
           const imgs = document.querySelectorAll('.company-work__images img');
           imgs.forEach((i) => {
             i.style.zIndex = 2;
+            i.style.top = '100%';
           });
 
           const img = document.querySelector('.company-work__images img:nth-child(' + id + ')');
           img.style.zIndex = 5;
-          // }, 250);
-
-          // setTimeout(() => {
-          //   document.querySelector('.company-work__images-placeholder').style.animation = null;
-          // }, 1000);
-
-          // document.querySelector('.company-work__images-placeholder').style.animation = null;
-          // document.querySelector('.company-work__images-placeholder').offsetHeight;
-          // document.querySelector('.company-work__images-placeholder').style.animation = 'changeImg .5s ease';
+          img.style.top = '0%';
         }
       });
     },
     {
       root: null,
-      rootMargin: '-35px',
+      rootMargin: '200px',
       threshold: 1,
     }
   );
@@ -450,7 +441,7 @@ $(document).ready(function () {
       .html(numArr.map((e) => `<span class="char">${e}</span>`));
 
     $(window).scroll(function () {
-      const scrolled = $(window).scrollTop() + $(window).height() - 100;
+      const scrolled = $(window).scrollTop() + $(window).height() - 160;
       if (scrolled > $(el).offset().top) $(el).addClass('is-inview');
     });
   });
@@ -574,4 +565,23 @@ $(document).ready(function () {
   }, 10000);
 
   $('.modal-close').click(() => $('.modal').fadeOut(300));
+
+  const lenis = new Lenis({
+    duration: 2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // https://www.desmos.com/calculator/brs54l4xou
+    direction: 'vertical', // vertical, horizontal
+    gestureDirection: 'vertical', // vertical, horizontal, both
+    smooth: true,
+    mouseMultiplier: 1,
+    smoothTouch: false,
+    touchMultiplier: 2,
+    infinite: false,
+  });
+
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+
+  requestAnimationFrame(raf);
 });
