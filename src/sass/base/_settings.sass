@@ -663,11 +663,14 @@ input
   input
     @include visually-hidden
 
-.modal
+.virtual
   position: fixed
+  z-index: 999
   bottom: 0
-  left: 108px
-  max-width: 550px
+  left: 0
+  right: 0
+
+.modal
   width: 100%
   padding: 25px
   background: #05173f url(../img/modal-pattern.png) no-repeat top left
@@ -675,7 +678,10 @@ input
   color: #fff
   z-index: 100
   overflow: hidden
-  display: none
+  display: block
+  position: absolute
+  bottom: 0
+  left: 0
   &-close
     width: 36px
     height: 36px
@@ -691,21 +697,21 @@ input
     transition: .2s
     &:hover
       background-color: rgba(255, 255, 255, 0.2)
-  &-item
+  img
     position: absolute
-    bottom: 0
-    right: -160px
+    top: 25px
+    left: 290px
   h3
-    font-size: 20px
+    font-size: 18px
     letter-spacing: -0.024em
     line-height: 1.2
     font-weight: 400
-    max-width: 260px
+    max-width: 240px
     margin-bottom: 25px
   a
     display: inline-block
-    padding: 20px 40px
+    padding: 15px 30px
     background: $color-blue
-    font-size: 18px
+    font-size: 14px
     line-height: 1.2
     letter-spacing: -0.024em
