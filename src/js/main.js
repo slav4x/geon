@@ -239,6 +239,59 @@ const createSlider = (el, params) => {
   }
 };
 
+let lenis;
+const initSmoothScrolling = () => {
+  lenis = new Lenis({
+    lerp: 0.2,
+    smooth: true,
+    duration: 2,
+  });
+
+  const scrollFn = (time) => {
+    lenis.raf(time);
+    requestAnimationFrame(scrollFn);
+  };
+
+  requestAnimationFrame(scrollFn);
+};
+
+let typeSplit;
+const trigger = '[data-split-text]';
+const runSplit = () => {
+  typeSplit = new SplitType(trigger, {
+    types: 'lines',
+  });
+};
+
+const addAttr = () => {
+  document.querySelectorAll(trigger).forEach((title) => {
+    title.querySelectorAll('.line').forEach((line) => {
+      line.setAttribute('data-animated', '');
+    });
+  });
+
+  document.querySelectorAll('section').forEach((section) => {
+    section.querySelectorAll('[data-animated]').forEach((el, i) => {
+      el.setAttribute('data-aos-delay', i * 60);
+    });
+  });
+
+  document.querySelectorAll('[data-animated]').forEach((el) => {
+    el.setAttribute('data-aos', 'fade-up');
+    el.setAttribute('data-aos-duration', '500');
+    el.setAttribute('data-aos-anchor-placement', 'top-bottom');
+    el.setAttribute('data-aos-offset', '200');
+  });
+};
+
+const initAnimate = () => {
+  AOS.init();
+  setTimeout(runSplit(), 600);
+  setTimeout(addAttr(), 700);
+  setTimeout(initSmoothScrolling(), 100);
+  setTimeout(AOS.refresh(), 800);
+};
+
 $(document).ready(function () {
   /*
    * FUNCTIONS INIT *
@@ -253,6 +306,7 @@ $(document).ready(function () {
   };
 
   init();
+  initAnimate();
 
   if ($('.item-card__desc').length !== 0) lineCampItemText();
   if ($('.services').length !== 0) scrollSlider();
@@ -565,23 +619,4 @@ $(document).ready(function () {
   }, 10000);
 
   $('.modal-close').click(() => $('.modal').fadeOut(300));
-
-  const lenis = new Lenis({
-    duration: 2,
-    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // https://www.desmos.com/calculator/brs54l4xou
-    direction: 'vertical', // vertical, horizontal
-    gestureDirection: 'vertical', // vertical, horizontal, both
-    smooth: true,
-    mouseMultiplier: 1,
-    smoothTouch: false,
-    touchMultiplier: 2,
-    infinite: false,
-  });
-
-  function raf(time) {
-    lenis.raf(time);
-    requestAnimationFrame(raf);
-  }
-
-  requestAnimationFrame(raf);
 });
