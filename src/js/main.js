@@ -614,9 +614,21 @@ $(document).ready(function () {
     $('html, body').animate({ scrollTop: $('.vacancy-job').offset().top - $('.header').outerHeight() + 1 }, 1000);
   });
 
+  if (!localStorage.getItem('politic')) {
+    $('.modal-politic').fadeIn(300);
+    $('.modal-politic__btn').on('click', () => {
+      $('.modal-politic').fadeOut(300);
+      localStorage.setItem('politic', 'true');
+    });
+  }
+
+  // if (!localStorage.getItem('modal')) {
   setTimeout(() => {
     $('.modal').fadeIn(300);
   }, 10000);
-
-  $('.modal-close').click(() => $('.modal').fadeOut(300));
+  $('.modal-close').on('click', () => {
+    $('.modal').fadeOut(300);
+    // localStorage.setItem('modal', 'true');
+  });
+  // }
 });

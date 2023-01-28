@@ -678,7 +678,7 @@ input
   color: #fff
   z-index: 100
   overflow: hidden
-  display: block
+  display: none
   position: absolute
   bottom: 0
   left: 0
@@ -715,3 +715,34 @@ input
     font-size: 14px
     line-height: 1.2
     letter-spacing: -0.024em
+
+  &-politic
+    padding: 25px
+    background: $color-blue
+    color: #fff
+    position: absolute
+    bottom: 0
+    right: 0
+    width: 280px
+    display: none
+    p
+      font-size: 18px
+      line-height: 1.2
+      letter-spacing: -0.024em
+      a
+        border-bottom: 1px solid #fff
+    &__btn
+      @include flexbox
+      align-items: center
+      justify-content: center
+      text-align: center
+      border: 1px solid #fff
+      margin-top: 20px
+      padding: 15px 30px
+      font-size: 14px
+      line-height: 1.2
+      letter-spacing: -0.024em
+      transition: .2s
+      &:hover
+        background: #fff
+        color: $color-blue
