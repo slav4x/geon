@@ -2,8 +2,9 @@
   <div class="container">
     <div class="header-logo">
       <a href="/" class="header-logo__pic"></a>
-      <div class="header-logo__desc">Проектирование и строительство очистных сооружений сточных вод по всей России и СНГ</div>
+      <div class="header-logo__desc{% if onepage %} onepage-header-logo__desc{% endif %}">Проектирование и строительство очистных сооружений сточных вод по всей России и СНГ</div>
     </div>
+    {% if not onepage %}
     <ul class="header-nav">
       <li><a href="#" class="js-hover-link">О компании</a></li>
       <li><a href="#" class="js-hover-link">Каталог</a></li>
@@ -39,6 +40,7 @@
       <a href="#" class="header-contact__chat">Онлайн-чат</a>
     </div>
     <a href="javascript:;" data-open-popup="popup-1" class="header-tender">Пригласить на тендер</a>
+    {% endif %}
     <div class="header-burger">
       <div class="header-burger__icon">
         <span></span>

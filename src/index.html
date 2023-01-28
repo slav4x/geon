@@ -1,6 +1,7 @@
 {% extends 'components/_layout.html' %}
 {% set site_title = 'Главная' %}
 {% set home = true %}
+{% set onepage = false %}
 
 {% block content %}
 
@@ -14,8 +15,8 @@
     <source src="hero-video-2.mp4" type="video/mp4">
   </video>
   <div class="container row">
-    <div class="col" data-aos="fade-up" data-aos-delay="600" data-aos-duration="600">
-      <h4 class="title-sm">Группа компаний ГЕОН</h4>
+    <div class="col">
+      <h4 class="title-sm" data-aos="fade-up" data-aos-delay="600" data-aos-duration="600">Группа компаний ГЕОН</h4>
     </div>
     <div class="col">
       <h1 class="title-xl" data-aos="fade-up" data-aos-duration="600">Профессиональные очистные сооружения: проектирование и строительство</h1>
