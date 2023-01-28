@@ -15,7 +15,7 @@ const noop = require('gulp-noop');
 const listing = require('is-pagelist');
 const typograf = require('gulp-typograf');
 
-const isMinify = false;
+const isMinify = true;
 
 const clean = () => del(['app']);
 
@@ -82,6 +82,8 @@ const libs_js = () => {
     'src/js/vendor/lenis.js',
     'src/js/vendor/aos.js',
     'src/js/vendor/split-type.min.js',
+    'src/js/vendor/gsap.min.js',
+    'src/js/vendor/ScrollTrigger.min.js',
   ])
     .pipe(isMinify ? uglify() : noop())
     .pipe(isMinify ? concat('libs.min.js') : concat('libs.js'))

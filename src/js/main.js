@@ -255,42 +255,62 @@ const initSmoothScrolling = () => {
   requestAnimationFrame(scrollFn);
 };
 
-let typeSplit;
-const trigger = '[data-split-text]';
 const runSplit = () => {
-  typeSplit = new SplitType(trigger, {
-    types: 'lines',
+  let typeSplit;
+  gsap.registerPlugin(ScrollTrigger);
+  const splitText = document.querySelectorAll('[data-animate-title]');
+
+  splitText.forEach((text, i) => {
+    typeSplit = new SplitType(text, {
+      types: 'lines',
+    });
+
+    gsap.utils.toArray(text).forEach((split) => {
+      gsap.from(typeSplit.lines, {
+        scrollTrigger: {
+          trigger: split,
+          start: 'top 85%',
+        },
+        opacity: 0,
+        y: 40,
+        duration: 0.3,
+        stagger: { amount: 0.5 },
+      });
+    });
   });
 };
 
 const addAttr = () => {
-  document.querySelectorAll(trigger).forEach((title) => {
-    title.querySelectorAll('.line').forEach((line) => {
-      line.setAttribute('data-animated', '');
-    });
-  });
-
-  document.querySelectorAll('section').forEach((section) => {
-    section.querySelectorAll('[data-animated]').forEach((el, i) => {
-      el.setAttribute('data-aos-delay', i * 60);
-    });
-  });
-
+  // document.querySelectorAll(trigger).forEach((title) => {
+  //   title.querySelectorAll('.line').forEach((line) => {
+  //     line.setAttribute('data-animated', '');
+  //   });
+  // });
+  // document.querySelectorAll('section').forEach((section) => {
+  //   section.querySelectorAll('[data-animated]').forEach((el, i) => {
+  //     el.setAttribute('data-aos-delay', i * 60);
+  //   });
+  // });
   document.querySelectorAll('[data-animated]').forEach((el) => {
     el.setAttribute('data-aos', 'fade-up');
     el.setAttribute('data-aos-duration', '500');
     el.setAttribute('data-aos-anchor-placement', 'top-bottom');
     el.setAttribute('data-aos-offset', '200');
   });
+  // AOS.refreshHard();
 };
 
 const initAnimate = () => {
-  AOS.init();
-  setTimeout(runSplit(), 600);
-  setTimeout(addAttr(), 700);
-  setTimeout(initSmoothScrolling(), 100);
-  setTimeout(AOS.refresh(), 800);
+  runSplit();
+  addAttr();
+  initSmoothScrolling();
 };
+
+setTimeout(function () {
+  AOS.init({
+    once: true,
+  });
+}, 100);
 
 $(document).ready(function () {
   /*
@@ -303,10 +323,10 @@ $(document).ready(function () {
     maskPhone();
     initPopup();
     burgerMenu();
+    initAnimate();
   };
 
   init();
-  initAnimate();
 
   if ($('.item-card__desc').length !== 0) lineCampItemText();
   if ($('.services').length !== 0) scrollSlider();
