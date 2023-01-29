@@ -89,6 +89,8 @@
         line-height: 1.2
         color: #fff
         a
+          border-bottom: 0
+          padding-bottom: 0
           position: relative
           &::before
             content: ''
@@ -102,8 +104,28 @@
             transition: .3s
           &:hover::before
             width: 100%
-      a span:nth-child(2)
-        color: #fff
+      &:not(:first-child)
+        a
+          position: relative
+          transition: .2s
+          padding-right: 15px
+          display: block
+          &::before
+            content: ''
+            position: absolute
+            left: 0
+            top: 10px
+            height: 1px
+            width: 0
+            background: #fff
+            transition: .2s
+          &:hover
+            padding-right: 0
+            padding-left: 15px
+            color: #fff
+            &::before
+              width: 10px
+
   &-contact
     small
       font-size: 15px
@@ -148,6 +170,13 @@
         margin-right: 35px
         &:last-child
           margin-right: 0
+        a
+          transition: .2s
+          border-bottom: 1px solid transparent
+          padding-bottom: 3px
+          &:hover
+            color: #fff
+            border-color: rgba(255,255,255,.3)
 
 @media(max-width: 1600px)
   .footer-social

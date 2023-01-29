@@ -273,44 +273,26 @@ const runSplit = () => {
         },
         opacity: 0,
         y: 40,
-        duration: 0.3,
-        stagger: { amount: 0.5 },
+        duration: 0.15,
+        stagger: { amount: 0.3 },
       });
     });
   });
 };
 
-const addAttr = () => {
-  // document.querySelectorAll(trigger).forEach((title) => {
-  //   title.querySelectorAll('.line').forEach((line) => {
-  //     line.setAttribute('data-animated', '');
-  //   });
-  // });
-  // document.querySelectorAll('section').forEach((section) => {
-  //   section.querySelectorAll('[data-animated]').forEach((el, i) => {
-  //     el.setAttribute('data-aos-delay', i * 60);
-  //   });
-  // });
-  document.querySelectorAll('[data-animated]').forEach((el) => {
-    el.setAttribute('data-aos', 'fade-up');
-    el.setAttribute('data-aos-duration', '500');
-    el.setAttribute('data-aos-anchor-placement', 'top-bottom');
-    el.setAttribute('data-aos-offset', '200');
-  });
-  // AOS.refreshHard();
-};
-
 const initAnimate = () => {
   runSplit();
-  addAttr();
   initSmoothScrolling();
-};
 
-setTimeout(function () {
-  AOS.init({
-    once: true,
-  });
-}, 100);
+  setTimeout(function () {
+    AOS.init({
+      once: true,
+      offset: 40,
+      duration: 400,
+      delay: 200,
+    });
+  }, 100);
+};
 
 $(document).ready(function () {
   /*

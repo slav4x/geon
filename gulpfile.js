@@ -15,7 +15,7 @@ const noop = require('gulp-noop');
 const listing = require('is-pagelist');
 const typograf = require('gulp-typograf');
 
-const isMinify = true;
+const isMinify = false;
 
 const clean = () => del(['app']);
 

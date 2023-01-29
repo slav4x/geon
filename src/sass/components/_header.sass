@@ -275,13 +275,28 @@
       line-height: 1.15
       li
         margin-bottom: 30px
-        span:first-child
+        color: #fff
+        a.active
           color: rgba(255,255,255,.5)
-        span
-          display: block
-          line-height: 1
-        a.active span:first-child
-          color: #fff
+        a
+          position: relative
+          padding-left: 0
+          transition: .2s
+          &::before
+            content: ''
+            position: absolute
+            top: 10px
+            bottom: 0
+            margin: auto 0
+            left: 0
+            height: 4px
+            width: 0
+            background: #fff
+            transition: .2s
+          &:not(.active):hover
+            padding-left: 50px
+            &::before
+              width: 40px
     &__copy
       font-size: 18px
       line-height: 1.2
