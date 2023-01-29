@@ -260,10 +260,16 @@ const runSplit = () => {
   gsap.registerPlugin(ScrollTrigger);
   const splitText = document.querySelectorAll('[data-animate-title]');
 
-  splitText.forEach((text, i) => {
+  splitText.forEach((text) => {
     typeSplit = new SplitType(text, {
       types: 'lines',
     });
+
+    let splitTextDelay = 0;
+
+    if (text.hasAttribute('data-animate-title-delay')) {
+      splitTextDelay = text.getAttribute('data-animate-title-delay');
+    }
 
     gsap.utils.toArray(text).forEach((split) => {
       gsap.from(typeSplit.lines, {
@@ -274,6 +280,7 @@ const runSplit = () => {
         opacity: 0,
         y: 40,
         duration: 0.15,
+        delay: splitTextDelay,
         stagger: { amount: 0.3 },
       });
     });

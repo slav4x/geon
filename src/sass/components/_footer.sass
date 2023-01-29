@@ -104,27 +104,6 @@
             transition: .3s
           &:hover::before
             width: 100%
-      &:not(:first-child)
-        a
-          position: relative
-          transition: .2s
-          padding-right: 15px
-          display: block
-          &::before
-            content: ''
-            position: absolute
-            left: 0
-            top: 10px
-            height: 1px
-            width: 0
-            background: #fff
-            transition: .2s
-          &:hover
-            padding-right: 0
-            padding-left: 15px
-            color: #fff
-            &::before
-              width: 10px
 
   &-contact
     small
@@ -177,6 +156,33 @@
           &:hover
             color: #fff
             border-color: rgba(255,255,255,.3)
+
+@media(min-width: 610px)
+  .footer-nav li:not(:first-child)
+    a
+      position: relative
+      transition: .2s
+      padding-right: 15px
+      display: block
+      &::before
+        content: ''
+        position: absolute
+        left: 0
+        top: 10px
+        height: 1px
+        width: 0
+        background: #fff
+        transition: .2s
+      &:hover
+        padding-right: 0
+        padding-left: 15px
+        color: #fff
+        &::before
+          width: 10px
+
+@media(min-width: 1600px)
+  .footer-nav li:not(:first-child) a::before
+    top: 15px
 
 @media(max-width: 1600px)
   .footer-social
