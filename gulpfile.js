@@ -81,7 +81,7 @@ const libs_js = () => {
     'src/js/vendor/imask.min.js',
     'src/js/vendor/lenis.js',
     'src/js/vendor/aos.js',
-    'src/js/vendor/split-type.min.js',
+    'src/js/vendor/jquery.splitlines.js',
     'src/js/vendor/gsap.min.js',
     'src/js/vendor/ScrollTrigger.min.js',
   ])

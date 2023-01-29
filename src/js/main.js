@@ -261,9 +261,7 @@ const runSplit = () => {
   const splitText = document.querySelectorAll('[data-animate-title]');
 
   splitText.forEach((text) => {
-    typeSplit = new SplitType(text, {
-      types: 'lines',
-    });
+    $(text).splitLines();
 
     let splitTextDelay = 0;
 
@@ -272,7 +270,7 @@ const runSplit = () => {
     }
 
     gsap.utils.toArray(text).forEach((split) => {
-      gsap.from(typeSplit.lines, {
+      gsap.from($(text).children(), {
         scrollTrigger: {
           trigger: split,
           start: 'top 85%',
