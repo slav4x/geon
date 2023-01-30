@@ -94,7 +94,13 @@ const scrollSlider = () => {
   const servicesContainerHeight = servicesContainer.height();
 
   const servicesSliderWrapper = $('.services-slider__wrapper');
-  const servicesSliderWrapperWidth = servicesSliderWrapper.innerWidth();
+  let servicesSliderWrapperWidth;
+
+  if ($('body').width() > 1024) {
+    servicesSliderWrapperWidth = servicesSliderWrapper.innerWidth() + $('.services .col').first().innerWidth() / 2;
+  } else {
+    servicesSliderWrapperWidth = servicesSliderWrapper.innerWidth();
+  }
 
   if ($('body').width() > 768) {
     services.css('height', servicesSliderWrapperWidth - servicesContainerWidth + servicesHeight);
@@ -108,10 +114,10 @@ const scrollSlider = () => {
       let img;
 
       if (versus >= 0) {
-        img = (pos / 100) * 5.2;
+        img = (pos / 100) * 4.6;
         if (versus >= servicesSliderWrapperWidth - servicesContainerWidth) {
           pos = servicesSliderWrapperWidth - servicesContainerWidth;
-          img = (pos / 100) * 5.2;
+          img = (pos / 100) * 4.6;
         }
       } else {
         pos = 0;
@@ -651,3 +657,7 @@ $(document).ready(function () {
 });
 
 const lazyLoadInstance = new LazyLoad();
+
+$('.projects-item__title').each((i, el) => $(el).splitLines());
+$('.news-item__title').each((i, el) => $(el).splitLines());
+$('.vacancy-item__title').each((i, el) => $(el).splitLines());
