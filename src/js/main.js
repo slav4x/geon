@@ -394,6 +394,11 @@ $(document).ready(function () {
   const projectsSlider = document.querySelector('.projects-slider');
   if (!!projectsSlider) {
     const slider = new Swiper(projectsSlider, {
+      preloadImages: false,
+      lazy: {
+        loadPrevNext: true,
+        checkInView: true,
+      },
       loop: true,
       speed: 1000,
       autoplay: {
@@ -456,6 +461,11 @@ $(document).ready(function () {
     });
 
     const solutionsSecond = new Swiper('.solutions-second__slider', {
+      preloadImages: false,
+      lazy: {
+        loadPrevNext: true,
+        checkInView: true,
+      },
       loop: true,
       speed: 1000,
       navigation: {
@@ -639,3 +649,5 @@ $(document).ready(function () {
   });
   // }
 });
+
+const lazyLoadInstance = new LazyLoad();
