@@ -43,6 +43,30 @@
     top: 107px
     letter-spacing: -0.024em
     color: $color-gray
+    &::after
+      content: ''
+      position: absolute
+      top: 0
+      bottom: 0
+      left: 0
+      width: 30px
+      background: linear-gradient(90deg, #fff, rgba(255,255,255, 0))
+      z-index: 100
+    &::before
+      content: ''
+      position: absolute
+      top: 0
+      bottom: 0
+      right: 0
+      width: 30px
+      background: linear-gradient(270deg, #fff, rgba(255,255,255, 0))
+      z-index: 100
+    ul
+      -ms-overflow-style: none
+      scrollbar-width: none
+      overflow-x: auto
+      &::-webkit-scrollbar
+        display: none
     ul
       padding: 17px 25px
       @include flexbox
@@ -149,12 +173,36 @@
         margin-top: 15px
 
   &-material
+    &__gray
+      padding: 50px 40px
+      color: #fff
+      margin-top: 20px
+      min-height: 200px
+      @include flexbox
+      align-items: center
+      h3
+        font-weight: 400
+        font-size: 38px
+        line-height: 1.2
+        letter-spacing: -0.024em
+        max-width: 700px
+      &:first-child
+        margin-top: 0
+    &__3
+      background: url(../img/material-3.jpg) no-repeat center
+      background-size: cover
+    &__4
+      background: url(../img/material-4.jpg) no-repeat center
+      background-size: cover
     &__blue
       background: $color-blue
       color: #fff
       padding: 50px 40px
       position: relative
       overflow: hidden
+      margin-top: 20px
+      &:first-child
+        margin-top: 0
       h3
         font-weight: 400
         font-size: 38px
@@ -167,8 +215,14 @@
         max-width: 605px
       img
         position: absolute
-        left: 770px
-        top: 25px
+    &__1 img
+      left: 770px
+      top: 25px
+    &__2 img
+      top: 0
+      right: 0
+      bottom: 0
+      height: 100%
 
   &-docs
     li
@@ -414,6 +468,12 @@
         .text-lg
           margin-top: 10px
     &-material
+      &__gray
+        padding: 40px 30px
+        min-height: 160px
+        h3
+          font-size: 30px
+          max-width: 560px
       &__blue
         padding: 40px 30px
         h3
@@ -421,8 +481,8 @@
           max-width: 395px
         .text-lg
           max-width: 395px
-        img
-          left: 470px
+      &__1 img
+        left: 470px
     &-docs
       li
         a
@@ -504,7 +564,7 @@
     max-width: 350px
   .item-material__blue .text-lg
     max-width: 350px
-  .item-material__blue img
+  .item-material__1 img
     left: 410px
   .item-gallery
     padding-right: 35px
@@ -518,30 +578,6 @@
 
 @media(max-width: 1200px)
   .item-nav
-    &::after
-      content: ''
-      position: absolute
-      top: 0
-      bottom: 0
-      left: 0
-      width: 30px
-      background: linear-gradient(90deg, #fff, rgba(255,255,255, 0))
-      z-index: 100
-    &::before
-      content: ''
-      position: absolute
-      top: 0
-      bottom: 0
-      right: 0
-      width: 30px
-      background: linear-gradient(270deg, #fff, rgba(255,255,255, 0))
-      z-index: 100
-    ul
-      -ms-overflow-style: none
-      scrollbar-width: none
-      overflow-x: auto
-      &::-webkit-scrollbar
-        display: none
     li
       margin-right: 20px
       &:last-child
@@ -656,13 +692,21 @@
     font-size: 22px
   .item-material__blue .text-lg
     margin-top: 15px
-
-  .item-material__blue img
-    left: initial
-    right: -50px
-    top: 220px
-    max-width: initial
-    width: 390px
+  .item-material__gray
+    padding: 25px
+    min-height: 120px
+    h3
+      font-size: 22px
+  .item-material
+    &__1 img
+      left: initial
+      right: -50px
+      top: 220px
+      max-width: initial
+      width: 390px
+    &__2 img
+      top: initial
+      height: 200px
 
   .item-docs li a
     min-height: 0

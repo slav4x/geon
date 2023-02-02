@@ -15,7 +15,7 @@ const noop = require('gulp-noop');
 const listing = require('is-pagelist');
 const typograf = require('gulp-typograf');
 
-const isMinify = true;
+const isMinify = false;
 
 const clean = () => del(['app']);
 
@@ -79,15 +79,18 @@ const libs_js = () => {
     'src/js/vendor/fancybox.umd.js',
     'src/js/vendor/swiper-bundle.min.js',
     'src/js/vendor/imask.min.js',
-    'src/js/vendor/lenis.js',
-    'src/js/vendor/aos.js',
     'src/js/vendor/jquery.splitlines.js',
-    'src/js/vendor/gsap.min.js',
-    'src/js/vendor/ScrollTrigger.min.js',
     'src/js/vendor/lazyload.min.js',
   ])
     .pipe(isMinify ? uglify() : noop())
     .pipe(isMinify ? concat('libs.min.js') : concat('libs.js'))
+    .pipe(dest('app/js/'));
+};
+
+const animate_libs_js = () => {
+  return src(['src/js/vendor/lenis.js', 'src/js/vendor/aos.js', 'src/js/vendor/gsap.min.js', 'src/js/vendor/ScrollTrigger.min.js'])
+    .pipe(isMinify ? uglify() : noop())
+    .pipe(isMinify ? concat('animate.min.js') : concat('animate.js'))
     .pipe(dest('app/js/'));
 };
 
@@ -117,5 +120,5 @@ const pageList = () => {
   return src('app/*.html').pipe(listing('page-list.html')).pipe(dest('app/'));
 };
 
-exports.default = series(clean, parallel(libs_js, js, libs_style, style, html, img, resources, watching));
-exports.build = series(clean, parallel(libs_js, js, libs_style, style, html, img, resources), pageList);
+exports.default = series(clean, parallel(libs_js, animate_libs_js, js, libs_style, style, html, img, resources, watching));
+exports.build = series(clean, parallel(libs_js, animate_libs_js, js, libs_style, style, html, img, resources), pageList);
