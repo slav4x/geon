@@ -1,9 +1,6 @@
 :root
   --app-height: 100%
 
-html, body
-  overscroll-behavior: none
-
 body
   font-family: 'RFDewiExtended', 'RFDewiExtended Fallback', sans-serif
   font-weight: 400
@@ -732,6 +729,10 @@ input
     font-size: 14px
     line-height: 1.2
     letter-spacing: -0.024em
+    transition: .2s
+    &:hover
+      background: #fff
+      color: $color-blue
 
   &-politic
     padding: 25px

@@ -36,7 +36,7 @@ const maskPhone = () => {
 };
 
 const initPopup = () => {
-  $('[data-open-popup]').click(function () {
+  $('[data-open-popup]').click(function (e) {
     const popup = $(this).attr('data-open-popup');
     $('body').css('overflow', 'hidden');
     $(`.popup[data-popup="${popup}"]`).addClass('open');
@@ -44,9 +44,13 @@ const initPopup = () => {
     if (popup === 'popup-sertificate') {
       const title = $(this).parent().find('h3').text();
       const file = $(this).attr('data-file');
-      $(`.popup[data-popup="${popup}"]`).find('h3.title-lg').text(title);
       $(`.popup[data-popup="${popup}"]`).find('input[name="urlfile"]').val(file);
     }
+  });
+
+  // const modal = document.querySelector('#cc-main')
+  $('.popup-layout').on('wheel', (e) => {
+    e.stopPropagation();
   });
 
   $('.popup-close, .popup-bg').click(() => {
@@ -197,6 +201,10 @@ const burgerMenu = () => {
     $('.header-burger').toggleClass('open');
     $('.header-opened').toggleClass('open');
     $('.header-logo').toggleClass('white');
+
+    $('.header-opened').on('wheel', (e) => {
+      e.stopPropagation();
+    });
 
     if ($('body').width() < 1024) isOpen ? $('body').css('overflow', 'hidden') : $('body').css('overflow', 'visible');
   });
@@ -645,15 +653,15 @@ $(document).ready(function () {
     });
   }
 
-  // if (!localStorage.getItem('modal')) {
-  setTimeout(() => {
-    $('.modal').fadeIn(300);
-  }, 10000);
-  $('.modal-close').on('click', () => {
-    $('.modal').fadeOut(300);
-    // localStorage.setItem('modal', 'true');
-  });
-  // }
+  if (!localStorage.getItem('modal')) {
+    setTimeout(() => {
+      $('.modal').fadeIn(300);
+    }, 20000);
+    $('.modal-close').on('click', () => {
+      $('.modal').fadeOut(300);
+      localStorage.setItem('modal', 'true');
+    });
+  }
 });
 
 const lazyLoadInstance = new LazyLoad();
@@ -661,3 +669,7 @@ const lazyLoadInstance = new LazyLoad();
 $('.projects-item__title').each((i, el) => $(el).splitLines());
 $('.news-item__title').each((i, el) => $(el).splitLines());
 $('.vacancy-item__title').each((i, el) => $(el).splitLines());
+
+$('.contact-map').click(function () {
+  $(this).addClass('clicked');
+});
