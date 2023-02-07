@@ -615,10 +615,27 @@ $(document).ready(function () {
   }
 
   $('.table-row').each(function (i, row) {
+    $('.table-col', row).each(function (i, col) {
+      $(col).attr('data-col', i);
+    });
+
     if (i === 0) {
       $('.table-col', row).each(function (i, col) {
         const content = $(col).html();
         const newContent = content.replace(/\|/g, '</span><span class="table-switch">');
+        $(col).html(`<span>${newContent}</span>`);
+      });
+
+      $('.table-col', row).click(function () {
+        const id = $(this).attr('data-col');
+        if ($(this).find('.table-switch').length > 0) {
+          $('.table-col[data-col="' + id + '"]').toggleClass('clicked');
+        }
+      });
+    } else {
+      $('.table-col', row).each(function (i, col) {
+        const content = $(col).html();
+        const newContent = content.replace(/\|/g, '</span><span>');
         $(col).html(`<span>${newContent}</span>`);
       });
     }

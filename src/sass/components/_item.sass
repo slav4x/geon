@@ -401,9 +401,41 @@
           justify-content: center
           flex-direction: column
           padding: 8px 0
+        &.clicked .table-switch
+          &:nth-child(2)
+            display: none
+          &:nth-child(3)
+            display: block
+      .table-switch
+        color: $color-blue
+        cursor: pointer
+        position: relative
+        font-size: 14px
+        padding-right: 12px
+        &::before
+          content: ''
+          position: absolute
+          top: 1px
+          bottom: 0
+          margin: auto 0
+          right: 0
+          background-image: url("data:image/svg+xml,%3Csvg width='7' height='5' viewBox='0 0 7 5' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M3.5 5L7 1.15515L5.94845 -2.29517e-07L3.5 2.68969L1.05155 -2.29517e-07L0 1.15515L3.5 5Z' fill='%230071FE'/%3E%3C/svg%3E%0A")
+          width: 7px
+          height: 5px
+        &:nth-child(3)
+          display: none
+
     &:not(:first-child)
-      .table-col:not(:first-child)
-        justify-content: flex-end
+      .table-col
+        &:not(:first-child)
+          justify-content: flex-end
+        span:nth-child(2)
+          display: none
+        &.clicked span
+          &:nth-child(1)
+            display: none
+          &:nth-child(2)
+            display: block
   &-col
     flex: 1
     @include flexbox
@@ -414,15 +446,12 @@
       font-style: normal
       color: $color-gray
       display: block
+      font-size: 14px
     &:first-child
       width: 250px
       flex: initial
     &:last-child
       border-right: 0
-  &-switch
-    color: $color-blue
-    &:nth-child(n+3)
-      display: none
 
 @media(max-width: 1600px)
   .item
@@ -543,6 +572,10 @@
       &:first-child
         width: 220px
 
+  .table-row:first-child .table-switch,
+  .table-col i
+    font-size: 12px
+
 @media(max-width: 1300px)
   .item-header__top .title-lg
     font-size: 26px
@@ -575,6 +608,9 @@
   .table
     &-row
       font-size: 12px
+  .table-row:first-child .table-switch,
+  .table-col i
+    font-size: 11px
 
 @media(max-width: 1200px)
   .item-nav
@@ -661,6 +697,10 @@
   .item-spec li
     width: 100%
 
+  .table-row:first-child .table-switch,
+  .table-col i
+    font-size: 10px
+
 @media(max-width: 610px)
   .table
     &-row
@@ -670,6 +710,10 @@
       padding: 5px
       &:first-child
         width: 65px
+
+  .table-row:first-child .table-switch,
+  .table-col i
+    font-size: 8px
 
 @media(max-width: 576px)
   .item-header__pic
