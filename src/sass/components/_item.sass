@@ -92,7 +92,7 @@
     .col
       border-bottom: 1px solid #eee
     & + .projects-equipment
-      padding-top: 80px
+      padding: 80px 0
       margin: 0 1px
       overflow: hidden
   &-content
@@ -291,7 +291,7 @@
       div
         display: -webkit-box
         -webkit-box-orient: vertical
-        height: calc(100% - 38px)
+        max-height: calc(100% - 38px)
         font-size: 16px
         line-height: 1.6
         overflow: hidden
@@ -370,6 +370,7 @@
           width: 100%
       .checkbox
         margin-top: 15px
+        margin-bottom: 3px
 
 .none-mg
   margin-bottom: 0 !important
@@ -427,8 +428,10 @@
 
     &:not(:first-child)
       .table-col
+        &:first-child
+          flex: initial
         &:not(:first-child)
-          justify-content: flex-end
+          justify-content: center
         span:nth-child(2)
           display: none
         &.clicked span
@@ -447,9 +450,6 @@
       color: $color-gray
       display: block
       font-size: 14px
-    &:first-child
-      width: 250px
-      flex: initial
     &:last-child
       border-right: 0
 
@@ -485,7 +485,7 @@
       img
         height: 400px
     &-wrapper + .projects-equipment
-      padding-top: 60px
+      padding: 60px 0
     &-spec
       margin-top: -35px
       li

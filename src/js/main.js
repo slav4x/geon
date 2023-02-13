@@ -75,7 +75,7 @@ const lineCampItemText = () => {
     if ($(window).width() > 1024) {
       return {
         '-webkit-line-clamp': `${itemDescLineCamp}`,
-        height: `${itemDescWrapper(itemDescLineCamp)}px`,
+        // 'max-height': `${itemDescWrapper(itemDescLineCamp)}px`,
       };
     }
     return {
@@ -614,31 +614,38 @@ $(document).ready(function () {
     if (num === 2) vacancyGrid.addClass('vacancy-grid__two');
   }
 
-  $('.table-row').each(function (i, row) {
-    $('.table-col', row).each(function (i, col) {
-      $(col).attr('data-col', i);
+  $('.table').each(function (i, table) {
+    let width = 0;
+
+    $('.table-row', table).each(function (i, row) {
+      $('.table-col', row).each(function (i, col) {
+        $(col).attr('data-col', i);
+      });
+
+      if (i === 0) {
+        $('.table-col', row).each(function (i, col) {
+          const content = $(col).html();
+          const newContent = content.replace(/\|/g, '</span><span class="table-switch">');
+          $(col).html(`<span>${newContent}</span>`);
+          if (i === 0) setTimeout(() => (width = $(col).outerWidth()), 300);
+        });
+
+        $('.table-col', row).click(function () {
+          const id = $(this).attr('data-col');
+          if ($(this).find('.table-switch').length > 0) {
+            $('.table-col[data-col="' + id + '"]').toggleClass('clicked');
+          }
+        });
+      } else {
+        $('.table-col', row).each(function (i, col) {
+          const content = $(col).html();
+          const newContent = content.replace(/\|/g, '</span><span>');
+          $(col).html(`<span>${newContent}</span>`);
+
+          if (i === 0) setTimeout(() => $(col).css('width', width), 400);
+        });
+      }
     });
-
-    if (i === 0) {
-      $('.table-col', row).each(function (i, col) {
-        const content = $(col).html();
-        const newContent = content.replace(/\|/g, '</span><span class="table-switch">');
-        $(col).html(`<span>${newContent}</span>`);
-      });
-
-      $('.table-col', row).click(function () {
-        const id = $(this).attr('data-col');
-        if ($(this).find('.table-switch').length > 0) {
-          $('.table-col[data-col="' + id + '"]').toggleClass('clicked');
-        }
-      });
-    } else {
-      $('.table-col', row).each(function (i, col) {
-        const content = $(col).html();
-        const newContent = content.replace(/\|/g, '</span><span>');
-        $(col).html(`<span>${newContent}</span>`);
-      });
-    }
   });
 
   $('.file input, .form-file input').change(function () {
@@ -689,4 +696,8 @@ $('.vacancy-item__title').each((i, el) => $(el).splitLines());
 
 $('.contact-map').click(function () {
   $(this).addClass('clicked');
+});
+
+$('.table-name').click(function () {
+  $(this).next('.table-overflow').slideToggle();
 });
