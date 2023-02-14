@@ -5,13 +5,26 @@
 
 {% block content %}
 
+<div class="loader">
+  <div class="container">
+    <div class="loader-logo">
+      <span><img src="img/svg/logo-circle.svg"></span>
+      <img src="img/svg/logo-text.svg">
+    </div>
+    <div class="loader-bottom">
+      <div class="loader-text">Проектирование и строительство очистных сооружений сточных вод по всей России и СНГ</div>
+      <div class="loader-progress">00%</div>
+    </div>
+  </div>
+</div>
+
 <div class="container container-lines row">
   <div class="col"></div>
   <div class="col"></div>
 </div>
 
-<section class="hero">
-  <video preload="auto" playsinline="" autoplay="" loop="" muted="" poster="img/hero-video.jpg">
+<section class="hero" style="background-image:url(img/hero-video.jpg);">
+  <video preload="auto" playsinline="" autoplay="" loop="" muted="">
     <source src="hero-video-2.mp4" type="video/mp4">
   </video>
   <div class="container row">

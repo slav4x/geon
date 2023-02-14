@@ -48,7 +48,6 @@ const initPopup = () => {
     }
   });
 
-  // const modal = document.querySelector('#cc-main')
   $('.popup-layout').on('wheel', (e) => {
     e.stopPropagation();
   });
@@ -75,7 +74,6 @@ const lineCampItemText = () => {
     if ($(window).width() > 1024) {
       return {
         '-webkit-line-clamp': `${itemDescLineCamp}`,
-        // 'max-height': `${itemDescWrapper(itemDescLineCamp)}px`,
       };
     }
     return {
@@ -244,33 +242,32 @@ const companyWorkChange = () => {
 };
 
 const createSlider = (el, params) => {
-  if ($(el).length) {
-    const slider = new Swiper(el, {
-      observer: true,
-      observeParents: true,
-      ...params,
-    });
-  }
+  const slider = new Swiper(el, {
+    observer: true,
+    observeParents: true,
+    ...params,
+  });
 };
 
 let lenis;
 const initSmoothScrolling = () => {
-  lenis = new Lenis({
-    lerp: 0.2,
-    smooth: true,
+  const lenis = new Lenis({
     duration: 2,
+    lerp: 0.2,
+    easing: (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t)),
+    smooth: true,
+    smoothTouch: false,
   });
 
-  const scrollFn = (time) => {
+  function raf(time) {
     lenis.raf(time);
-    requestAnimationFrame(scrollFn);
-  };
+    requestAnimationFrame(raf);
+  }
 
-  requestAnimationFrame(scrollFn);
+  requestAnimationFrame(raf);
 };
 
 const runSplit = () => {
-  let typeSplit;
   gsap.registerPlugin(ScrollTrigger);
   const splitText = document.querySelectorAll('[data-animate-title]');
 
@@ -300,10 +297,8 @@ const runSplit = () => {
 };
 
 const initAnimate = () => {
-  runSplit();
-  initSmoothScrolling();
-
   setTimeout(function () {
+    runSplit();
     AOS.init({
       once: true,
       offset: 40,
@@ -324,16 +319,15 @@ $(document).ready(function () {
     maskPhone();
     initPopup();
     burgerMenu();
-    initAnimate();
+    initSmoothScrolling();
+    lineCampItemText();
+    companyWorkChange();
   };
 
   init();
 
-  if ($('.item-card__desc').length !== 0) lineCampItemText();
   if ($('.services').length !== 0) scrollSlider();
-  if ($('.item-wrapper').length !== 0) itemSingle();
-  if ($('.company-work').length !== 0) companyWorkChange();
-
+  if ($('.item-nav').length !== 0) itemSingle();
   if ($('.unset').length !== 0) $('.wrapper').css('overflow', 'unset');
 
   /*
@@ -408,11 +402,6 @@ $(document).ready(function () {
   const projectsSlider = document.querySelector('.projects-slider');
   if (!!projectsSlider) {
     const slider = new Swiper(projectsSlider, {
-      preloadImages: false,
-      lazy: {
-        loadPrevNext: true,
-        checkInView: true,
-      },
       loop: true,
       speed: 1000,
       autoplay: {
@@ -446,6 +435,13 @@ $(document).ready(function () {
 
   const solutionsSlider = document.querySelector('.solutions-main');
   if (!!solutionsSlider) {
+    const solutionsSecond = new Swiper('.solutions-second__slider', {
+      loop: true,
+      speed: 1000,
+      noSwiping: true,
+      noSwipingClass: 'swiper-slide',
+    });
+
     const solutionsMain = new Swiper(solutionsSlider, {
       loop: true,
       speed: 1000,
@@ -461,12 +457,17 @@ $(document).ready(function () {
       },
       noSwiping: true,
       noSwipingClass: 'swiper-slide',
+      thumbs: {
+        swiper: solutionsSecond,
+      },
       on: {
         init: function () {
-          $('.solutions-next .text-lg').text($('.swiper-slide-next .title-lg').text());
+          $('.solutions-next .text-lg').text($('.solutions-main .swiper-slide-next .title-lg').text());
         },
         slideChangeTransitionEnd: function () {
-          $('.solutions-next .text-lg').text($('.swiper-slide-next .title-lg').text()).css({ opacity: 1, transition: 'opacity 0.2s' });
+          $('.solutions-next .text-lg')
+            .text($('.solutions-main .swiper-slide-next .title-lg').text())
+            .css({ opacity: 1, transition: 'opacity 0.2s' });
         },
         slideChangeTransitionStart: function () {
           $('.solutions-next .text-lg').css({ opacity: 0, transition: 'opacity 0.2s' });
@@ -474,24 +475,8 @@ $(document).ready(function () {
       },
     });
 
-    const solutionsSecond = new Swiper('.solutions-second__slider', {
-      preloadImages: false,
-      lazy: {
-        loadPrevNext: true,
-        checkInView: true,
-      },
-      loop: true,
-      speed: 1000,
-      navigation: {
-        nextEl: '.solutions-arrow-next',
-        prevEl: '.solutions-arrow-prev',
-      },
-      thumbs: {
-        swiper: solutionsMain,
-      },
-      noSwiping: true,
-      noSwipingClass: 'swiper-slide',
-    });
+    solutionsMain.params.control = solutionsSecond;
+    solutionsSecond.params.control = solutionsMain;
   }
 
   /*
@@ -688,8 +673,6 @@ $(document).ready(function () {
   }
 });
 
-const lazyLoadInstance = new LazyLoad();
-
 $('.projects-item__title').each((i, el) => $(el).splitLines());
 $('.news-item__title').each((i, el) => $(el).splitLines());
 $('.vacancy-item__title').each((i, el) => $(el).splitLines());
@@ -701,3 +684,23 @@ $('.contact-map').click(function () {
 $('.table-name').click(function () {
   $(this).next('.table-overflow').slideToggle();
 });
+
+const counter = () => {
+  let counter = 0;
+  let total = 0;
+  const interval = setInterval(() => {
+    counter < 9 ? (total = `0${++counter}%`) : (total = `${++counter}%`);
+    document.querySelector('.loader-progress').innerHTML = total;
+    counter === 100 ? clearInterval(interval) : false;
+  }, 2000 / 100);
+};
+
+if ($('.loader').length > 0) {
+  window.onload = function () {
+    counter();
+    setTimeout(() => $('.loader').addClass('loader-done'), 2500);
+    setTimeout(() => initAnimate(), 2500);
+  };
+} else {
+  initAnimate();
+}
