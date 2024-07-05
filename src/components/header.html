@@ -2,7 +2,7 @@
   <div class="container">
     <div class="header-logo">
       <a href="/" class="header-logo__pic"></a>
-      <div class="header-logo__desc{% if onepage %} onepage-header-logo__desc{% endif %}">Проектирование и строительство очистных сооружений сточных вод по всей России и СНГ</div>
+      {# <div class="header-logo__desc{% if onepage %} onepage-header-logo__desc{% endif %}">Проектирование и строительство очистных сооружений сточных вод по всей России и СНГ</div> #}
     </div>
     {% if not onepage %}
     <ul class="header-nav">
@@ -35,9 +35,25 @@
         <img src="img/svg/telegram.svg" alt="">
       </a></li>
     </ul>
+    <ul class="header-social tablet">
+      <li><a href="mailto:zakaz+123856@geongroup.ru">
+        <svg aria-hidden="true" class="progress" width="70" height="70" viewBox="0 0 70 70">
+          <path class="progress__circle" d="m35,2.5c17.955803,0 32.5,14.544199 32.5,32.5c0,17.955803 -14.544197,32.5 -32.5,32.5c-17.955803,0 -32.5,-14.544197 -32.5,-32.5c0,-17.955801 14.544197,-32.5 32.5,-32.5z"></path>
+          <path class="progress__path" d="m35,2.5c17.955803,0 32.5,14.544199 32.5,32.5c0,17.955803 -14.544197,32.5 -32.5,32.5c-17.955803,0 -32.5,-14.544197 -32.5,-32.5c0,-17.955801 14.544197,-32.5 32.5,-32.5z" pathLength="1"></path>
+        </svg>
+        <img src="img/svg/email.svg" alt="">
+      </a></li>
+      <li><a href="tel:+78005513195">
+        <svg aria-hidden="true" class="progress" width="70" height="70" viewBox="0 0 70 70">
+          <path class="progress__circle" d="m35,2.5c17.955803,0 32.5,14.544199 32.5,32.5c0,17.955803 -14.544197,32.5 -32.5,32.5c-17.955803,0 -32.5,-14.544197 -32.5,-32.5c0,-17.955801 14.544197,-32.5 32.5,-32.5z"></path>
+          <path class="progress__path" d="m35,2.5c17.955803,0 32.5,14.544199 32.5,32.5c0,17.955803 -14.544197,32.5 -32.5,32.5c-17.955803,0 -32.5,-14.544197 -32.5,-32.5c0,-17.955801 14.544197,-32.5 32.5,-32.5z" pathLength="1"></path>
+        </svg>
+        <img src="img/svg/phone.svg" alt="">
+      </a></li>
+    </ul>
     <div class="header-contact">
-      <a href="tel:8 (800) 500-21-74" class="header-contact__phone" data-hover="black">8 (800) 500-21-74</a>
-      <a href="#" class="header-contact__chat">Онлайн-чат</a>
+      <a href="mailto:zakaz+123856@geongroup.ru" class="header-contact__phone" data-hover="black">zakaz+123856@geongroup.ru</a>
+      <a href="tel:+78005513195" class="header-contact__phone" data-hover="black">8 (800) 551-31-95</a>
     </div>
     <a href="javascript:;" data-open-popup="popup-tender" class="header-tender">Пригласить на тендер</a>
     {% endif %}
